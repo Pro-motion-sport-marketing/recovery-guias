@@ -17,14 +17,14 @@
 <script>document.documentElement.classList.add('js')</script>
 <style>
 /* ---------- Portada ---------- */
-.portada{padding:22px 0 34px}
-.portada .envoltura{display:grid;gap:20px}
-.portada h1{font-size:clamp(40px,11.5vw,72px);font-weight:800;color:var(--vino);margin-top:14px}
-.portada h1 em{font-style:normal;display:block;color:var(--tinta);font-size:.46em;letter-spacing:0;margin-bottom:8px;text-wrap:balance}
+.portada{padding:24px 0 40px}
+.portada .envoltura{display:grid;gap:22px}
+.portada h1{font-size:clamp(46px,13vw,76px);font-weight:800;color:var(--vino);margin-top:18px}
+.portada h1 em{font-style:normal;display:block;color:var(--tinta);font-size:.42em;letter-spacing:0;margin-bottom:10px;text-wrap:balance}
 .portada h1 mark{background:var(--grad-vino);color:#fff;padding:.04em .2em 0;border-radius:.16em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.portada .bajada{margin-top:14px;font-size:17px;font-weight:500;color:var(--tinta-2);max-width:36ch}
+.portada .bajada{margin-top:16px;font-size:17px;font-weight:500;color:var(--tinta-2);max-width:36ch}
 .portada-media{position:relative;border-radius:28px;overflow:hidden;background:#ECECEC;aspect-ratio:4/5;box-shadow:var(--sombra)}
-.portada-media video,.portada-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 70%}
+.portada-media video,.portada-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 100%}
 .portada .pie{display:grid;gap:14px}
 .firma{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--tinta-2)}
 .firma i{width:8px;height:8px;border-radius:50%;background:var(--amarillo);box-shadow:0 0 0 4px rgba(253,185,19,.3)}
@@ -46,13 +46,13 @@
 .barra-cap i{animation-duration:9s}
 
 /* ---------- Ejercicios ---------- */
-.ejercicio{display:grid;gap:24px;padding:40px 0;border-top:1px solid var(--linea)}
+.ejercicio{display:grid;gap:20px;padding:44px 0;border-top:1px solid var(--linea)}
 .ejercicio:first-of-type{border-top:0;padding-top:0}
 .ej-cabeza{display:flex;align-items:center;gap:14px}
 .numero{flex:none;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-family:var(--titulo);font-weight:800;font-size:30px;color:#fff;background:var(--grad-vino);box-shadow:0 8px 20px -8px rgba(142,42,47,.7)}
 .ej-cabeza h3{color:var(--vino)}
 .ej-cabeza p{font-weight:600;color:var(--tinta-2)}
-.marco{position:relative;border-radius:26px;overflow:hidden;background:#E9E9E9;aspect-ratio:9/16;max-height:78svh;box-shadow:var(--sombra);margin:0 auto;width:100%;max-width:420px}
+.marco{position:relative;border-radius:24px;overflow:hidden;background:#E9E9E9;aspect-ratio:4/5;box-shadow:var(--sombra);margin:0 auto;width:100%;max-width:440px}
 .marco video{width:100%;height:100%;object-fit:cover}
 .marco .etiqueta{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.9);color:var(--vino);font-weight:700;font-size:13px;padding:6px 12px;border-radius:99px;letter-spacing:.02em}
 .ritmo{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(42,26,27,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;border-radius:16px;padding:12px 14px}
@@ -75,7 +75,7 @@
 .r-iso .pista i{width:100%;animation:latido 1.6s ease-in-out infinite}
 @keyframes latido{50%{opacity:.55}}
 
-.ej-texto{display:grid;gap:20px;align-content:start}
+.ej-texto{display:grid;gap:18px;align-content:start}
 .ej-texto>p{font-size:18px}
 .datos{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .dato{background:var(--papel);border:1px solid var(--linea);border-radius:16px;padding:13px 14px}
@@ -128,11 +128,12 @@ details.casa[open] summary::after{content:"–"}
 details.casa p{margin-top:8px;font-size:16px}
 
 /* Progreso del día */
-.progreso-dia{position:fixed;bottom:12px;left:50%;z-index:40;width:calc(100% - 32px);max-width:520px;background:var(--tinta);color:#fff;border-radius:18px;padding:12px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 14px 34px -12px rgba(42,26,27,.6);transform:translate(-50%,160%);transition:transform .35s ease}
+.progreso-dia{position:fixed;bottom:max(12px,env(safe-area-inset-bottom));left:50%;z-index:40;width:calc(100% - 40px);max-width:420px;background:rgba(42,26,27,.92);color:#fff;border-radius:99px;padding:10px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 14px 34px -12px rgba(42,26,27,.6);transform:translate(-50%,160%);transition:transform .35s ease}
 .progreso-dia.visible{transform:translate(-50%,0)}
 .progreso-dia .medidor{flex:1;background:rgba(255,255,255,.15);margin:0}
 .progreso-dia .medidor i{animation:none;width:0;transition:width .4s ease}
-.progreso-dia strong{font-family:var(--titulo);font-size:18px;white-space:nowrap}
+.progreso-dia strong{font-family:var(--titulo);font-size:16px;white-space:nowrap}
+.progreso-dia .medidor{height:8px}
 
 /* Importante */
 .importante{display:grid;gap:10px;grid-template-columns:48px 1fr;align-items:start;background:var(--papel);border:1px solid var(--linea);border-radius:var(--radio);padding:20px;box-shadow:var(--sombra)}
@@ -153,7 +154,8 @@ details.casa p{margin-top:8px;font-size:16px}
 .zona i{width:14px;height:14px;border-radius:50%;margin-top:5px}
 .zona b{display:block}
 .zona.verde i{background:#43B37A}.zona.amarilla i{background:var(--amarillo)}.zona.roja i{background:var(--rojo)}
-.js .zona{opacity:.45}
+.js .zona{opacity:.62}
+.js .zona:not(.activa) p{font-size:15px}
 .js .zona.activa{opacity:1;border-color:transparent;background:var(--suave);box-shadow:inset 4px 0 0 var(--vino)}
 
 /* Plan Recovery */
@@ -178,10 +180,12 @@ details.casa p{margin-top:8px;font-size:16px}
 
 /* Cierre */
 .cierre{text-align:center}
-.cierre .envoltura{display:grid;justify-items:center;gap:18px}
+.cierre .envoltura{display:grid;justify-items:center;gap:16px}
 .cierre h2{max-width:16ch}
-.acciones{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.pie-pagina{padding:28px 0 110px;border-top:1px solid var(--linea);text-align:center}
+.acciones{display:grid;gap:12px;width:100%;max-width:380px;margin-top:6px}
+.acciones .boton{width:100%}
+.mas-guias{font-weight:700;color:var(--vino);text-decoration:none;padding:10px;margin-top:4px}
+.pie-pagina{padding:32px 0 40px;border-top:1px solid var(--linea);text-align:center}
 .pie-pagina img{height:56px;width:auto;margin:0 auto 10px}
 
 @media (min-width:860px){
@@ -191,9 +195,9 @@ details.casa p{margin-top:8px;font-size:16px}
   .portada-media{grid-area:m;aspect-ratio:9/14}
   .portada .pie{grid-area:p;align-self:start;justify-items:start}
   .capacidad{grid-template-columns:1.1fr 1fr;align-items:center}
-  .ejercicio{grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:48px;align-items:start}
-  .ejercicio .marco{position:sticky;top:78px}
-  .ejercicio:nth-of-type(even) .marco{order:2}
+  .ejercicio{grid-template-columns:minmax(0,400px) minmax(0,1fr);column-gap:48px;row-gap:20px;align-items:start}
+  .ejercicio .marco{grid-column:1;grid-row:1 / span 2;position:sticky;top:80px;aspect-ratio:9/16}
+  .ejercicio .ej-cabeza,.ejercicio .ej-texto{grid-column:2}
   .datos{grid-template-columns:repeat(4,1fr)}
   .plan .envoltura{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start}
   .plan .cabecera-seccion{grid-column:1/-1}
@@ -204,7 +208,8 @@ details.casa p{margin-top:8px;font-size:16px}
 
 <header class="barra">
   <div class="envoltura">
-    <a class="logo" href="../" aria-label="Guías Recovery"><img src="../assets/img/recovery-logo-color.png" alt="Recovery" width="45" height="38"></a>
+    <a class="logo" href="../" aria-label="Guías Recovery"><img src="../assets/img/recovery-logo-color.png" alt="Recovery" width="48" height="40"></a>
+    <span class="titulo-guia">Rendimiento Blindado<small>Guía de rodilla</small></span>
     <nav aria-label="Secciones">
       <a href="#entiende">Tu tendón</a>
       <a href="#ej1">1 · Isométricos</a>
@@ -213,15 +218,16 @@ details.casa p{margin-top:8px;font-size:16px}
       <a href="#senales">Señales</a>
       <a href="#plan">Tu plan</a>
     </nav>
+    <a class="agendar" href="https://ig.me/m/recoveryecu" target="_blank" rel="noopener">Agendar</a>
   </div>
 </header>
 
 <main>
 <!-- PORTADA -->
-<section class="portada cruces" aria-label="Portada">
+<section class="portada" aria-label="Portada">
   <div class="envoltura">
     <div class="portada-texto">
-      <div class="insignia"><span>RENDIMIENTO</span><span>BLINDADO</span></div>
+      <div class="insignia"><i></i>RENDIMIENTO BLINDADO</div>
       <h1><em>3 ejercicios que pueden ayudar a</em><mark>tu rodilla</mark></h1>
       <p class="bajada">Los que usamos en Recovery para el tendón rotuliano y cuadricipital, con video, ritmo y temporizador.</p>
     </div>
@@ -239,13 +245,12 @@ details.casa p{margin-top:8px;font-size:16px}
       </div>
       <a class="boton boton-principal" href="#entiende">Empezar la guía
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
-      <p class="firma"><i></i>Guía del equipo de fisioterapia de Recovery</p>
     </div>
   </div>
 </section>
 
 <!-- ENTIENDE TU TENDÓN -->
-<section class="seccion cruces" id="entiende">
+<section class="seccion" id="entiende" style="background:var(--papel);border-block:1px solid var(--linea)">
   <div class="envoltura capacidad">
     <div class="cabecera-seccion">
       <p class="ante">Antes de empezar</p>
@@ -268,7 +273,7 @@ details.casa p{margin-top:8px;font-size:16px}
 </section>
 
 <!-- EJERCICIOS -->
-<section class="seccion" id="ejercicios" style="padding-top:24px">
+<section class="seccion" id="ejercicios">
   <div class="envoltura">
     <div class="cabecera-seccion">
       <p class="ante">La rutina</p>
@@ -278,14 +283,14 @@ details.casa p{margin-top:8px;font-size:16px}
 
     <!-- 1 ISOMÉTRICOS -->
     <article class="ejercicio" id="ej1">
+      <div class="ej-cabeza"><span class="numero">1</span><div><h3>Isométricos</h3><p>Contracción sin movimiento</p></div></div>
       <div class="marco">
-        <video autoplay muted loop playsinline preload="metadata" poster="../assets/clips/isometrico.jpg" aria-label="Demostración del ejercicio isométrico">
+        <video autoplay muted loop playsinline preload="metadata" poster="../assets/clips/isometrico.jpg" style="object-position:50% 62%" aria-label="Demostración del ejercicio isométrico">
           <source src="../assets/clips/isometrico.mp4" type="video/mp4"></video>
         <span class="etiqueta">Contracción sin movimiento</span>
         <div class="ritmo r-iso"><div class="fila"><span>Aguanta sin mover la rodilla</span><b>45 s</b></div><div class="pista"><i></i></div></div>
       </div>
       <div class="ej-texto">
-        <div class="ej-cabeza"><span class="numero">1</span><div><h3>Isométricos</h3><p>Contracción sin movimiento</p></div></div>
         <p>Ayudan a trabajar la fuerza y a manejar la carga sobre el tendón. Son útiles especialmente cuando el dolor está más irritable.</p>
         <div class="datos">
           <div class="dato"><small>Series</small><strong>5</strong></div>
@@ -322,14 +327,14 @@ details.casa p{margin-top:8px;font-size:16px}
 
     <!-- 2 PRENSA -->
     <article class="ejercicio" id="ej2">
+      <div class="ej-cabeza"><span class="numero">2</span><div><h3>Prensa de piernas</h3><p>Fuerza con control</p></div></div>
       <div class="marco">
-        <video autoplay muted loop playsinline preload="metadata" poster="../assets/clips/prensa.jpg" aria-label="Demostración de la prensa de piernas">
+        <video autoplay muted loop playsinline preload="metadata" poster="../assets/clips/prensa.jpg" style="object-position:50% 55%" aria-label="Demostración de la prensa de piernas">
           <source src="../assets/clips/prensa.mp4" type="video/mp4"></video>
         <span class="etiqueta">Fuerza con control</span>
         <div class="ritmo r-prensa"><div class="fila"><span class="a">Empuja · 3 s</span><span class="b">Regresa · 3 s</span><b>Ritmo</b></div><div class="pista"><i></i></div></div>
       </div>
       <div class="ej-texto">
-        <div class="ej-cabeza"><span class="numero">2</span><div><h3>Prensa de piernas</h3><p>Fuerza con control</p></div></div>
         <p>Trabajamos la fuerza con movimientos lentos y controlados, ajustando el peso según tu tolerancia.</p>
         <div class="datos">
           <div class="dato"><small>Series</small><strong>4</strong></div>
@@ -357,14 +362,14 @@ details.casa p{margin-top:8px;font-size:16px}
 
     <!-- 3 EXCÉNTRICA -->
     <article class="ejercicio" id="ej3">
+      <div class="ej-cabeza"><span class="numero">3</span><div><h3>Sentadilla excéntrica</h3><p>Control y fuerza</p></div></div>
       <div class="marco">
-        <video autoplay muted loop playsinline preload="metadata" poster="../assets/clips/excentrica.jpg" aria-label="Demostración de la sentadilla excéntrica">
+        <video autoplay muted loop playsinline preload="metadata" poster="../assets/clips/excentrica.jpg" style="object-position:50% 100%" aria-label="Demostración de la sentadilla excéntrica">
           <source src="../assets/clips/excentrica.mp4" type="video/mp4"></video>
         <span class="etiqueta">Control y fuerza</span>
         <div class="ritmo r-exc"><div class="fila"><span class="a">Baja lento · 3 s</span><span class="b">Sube (con ayuda)</span><b>Ritmo</b></div><div class="pista"><i></i></div></div>
       </div>
       <div class="ej-texto">
-        <div class="ej-cabeza"><span class="numero">3</span><div><h3>Sentadilla excéntrica</h3><p>Control y fuerza</p></div></div>
         <p>Se enfatiza la bajada lenta para trabajar el control y la fuerza del tendón. Puede ser útil en etapas con mayor tolerancia a la carga.</p>
         <div class="datos">
           <div class="dato"><small>Series</small><strong>3</strong></div>
@@ -411,7 +416,7 @@ details.casa p{margin-top:8px;font-size:16px}
 </section>
 
 <!-- SEÑALES -->
-<section class="seccion cruces" id="senales" style="padding-top:24px">
+<section class="seccion" id="senales" style="background:var(--papel);border-block:1px solid var(--linea)">
   <div class="envoltura">
     <div class="cabecera-seccion">
       <p class="ante">Escucha a tu rodilla</p>
@@ -467,7 +472,7 @@ details.casa p{margin-top:8px;font-size:16px}
 </section>
 
 <!-- CIERRE -->
-<section class="seccion cierre cruces">
+<section class="seccion cierre">
   <div class="envoltura">
     <p class="ante">¿Tu dolor de rodilla sigue apareciendo?</p>
     <h2>Escríbenos y armamos tu plan</h2>
@@ -480,7 +485,7 @@ details.casa p{margin-top:8px;font-size:16px}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
         Agendar cita</a>
     </div>
-    <a class="boton boton-linea" href="../" style="color:var(--vino)">Ver más guías de Recovery</a>
+    <a class="mas-guias" href="../">Ver más guías de Recovery →</a>
   </div>
 </section>
 </main>

@@ -27,7 +27,7 @@ body{background:var(--fondo);color:var(--tinta);font-family:var(--texto);font-si
 img,video{display:block;max-width:100%}
 a{color:inherit}
 button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
-.envoltura{width:100%;max-width:1080px;margin:0 auto;padding:0 16px}
+.envoltura{width:100%;max-width:1080px;margin:0 auto;padding:0 20px}
 h1,h2,h3{font-family:var(--titulo);line-height:1.02;letter-spacing:-.01em}
 h2{font-size:clamp(30px,7vw,46px);font-weight:800;color:var(--vino)}
 h3{font-size:clamp(26px,6vw,34px);font-weight:800}
@@ -37,14 +37,19 @@ h3{font-size:clamp(26px,6vw,34px);font-weight:800}
 
 /* Fondo con cruces de salud, como en las guías de Canva */
 .cruces{position:relative;isolation:isolate}
-.cruces::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.55;pointer-events:none;
+.cruces::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.28;pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cg fill='none' stroke-width='3'%3E%3Cpath d='M30 18h10v12h12v10H40v12H30V40H18V30h12z' stroke='%23F7C9A6'/%3E%3Cpath d='M160 120h8v10h10v8h-10v10h-8v-10h-10v-8h10z' stroke='%23A9DCDA'/%3E%3C/g%3E%3Cpath d='M118 52h6v8h8v6h-8v8h-6v-8h-8v-6h8z' fill='%23FBD9C1'/%3E%3Cpath d='M48 160h6v8h8v6h-8v8h-6v-8h-8v-6h8z' fill='%23CDEBEA'/%3E%3C/svg%3E");}
 
 /* Barra superior */
 .barra{position:sticky;top:0;z-index:50;background:rgba(251,248,245,.86);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--linea)}
-.barra .envoltura{display:flex;align-items:center;gap:12px;height:58px}
-.barra .logo img{height:38px;width:auto}
-.barra nav{display:flex;gap:6px;margin-left:auto;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12px,#000 calc(100% - 12px),transparent)}
+.barra .envoltura{display:flex;align-items:center;gap:10px;height:60px}
+.barra .logo img{height:40px;width:auto}
+.barra .titulo-guia{font-family:var(--titulo);font-weight:800;font-size:15px;line-height:1.05;color:var(--vino);letter-spacing:.02em}
+.barra .titulo-guia small{display:block;font-family:var(--texto);font-weight:600;font-size:12px;color:var(--tinta-3);letter-spacing:0}
+.barra .agendar{margin-left:auto;flex:none;text-decoration:none;font-weight:700;font-size:14px;padding:9px 16px;border-radius:99px;background:var(--vino);color:#fff}
+@media (max-width:859px){.barra nav{display:none}}
+@media (min-width:860px){.barra .agendar{margin-left:12px}}
+.barra nav{display:flex;gap:6px;margin-left:auto;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12px,#000 calc(100% - 12px),transparent)}
 .barra nav::-webkit-scrollbar{display:none}
 .barra nav a{flex:none;text-decoration:none;font-weight:600;font-size:14px;padding:7px 12px;border-radius:99px;color:var(--tinta-2);white-space:nowrap}
 .barra nav a:hover,.barra nav a.activo{background:var(--suave);color:var(--vino)}
@@ -58,16 +63,16 @@ h3{font-size:clamp(26px,6vw,34px);font-weight:800}
 .boton svg{width:20px;height:20px;flex:none}
 
 /* Insignia Rendimiento Blindado */
-.insignia{display:inline-flex;flex-direction:column;align-items:flex-start;gap:4px}
-.insignia span:first-child{font-family:var(--titulo);font-weight:800;font-size:15px;letter-spacing:.06em;color:var(--vino)}
-.insignia span:last-child{font-family:var(--titulo);font-weight:800;font-size:22px;letter-spacing:.04em;color:#fff;background:var(--grad-vino);padding:6px 14px 3px;border-radius:10px;line-height:1}
+.insignia{display:inline-flex;align-items:center;gap:8px;font-family:var(--titulo);font-weight:800;font-size:13px;letter-spacing:.12em;color:#fff;background:var(--grad-vino);padding:8px 14px 6px;border-radius:99px;line-height:1}
+.insignia i{width:6px;height:6px;border-radius:50%;background:var(--amarillo)}
 
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{display:inline-flex;align-items:center;gap:6px;background:var(--papel);border:1px solid var(--linea);padding:7px 13px;border-radius:99px;font-size:14px;font-weight:600;color:var(--tinta-2)}
 .chip b{color:var(--vino)}
 
-.seccion{padding:72px 0}
-.cabecera-seccion{display:grid;gap:12px;margin-bottom:32px}
+.seccion{padding:56px 0}
+.cabecera-seccion{display:grid;gap:12px;margin-bottom:28px}
+@media (min-width:860px){.seccion{padding:88px 0}}
 
 .oculto-sin-js{display:none}
 .js .oculto-sin-js{display:revert}
