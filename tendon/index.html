@@ -17,22 +17,16 @@
 <script>document.documentElement.classList.add('js')</script>
 <style>
 /* ---------- Portada ---------- */
-.portada{position:relative;overflow:hidden;background:#EDEDED}
-.portada video,.portada .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 70%}
-.portada::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,248,245,.92) 0%,rgba(251,248,245,.55) 30%,rgba(251,248,245,0) 52%,rgba(42,26,27,0) 70%,rgba(42,26,27,.55) 100%)}
-.portada .envoltura{position:relative;z-index:1;min-height:min(92svh,860px);display:flex;flex-direction:column;justify-content:space-between;padding-top:28px;padding-bottom:28px}
-.portada h1{font-size:clamp(40px,11.5vw,76px);font-weight:800;color:var(--vino);margin-top:16px}
-.portada h1 em{font-style:normal;display:block;color:var(--tinta);font-size:.46em;letter-spacing:0;margin-bottom:6px;text-wrap:balance}
-@media (max-width:859px){
-  .portada .bajada{display:none}
-  .portada video,.portada .poster{top:9%;height:91%}
-}
-.portada h1 mark{background:var(--grad-vino);color:#fff;padding:.02em .18em 0;border-radius:.16em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.portada .bajada{margin-top:14px;font-size:17px;font-weight:500;color:var(--tinta-2);max-width:30ch}
-.portada .pie{display:grid;gap:14px;color:#fff}
-.portada .pie .chip{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.3);color:#fff;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.portada .pie .chip b{color:#fff}
-.firma{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+.portada{padding:22px 0 34px}
+.portada .envoltura{display:grid;gap:20px}
+.portada h1{font-size:clamp(40px,11.5vw,72px);font-weight:800;color:var(--vino);margin-top:14px}
+.portada h1 em{font-style:normal;display:block;color:var(--tinta);font-size:.46em;letter-spacing:0;margin-bottom:8px;text-wrap:balance}
+.portada h1 mark{background:var(--grad-vino);color:#fff;padding:.04em .2em 0;border-radius:.16em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.portada .bajada{margin-top:14px;font-size:17px;font-weight:500;color:var(--tinta-2);max-width:36ch}
+.portada-media{position:relative;border-radius:28px;overflow:hidden;background:#ECECEC;aspect-ratio:4/5;box-shadow:var(--sombra)}
+.portada-media video,.portada-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.portada .pie{display:grid;gap:14px}
+.firma{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--tinta-2)}
 .firma i{width:8px;height:8px;border-radius:50%;background:var(--amarillo);box-shadow:0 0 0 4px rgba(253,185,19,.3)}
 
 /* ---------- Dolor vs capacidad ---------- */
@@ -191,9 +185,11 @@ details.casa p{margin-top:8px;font-size:16px}
 .pie-pagina img{height:56px;width:auto;margin:0 auto 10px}
 
 @media (min-width:860px){
-  .portada .envoltura{justify-content:center;gap:40px}
-  .portada .bajada{max-width:36ch}
-  .portada video,.portada .poster{object-position:50% 50%}
+  .portada{padding:48px 0 56px}
+  .portada .envoltura{grid-template-columns:1.15fr .85fr;grid-template-areas:"t m" "p m";column-gap:48px;align-items:center}
+  .portada-texto{grid-area:t;align-self:end}
+  .portada-media{grid-area:m;aspect-ratio:9/14}
+  .portada .pie{grid-area:p;align-self:start;justify-items:start}
   .capacidad{grid-template-columns:1.1fr 1fr;align-items:center}
   .ejercicio{grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:48px;align-items:start}
   .ejercicio .marco{position:sticky;top:78px}
@@ -222,16 +218,18 @@ details.casa p{margin-top:8px;font-size:16px}
 
 <main>
 <!-- PORTADA -->
-<section class="portada" aria-label="Portada">
-  <img class="poster" src="../assets/clips/portada.jpg" alt="" aria-hidden="true">
-  <video autoplay muted loop playsinline preload="auto" poster="../assets/clips/portada.jpg" aria-hidden="true">
-    <source src="../assets/clips/portada.mp4" type="video/mp4">
-  </video>
+<section class="portada cruces" aria-label="Portada">
   <div class="envoltura">
-    <div>
+    <div class="portada-texto">
       <div class="insignia"><span>RENDIMIENTO</span><span>BLINDADO</span></div>
       <h1><em>3 ejercicios que pueden ayudar a</em><mark>tu rodilla</mark></h1>
-      <p class="bajada">Los que usamos en Recovery en la rehabilitación del tendón rotuliano y cuadricipital. Con video, ritmo y temporizador para que los hagas bien.</p>
+      <p class="bajada">Los que usamos en Recovery para el tendón rotuliano y cuadricipital, con video, ritmo y temporizador.</p>
+    </div>
+    <div class="portada-media">
+      <img src="../assets/clips/portada.jpg" alt="" aria-hidden="true">
+      <video autoplay muted loop playsinline preload="auto" poster="../assets/clips/portada.jpg" aria-hidden="true">
+        <source src="../assets/clips/portada.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="pie">
       <div class="chips">
