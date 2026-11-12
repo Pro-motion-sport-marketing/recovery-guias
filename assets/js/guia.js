@@ -117,14 +117,6 @@
     rango.addEventListener('input', leer); leer();
   }
 
-  /* ---------- Compartir ---------- */
-  var comp = document.querySelector('[data-compartir]');
-  if (comp) comp.addEventListener('click', function () {
-    var datos = { title: document.title, text: '3 ejercicios que pueden ayudar a tu rodilla · Recovery', url: location.href.split('#')[0] };
-    if (navigator.share) { navigator.share(datos).catch(function () {}); return; }
-    try { navigator.clipboard.writeText(datos.url); comp.textContent = 'Enlace copiado ✓'; } catch (e) { prompt('Copia el enlace:', datos.url); }
-  });
-
   /* ---------- Menú: sección activa ---------- */
   var enlaces = [].slice.call(document.querySelectorAll('.barra nav a[href^="#"]'));
   if ('IntersectionObserver' in window && enlaces.length) {
