@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Rendimiento Blindado · Recovery</title>
+<meta name="description" content="3 ejercicios que pueden ayudar a tu rodilla: la guía de Recovery para el tendón rotuliano y cuadricipital, con videos, temporizador y control de series.">
+<meta name="theme-color" content="#8E2A2F">
+<meta property="og:title" content="3 ejercicios que pueden ayudar a tu rodilla · Recovery">
+<meta property="og:description" content="Guía Rendimiento Blindado para el tendón rotuliano y cuadricipital.">
+<meta property="og:image" content="https://pro-motion-sport-marketing.github.io/recovery-guias/assets/clips/portada.jpg">
+<link rel="icon" href="../assets/img/recovery-logo-color.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=League+Spartan:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/recovery.css">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* ---------- Portada ---------- */
+.portada{position:relative;overflow:hidden;background:#EDEDED}
+.portada video,.portada .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 70%}
+.portada::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,248,245,.92) 0%,rgba(251,248,245,.55) 30%,rgba(251,248,245,0) 52%,rgba(42,26,27,0) 70%,rgba(42,26,27,.55) 100%)}
+.portada .envoltura{position:relative;z-index:1;min-height:min(92svh,860px);display:flex;flex-direction:column;justify-content:space-between;padding-top:28px;padding-bottom:28px}
+.portada h1{font-size:clamp(40px,11.5vw,76px);font-weight:800;color:var(--vino);margin-top:16px}
+.portada h1 em{font-style:normal;display:block;color:var(--tinta);font-size:.56em;letter-spacing:0}
+.portada h1 mark{background:var(--grad-vino);color:#fff;padding:.02em .18em 0;border-radius:.16em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.portada .bajada{margin-top:14px;font-size:17px;font-weight:500;color:var(--tinta-2);max-width:30ch}
+.portada .pie{display:grid;gap:14px;color:#fff}
+.portada .pie .chip{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.3);color:#fff;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.portada .pie .chip b{color:#fff}
+.firma{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+.firma i{width:8px;height:8px;border-radius:50%;background:var(--amarillo);box-shadow:0 0 0 4px rgba(253,185,19,.3)}
+
+/* ---------- Dolor vs capacidad ---------- */
+.capacidad{display:grid;gap:22px}
+.escalera{background:var(--papel);border:1px solid var(--linea);border-radius:var(--radio);padding:22px;box-shadow:var(--sombra)}
+.escalera ol{list-style:none;display:grid;gap:10px;margin-top:14px}
+.escalera li{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:12px;font-weight:600}
+.escalera li span:first-child{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--suave);font-size:18px}
+.escalera li small{font-size:12px;font-weight:700;color:var(--tinta-3);text-transform:uppercase;letter-spacing:.06em}
+.medidor{height:14px;border-radius:99px;background:var(--suave);overflow:hidden;margin-top:6px}
+.medidor i{display:block;height:100%;width:38%;background:var(--grad);border-radius:inherit;animation:llenar 4.5s ease-in-out infinite alternate}
+@keyframes llenar{from{width:22%}to{width:78%}}
+.dos-barras{display:grid;gap:14px}
+.dos-barras label{display:flex;justify-content:space-between;font-size:14px;font-weight:700;color:var(--tinta-2)}
+.barra-dolor i{background:linear-gradient(90deg,#F4B2A6,var(--rojo));animation:bajar 4.5s ease-in-out infinite alternate}
+@keyframes bajar{from{width:80%}to{width:18%}}
+.barra-cap i{animation-duration:9s}
+
+/* ---------- Ejercicios ---------- */
+.ejercicio{display:grid;gap:24px;padding:40px 0;border-top:1px solid var(--linea)}
+.ejercicio:first-of-type{border-top:0;padding-top:0}
+.ej-cabeza{display:flex;align-items:center;gap:14px}
+.numero{flex:none;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-family:var(--titulo);font-weight:800;font-size:30px;color:#fff;background:var(--grad-vino);box-shadow:0 8px 20px -8px rgba(142,42,47,.7)}
+.ej-cabeza h3{color:var(--vino)}
+.ej-cabeza p{font-weight:600;color:var(--tinta-2)}
+.marco{position:relative;border-radius:26px;overflow:hidden;background:#E9E9E9;aspect-ratio:9/16;max-height:78svh;box-shadow:var(--sombra);margin:0 auto;width:100%;max-width:420px}
+.marco video{width:100%;height:100%;object-fit:cover}
+.marco .etiqueta{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.9);color:var(--vino);font-weight:700;font-size:13px;padding:6px 12px;border-radius:99px;letter-spacing:.02em}
+.ritmo{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(42,26,27,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;border-radius:16px;padding:12px 14px}
+.ritmo .fila{display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:8px;position:relative;height:18px}
+.ritmo .fila span{position:absolute;left:0;transition:opacity .2s}
+.ritmo .fila b{position:absolute;right:0;color:var(--amarillo)}
+.ritmo .pista{height:8px;border-radius:99px;background:rgba(255,255,255,.18);overflow:hidden}
+.ritmo .pista i{display:block;height:100%;background:var(--grad);border-radius:inherit}
+/* Prensa: 3 s empujando, 3 s regresando */
+.r-prensa .pista i{animation:prensa 6s linear infinite}
+@keyframes prensa{0%{width:0}50%{width:100%}100%{width:0}}
+.r-prensa .a{animation:t1 6s steps(1) infinite}.r-prensa .b{animation:t2 6s steps(1) infinite}
+@keyframes t1{0%{opacity:1}50%{opacity:0}}@keyframes t2{0%{opacity:0}50%{opacity:1}}
+/* Excéntrica: baja 3 s, sube con ayuda */
+.r-exc .pista i{animation:exc 4.5s linear infinite}
+@keyframes exc{0%{width:0}66.6%{width:100%}100%{width:0}}
+.r-exc .a{animation:t3 4.5s steps(1) infinite}.r-exc .b{animation:t4 4.5s steps(1) infinite}
+@keyframes t3{0%{opacity:1}66.6%{opacity:0}}@keyframes t4{0%{opacity:0}66.6%{opacity:1}}
+/* Isométrico: aguanta */
+.r-iso .pista i{width:100%;animation:latido 1.6s ease-in-out infinite}
+@keyframes latido{50%{opacity:.55}}
+
+.ej-texto{display:grid;gap:20px;align-content:start}
+.ej-texto>p{font-size:18px}
+.datos{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.dato{background:var(--papel);border:1px solid var(--linea);border-radius:16px;padding:13px 14px}
+.dato small{display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--rojo)}
+.dato strong{font-family:var(--titulo);font-size:24px;line-height:1.1;color:var(--tinta)}
+.dato.ancho{grid-column:1/-1}
+.dato.ancho strong{font-size:19px}
+.pasos{list-style:none;counter-reset:p;display:grid;gap:10px}
+.pasos li{counter-increment:p;display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start}
+.pasos li::before{content:counter(p);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--suave);color:var(--vino);font-weight:800;font-size:15px}
+.consejo{background:#FFF6E6;border-left:4px solid var(--amarillo);border-radius:12px;padding:12px 14px;font-size:16px}
+.consejo b{color:var(--vino-2)}
+
+/* Panel de series */
+.panel{background:var(--papel);border:1px solid var(--linea);border-radius:var(--radio);padding:18px;box-shadow:var(--sombra);display:grid;gap:14px}
+.panel h4{font-family:var(--titulo);font-size:20px;color:var(--vino);display:flex;justify-content:space-between;align-items:baseline}
+.panel h4 small{font-family:var(--texto);font-size:14px;font-weight:600;color:var(--tinta-3)}
+.series{display:flex;gap:10px;flex-wrap:wrap}
+.serie{width:48px;height:48px;border-radius:14px;border:2px dashed #D9C9C0;display:grid;place-items:center;font-weight:800;color:var(--tinta-3);transition:all .2s}
+.serie[aria-pressed="true"]{border:2px solid transparent;background:var(--grad-vino);color:#fff;transform:scale(1.04)}
+.reloj{display:flex;align-items:center;gap:16px}
+.anillo{position:relative;width:96px;height:96px;flex:none}
+.anillo svg{width:100%;height:100%;transform:rotate(-90deg)}
+.anillo circle{fill:none;stroke-width:9}
+.anillo .fondo-a{stroke:var(--suave)}
+.anillo .avance{stroke:url(#gradAnillo);stroke-linecap:round;stroke-dasharray:264;stroke-dashoffset:0;transition:stroke-dashoffset 1s linear}
+.anillo .anillo-texto{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-family:var(--titulo);font-weight:800;font-size:26px;color:var(--vino);line-height:1}
+.anillo .anillo-texto small{display:block;font-family:var(--texto);font-size:11px;font-weight:700;color:var(--tinta-3);text-transform:uppercase;letter-spacing:.06em}
+.reloj .controles{display:grid;gap:8px;flex:1}
+.reloj .boton{min-height:46px;font-size:16px;padding:0 18px}
+.estado-reloj{font-size:14px;color:var(--tinta-2);font-weight:600}
+
+/* Niveles (sin JS: radios) */
+.niveles{border:1px solid var(--linea);border-radius:var(--radio);background:var(--papel);overflow:hidden}
+.niveles>input{position:absolute;opacity:0;pointer-events:none}
+.niveles .pestanas{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--linea)}
+.niveles label{padding:12px 4px;text-align:center;font-size:13px;font-weight:700;color:var(--tinta-3);cursor:pointer;line-height:1.2}
+.niveles label b{display:block;font-family:var(--titulo);font-size:20px}
+.niveles .cuerpo{padding:16px 18px;display:none}
+#n1:checked~.pestanas label[for=n1],#n2:checked~.pestanas label[for=n2],#n3:checked~.pestanas label[for=n3],#n4:checked~.pestanas label[for=n4]{color:var(--vino);background:var(--suave);box-shadow:inset 0 -3px 0 var(--rojo)}
+#n1:checked~.c1,#n2:checked~.c2,#n3:checked~.c3,#n4:checked~.c4{display:block}
+.niveles input:focus-visible~.pestanas{outline:2px solid var(--naranja)}
+.niveles h5{font-family:var(--titulo);font-size:19px;color:var(--tinta);margin-bottom:4px}
+
+details.casa{background:var(--suave);border-radius:16px;padding:14px 16px}
+details.casa summary{font-weight:700;color:var(--vino);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:10px}
+details.casa summary::-webkit-details-marker{display:none}
+details.casa summary::after{content:"+";font-size:22px;line-height:1}
+details.casa[open] summary::after{content:"–"}
+details.casa p{margin-top:8px;font-size:16px}
+
+/* Progreso del día */
+.progreso-dia{position:sticky;bottom:12px;z-index:40;margin:0 auto;width:calc(100% - 32px);max-width:520px;background:var(--tinta);color:#fff;border-radius:18px;padding:12px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 14px 34px -12px rgba(42,26,27,.6);transform:translateY(140%);transition:transform .35s ease}
+.progreso-dia.visible{transform:none}
+.progreso-dia .medidor{flex:1;background:rgba(255,255,255,.15);margin:0}
+.progreso-dia .medidor i{animation:none;width:0;transition:width .4s ease}
+.progreso-dia strong{font-family:var(--titulo);font-size:18px;white-space:nowrap}
+
+/* Importante */
+.importante{display:grid;gap:10px;grid-template-columns:48px 1fr;align-items:start;background:var(--papel);border:1px solid var(--linea);border-radius:var(--radio);padding:20px;box-shadow:var(--sombra)}
+.importante .icono{width:48px;height:48px;border-radius:14px;background:var(--grad);display:grid;place-items:center}
+.importante .icono svg{width:26px;height:26px;stroke:var(--vino-2)}
+.importante h4{font-family:var(--titulo);font-size:22px;color:var(--vino)}
+
+/* Semáforo del dolor */
+.semaforo{background:var(--papel);border:1px solid var(--linea);border-radius:var(--radio);padding:22px;box-shadow:var(--sombra);display:grid;gap:18px}
+.semaforo input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:14px;border-radius:99px;background:linear-gradient(90deg,#43B37A 0 35%,var(--amarillo) 35% 58%,var(--rojo) 58%);outline-offset:6px}
+.semaforo input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:34px;height:34px;border-radius:50%;background:#fff;border:4px solid var(--vino);box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.semaforo input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:#fff;border:4px solid var(--vino)}
+.escala{display:flex;justify-content:space-between;font-size:13px;font-weight:700;color:var(--tinta-3)}
+.lectura{display:flex;align-items:center;gap:14px}
+.lectura .valor{font-family:var(--titulo);font-weight:800;font-size:54px;line-height:1;color:var(--vino);min-width:72px}
+.zonas{display:grid;gap:10px}
+.zona{display:grid;grid-template-columns:14px 1fr;gap:12px;padding:12px 14px;border-radius:14px;border:1px solid var(--linea);transition:all .2s}
+.zona i{width:14px;height:14px;border-radius:50%;margin-top:5px}
+.zona b{display:block}
+.zona.verde i{background:#43B37A}.zona.amarilla i{background:var(--amarillo)}.zona.roja i{background:var(--rojo)}
+.js .zona{opacity:.45}
+.js .zona.activa{opacity:1;border-color:transparent;background:var(--suave);box-shadow:inset 4px 0 0 var(--vino)}
+
+/* Plan Recovery */
+.plan{background:var(--vino);color:#fff;position:relative;overflow:hidden}
+.plan::before{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(253,185,19,.35),transparent 70%)}
+.plan h2{color:#fff}
+.plan h2 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.plan .sub{color:rgba(255,255,255,.82)}
+.pasos-plan{display:grid;gap:12px;list-style:none;counter-reset:pp}
+.pasos-plan li{counter-increment:pp;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:16px 16px 16px 64px;position:relative}
+.pasos-plan li::before{content:counter(pp);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:10px;background:var(--grad);color:var(--vino-2);display:grid;place-items:center;font-family:var(--titulo);font-weight:800;font-size:19px}
+.pasos-plan b{font-family:var(--titulo);font-size:20px;display:block;letter-spacing:.01em}
+.pasos-plan span{color:rgba(255,255,255,.8);font-size:16px}
+.programa{background:#fff;color:var(--tinta);border-radius:var(--radio);padding:24px;display:grid;gap:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.5)}
+.programa .ante{color:var(--rojo)}
+.programa h3{color:var(--vino)}
+.programa blockquote{font-style:italic;color:var(--tinta-2);border-left:3px solid var(--amarillo);padding-left:12px}
+.programa ul{list-style:none;display:grid;gap:8px}
+.programa li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-weight:500}
+.programa li::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--suave) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238E2A2F' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12l4 4 8-8'/%3E%3C/svg%3E") center/14px no-repeat;margin-top:2px}
+.programa .condicion{font-size:14px;font-weight:600;color:var(--tinta-3)}
+
+/* Cierre */
+.cierre{text-align:center}
+.cierre .envoltura{display:grid;justify-items:center;gap:18px}
+.cierre h2{max-width:16ch}
+.acciones{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.pie-pagina{padding:28px 0 110px;border-top:1px solid var(--linea);text-align:center}
+.pie-pagina img{height:56px;width:auto;margin:0 auto 10px}
+
+@media (min-width:860px){
+  .portada .envoltura{justify-content:center;gap:40px}
+  .portada .bajada{max-width:36ch}
+  .portada video,.portada .poster{object-position:50% 50%}
+  .capacidad{grid-template-columns:1.1fr 1fr;align-items:center}
+  .ejercicio{grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:48px;align-items:start}
+  .ejercicio .marco{position:sticky;top:78px}
+  .ejercicio:nth-of-type(even) .marco{order:2}
+  .datos{grid-template-columns:repeat(4,1fr)}
+  .plan .envoltura{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start}
+  .plan .cabecera-seccion{grid-column:1/-1}
+}
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <div class="envoltura">
+    <a class="logo" href="../" aria-label="Guías Recovery"><img src="../assets/img/recovery-logo-color.png" alt="Recovery" width="45" height="38"></a>
+    <nav aria-label="Secciones">
+      <a href="#entiende">Tu tendón</a>
+      <a href="#ej1">1 · Isométricos</a>
+      <a href="#ej2">2 · Prensa</a>
+      <a href="#ej3">3 · Excéntrica</a>
+      <a href="#senales">Señales</a>
+      <a href="#plan">Tu plan</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- PORTADA -->
+<section class="portada" aria-label="Portada">
+  <img class="poster" src="../assets/clips/portada.jpg" alt="" aria-hidden="true">
+  <video autoplay muted loop playsinline preload="auto" poster="../assets/clips/portada.jpg" aria-hidden="true">
+    <source src="../assets/clips/portada.mp4" type="video/mp4">
+  </video>
+  <div class="envoltura">
+    <div>
+      <div class="insignia"><span>RENDIMIENTO</span><span>BLINDADO</span></div>
+      <h1><em>3 ejercicios que pueden ayudar a</em><mark>tu rodilla</mark></h1>
+      <p class="bajada">Los que usamos en Recovery en la rehabilitación del tendón rotuliano y cuadricipital. Con video, ritmo y temporizador para que los hagas bien.</p>
+    </div>
+    <div class="pie">
+      <div class="chips">
+        <span class="chip"><b>3</b> ejercicios</span>
+        <span class="chip">≈ <b>25</b> min</span>
+        <span class="chip">Con tu ritmo</span>
+      </div>
+      <a class="boton boton-principal" href="#entiende">Empezar la guía
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+      <p class="firma"><i></i>Guía del equipo de fisioterapia de Recovery</p>
+    </div>
+  </div>
+</section>
+
+<!-- ENTIENDE TU TENDÓN -->
+<section class="seccion cruces" id="entiende">
+  <div class="envoltura capacidad">
+    <div class="cabecera-seccion">
+      <p class="ante">Antes de empezar</p>
+      <h2>Tu dolor bajó. ¿Tu tendón ya está listo?</h2>
+      <p class="sub">Muchos dolores de rodilla, justo encima o debajo de la rótula, tienen que ver con el tendón cuadricipital o el rotuliano. Y aquí está la trampa: <b>sentir menos dolor no es lo mismo que recuperar capacidad</b>. El tendón se fortalece cuando recibe la carga correcta, de forma progresiva. Eso es lo que hacen estos tres ejercicios.</p>
+    </div>
+    <div class="escalera">
+      <div class="dos-barras">
+        <div><label><span>Dolor</span><span>baja rápido</span></label><div class="medidor barra-dolor"><i></i></div></div>
+        <div><label><span>Capacidad del tendón</span><span>sube con carga</span></label><div class="medidor barra-cap"><i></i></div></div>
+      </div>
+      <ol aria-label="Lo que tu tendón tiene que volver a soportar">
+        <li><span>🚶</span>Caminar sin molestia<small>Paso 1</small></li>
+        <li><span>🪜</span>Subir y bajar escaleras<small>Paso 2</small></li>
+        <li><span>🏋️</span>Volver a entrenar<small>Paso 3</small></li>
+        <li><span>🏃</span>Correr y saltar<small>Meta</small></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- EJERCICIOS -->
+<section class="seccion" id="ejercicios" style="padding-top:24px">
+  <div class="envoltura">
+    <div class="cabecera-seccion">
+      <p class="ante">La rutina</p>
+      <h2>Tres ejercicios, un mismo objetivo: que el tendón vuelva a tolerar carga</h2>
+      <p class="sub">Toca los cuadros de cada ejercicio a medida que terminas una serie. Tu avance de hoy se guarda en este teléfono.</p>
+    </div>
+
+    <!-- 1 ISOMÉTRICOS -->
+    <article class="ejercicio" id="ej1">
+      <div class="marco">
+        <video autoplay muted loop playsinline preload="metadata" poster="../assets/clips/isometrico.jpg" aria-label="Demostración del ejercicio isométrico">
+          <source src="../assets/clips/isometrico.mp4" type="video/mp4"></video>
+        <span class="etiqueta">Contracción sin movimiento</span>
+        <div class="ritmo r-iso"><div class="fila"><span>Aguanta sin mover la rodilla</span><b>45 s</b></div><div class="pista"><i></i></div></div>
+      </div>
+      <div class="ej-texto">
+        <div class="ej-cabeza"><span class="numero">1</span><div><h3>Isométricos</h3><p>Contracción sin movimiento</p></div></div>
+        <p>Ayudan a trabajar la fuerza y a manejar la carga sobre el tendón. Son útiles especialmente cuando el dolor está más irritable.</p>
+        <div class="datos">
+          <div class="dato"><small>Series</small><strong>5</strong></div>
+          <div class="dato"><small>Duración</small><strong>45 s</strong></div>
+          <div class="dato"><small>Descanso</small><strong>2 min</strong></div>
+          <div class="dato"><small>Rodilla</small><strong>Quieta</strong></div>
+        </div>
+        <ol class="pasos">
+          <li>Siéntate con la espalda bien apoyada y el rodillo sobre la parte baja de la pierna.</li>
+          <li>Extiende la rodilla hasta el ángulo que te indique tu fisioterapeuta, sin bloquearla.</li>
+          <li>Empuja contra el rodillo y mantén la contracción 45 segundos, sin mover la rodilla.</li>
+          <li>Suelta despacio, descansa 2 minutos y repite.</li>
+        </ol>
+        <div class="panel" data-ejercicio="iso" data-series="5">
+          <h4>Temporizador <small data-cuenta>0 de 5 series</small></h4>
+          <div class="reloj oculto-sin-js">
+            <div class="anillo">
+              <svg viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="gradAnillo" x1="0" x2="1"><stop offset="0" stop-color="#F28C1E"/><stop offset="1" stop-color="#C9472B"/></linearGradient></defs><circle class="fondo-a" cx="50" cy="50" r="42"/><circle class="avance" cx="50" cy="50" r="42"/></svg>
+              <div class="anillo-texto" aria-live="polite"><div><span data-tiempo>45</span><small data-fase>listo</small></div></div>
+            </div>
+            <div class="controles">
+              <button class="boton boton-vino" type="button" data-iniciar>Iniciar serie</button>
+              <p class="estado-reloj" data-estado>45 s de contracción + 2 min de descanso.</p>
+            </div>
+          </div>
+          <div class="series" role="group" aria-label="Series completadas"></div>
+        </div>
+        <details class="casa">
+          <summary>¿No tienes máquina? Hazlo en casa</summary>
+          <p>Siéntate en una silla firme, ata una banda elástica al tobillo y a la pata de la silla, y empuja hacia adelante sin que la pierna se mueva. Mismo tiempo: 45 segundos por serie.</p>
+        </details>
+      </div>
+    </article>
+
+    <!-- 2 PRENSA -->
+    <article class="ejercicio" id="ej2">
+      <div class="marco">
+        <video autoplay muted loop playsinline preload="metadata" poster="../assets/clips/prensa.jpg" aria-label="Demostración de la prensa de piernas">
+          <source src="../assets/clips/prensa.mp4" type="video/mp4"></video>
+        <span class="etiqueta">Fuerza con control</span>
+        <div class="ritmo r-prensa"><div class="fila"><span class="a">Empuja · 3 s</span><span class="b">Regresa · 3 s</span><b>Ritmo</b></div><div class="pista"><i></i></div></div>
+      </div>
+      <div class="ej-texto">
+        <div class="ej-cabeza"><span class="numero">2</span><div><h3>Prensa de piernas</h3><p>Fuerza con control</p></div></div>
+        <p>Trabajamos la fuerza con movimientos lentos y controlados, ajustando el peso según tu tolerancia.</p>
+        <div class="datos">
+          <div class="dato"><small>Series</small><strong>4</strong></div>
+          <div class="dato"><small>Repeticiones</small><strong>15</strong></div>
+          <div class="dato"><small>Carga</small><strong>Tolerable</strong></div>
+          <div class="dato"><small>Ritmo</small><strong>3 s · 3 s</strong></div>
+        </div>
+        <ol class="pasos">
+          <li>Apoya la espalda en el respaldo y los pies en la plataforma, a la anchura de tu cadera.</li>
+          <li>Empuja la plataforma en 3 segundos, sin llegar a bloquear las rodillas.</li>
+          <li>Regresa en 3 segundos, controlando el peso hasta doblar las rodillas.</li>
+          <li>Elige un peso que te permita terminar las 15 repeticiones con buena técnica.</li>
+        </ol>
+        <p class="consejo"><b>Sigue la barra del video:</b> se llena mientras empujas y se vacía mientras regresas. Ese es tu ritmo.</p>
+        <div class="panel" data-ejercicio="prensa" data-series="4">
+          <h4>Tus series de hoy <small data-cuenta>0 de 4 series</small></h4>
+          <div class="series" role="group" aria-label="Series completadas"></div>
+        </div>
+        <details class="casa">
+          <summary>¿No tienes prensa? Usa una banda elástica</summary>
+          <p>Acuéstate boca arriba, pasa la banda por la planta del pie y empuja la pierna hacia adelante con el mismo ritmo: 3 segundos al empujar y 3 al regresar. Ajusta la tensión de la banda a tu rango de movimiento.</p>
+        </details>
+      </div>
+    </article>
+
+    <!-- 3 EXCÉNTRICA -->
+    <article class="ejercicio" id="ej3">
+      <div class="marco">
+        <video autoplay muted loop playsinline preload="metadata" poster="../assets/clips/excentrica.jpg" aria-label="Demostración de la sentadilla excéntrica">
+          <source src="../assets/clips/excentrica.mp4" type="video/mp4"></video>
+        <span class="etiqueta">Control y fuerza</span>
+        <div class="ritmo r-exc"><div class="fila"><span class="a">Baja lento · 3 s</span><span class="b">Sube (con ayuda)</span><b>Ritmo</b></div><div class="pista"><i></i></div></div>
+      </div>
+      <div class="ej-texto">
+        <div class="ej-cabeza"><span class="numero">3</span><div><h3>Sentadilla excéntrica</h3><p>Control y fuerza</p></div></div>
+        <p>Se enfatiza la bajada lenta para trabajar el control y la fuerza del tendón. Puede ser útil en etapas con mayor tolerancia a la carga.</p>
+        <div class="datos">
+          <div class="dato"><small>Series</small><strong>3</strong></div>
+          <div class="dato"><small>Repeticiones</small><strong>15</strong></div>
+          <div class="dato ancho"><small>Ritmo</small><strong>Baja en 3 segundos. La subida puede ser con ayuda.</strong></div>
+        </div>
+        <ol class="pasos">
+          <li>Párate sobre una tabla inclinada (los talones más altos que la punta de los pies).</li>
+          <li>Lleva los brazos al frente y baja muy lento, contando 3 segundos.</li>
+          <li>Deja que las rodillas avancen hacia la punta del pie, con el tronco erguido.</li>
+          <li>Sube como te resulte cómodo: con las dos piernas o apoyándote en algo.</li>
+        </ol>
+        <div class="niveles">
+          <input type="radio" name="nivel" id="n1" checked>
+          <input type="radio" name="nivel" id="n2">
+          <input type="radio" name="nivel" id="n3">
+          <input type="radio" name="nivel" id="n4">
+          <div class="pestanas">
+            <label for="n1"><b>1</b>Pared</label>
+            <label for="n2"><b>2</b>Un pie</label>
+            <label for="n3"><b>3</b>Banda</label>
+            <label for="n4"><b>4</b>De frente</label>
+          </div>
+          <div class="cuerpo c1"><h5>Empieza en la pared</h5><p>Apoya la espalda en la pared, baja hasta una posición cómoda y mantenla unos 30 segundos. Es la forma más suave de empezar.</p></div>
+          <div class="cuerpo c2"><h5>Levanta un pie</h5><p>Cuando la pared ya te parezca sencilla, aumenta la dificultad levantando un pie y sosteniendo la posición con una sola pierna.</p></div>
+          <div class="cuerpo c3"><h5>Suma una banda</h5><p>Coloca una banda elástica alrededor de las rodillas para exigir más control mientras sostienes la posición.</p></div>
+          <div class="cuerpo c4"><h5>Cambia de posición</h5><p>Ponte de frente a la pared y sostente con las manos. Baja en la posición contraria y aguanta otra vez 30 segundos.</p></div>
+        </div>
+        <div class="panel" data-ejercicio="exc" data-series="3">
+          <h4>Tus series de hoy <small data-cuenta>0 de 3 series</small></h4>
+          <div class="series" role="group" aria-label="Series completadas"></div>
+        </div>
+      </div>
+    </article>
+
+    <div class="importante">
+      <span class="icono"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg></span>
+      <div>
+        <h4>Importante</h4>
+        <p>No todos necesitan las mismas repeticiones, la misma carga ni los mismos ejercicios. La dosis (peso, repeticiones, ritmo y descanso) se ajusta según tu dolor, tu fuerza y tu etapa de recuperación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÑALES -->
+<section class="seccion cruces" id="senales" style="padding-top:24px">
+  <div class="envoltura">
+    <div class="cabecera-seccion">
+      <p class="ante">Escucha a tu rodilla</p>
+      <h2>¿Cuánto te molesta mientras haces los ejercicios?</h2>
+      <p class="sub">Mueve el control del 0 (nada) al 10 (el peor dolor que imaginas) y mira qué te recomendamos.</p>
+    </div>
+    <div class="semaforo">
+      <div class="lectura oculto-sin-js"><span class="valor" data-valor>2</span><p data-mensaje>Molestia ligera. Es normal: puedes seguir con la dosis.</p></div>
+      <div class="oculto-sin-js">
+        <input type="range" min="0" max="10" step="1" value="2" aria-label="Nivel de dolor del 0 al 10" data-dolor>
+        <div class="escala"><span>0</span><span>5</span><span>10</span></div>
+      </div>
+      <div class="zonas">
+        <div class="zona verde" data-zona="0-3"><i></i><p><b>0 a 3 · Sigue</b>Es normal sentir una ligera molestia durante o después del ejercicio.</p></div>
+        <div class="zona amarilla" data-zona="4-5"><i></i><p><b>4 a 5 · Ajusta</b>Baja el peso o el rango y observa cómo responde tu rodilla al día siguiente.</p></div>
+        <div class="zona roja" data-zona="6-10"><i></i><p><b>6 a 10 · Detente</b>Si el dolor aumenta de forma importante o dura más de 24 a 48 horas, puede que la carga sea excesiva. Ante un dolor muy intenso, inflamación importante o dificultad para extender la rodilla, consulta con un profesional.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAN -->
+<section class="seccion plan" id="plan">
+  <div class="envoltura">
+    <div class="cabecera-seccion">
+      <p class="ante" style="color:var(--amarillo)">Recovery</p>
+      <h2>¿Qué incluye un <span>plan personalizado</span>?</h2>
+      <p class="sub">Combinamos tu valoración profesional, ejercicio terapéutico y la mejor tecnología para ayudarte a recuperarte.</p>
+    </div>
+    <ol class="pasos-plan">
+      <li><b>Valoración completa</b><span>Analizamos tu dolor, tu fuerza, tu movilidad y tus objetivos.</span></li>
+      <li><b>Ejercicios a tu medida</b><span>Elegimos los ejercicios más adecuados y definimos la dosis ideal para ti.</span></li>
+      <li><b>Progresión segura</b><span>Ajustamos la carga de forma gradual según tu evolución y tolerancia.</span></li>
+      <li><b>Tecnología especializada</b><span>Utilizamos terapias avanzadas que pueden complementar tu recuperación.</span></li>
+      <li><b>Acompañamiento continuo</b><span>Revisamos tus avances y adaptamos el plan hasta que vuelvas a tus actividades.</span></li>
+    </ol>
+    <div class="programa">
+      <p class="ante">Programa · 6 semanas</p>
+      <h3>Recovery Tendón Cuadricipital</h3>
+      <blockquote>Tu dolor bajó… pero ¿tu tendón ya está listo para volver a cargar igual?</blockquote>
+      <ul>
+        <li>Valoración funcional especializada</li>
+        <li>6 sesiones integrales de fisioterapia</li>
+        <li>Terapia manual y láser terapéutico</li>
+        <li>Ondas de choque, si están indicadas</li>
+        <li>Programa progresivo de carga y guía de ejercicios</li>
+        <li>Reevaluación funcional al final</li>
+      </ul>
+      <p class="condicion">Sujeto a valoración previa. Te contamos los detalles por mensaje.</p>
+      <a class="boton boton-principal" href="https://ig.me/m/recoveryecu" target="_blank" rel="noopener">Quiero mi valoración</a>
+    </div>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<section class="seccion cierre cruces">
+  <div class="envoltura">
+    <p class="ante">¿Tu dolor de rodilla sigue apareciendo?</p>
+    <h2>Escríbenos y armamos tu plan</h2>
+    <p class="sub">Cuéntanos qué sientes y cuándo empezó. Te ayudamos a agendar tu valoración en Recovery.</p>
+    <div class="acciones">
+      <a class="boton boton-principal" href="https://ig.me/m/recoveryecu" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.5-5.4A8.5 8.5 0 1 1 21 12z"/></svg>
+        Escribir a Recovery</a>
+      <button class="boton boton-linea oculto-sin-js" type="button" data-compartir>Compartir esta guía</button>
+    </div>
+    <a href="../" style="font-weight:600;color:var(--vino)">Ver más guías de Recovery →</a>
+  </div>
+</section>
+</main>
+
+<footer class="pie-pagina">
+  <div class="envoltura">
+    <img src="../assets/img/recovery-logo-color.png" alt="Recovery" width="67" height="56">
+    <p class="nota-pie">Recovery · Fisioterapia · Cuenca, Ecuador · <a href="https://www.instagram.com/recoveryecu/" target="_blank" rel="noopener">@recoveryecu</a></p>
+    <p class="nota-pie" style="max-width:52ch;margin:8px auto 0">Esta guía es educativa y no reemplaza una valoración profesional. Si tienes dolor intenso o una lesión reciente, consulta antes de hacer los ejercicios.</p>
+  </div>
+</footer>
+
+<div class="progreso-dia" aria-live="polite">
+  <div class="medidor"><i data-barra-dia></i></div>
+  <strong data-total-dia>0 / 12 series</strong>
+</div>
+
+<script src="../assets/js/guia.js"></script>
+</body>
+</html>

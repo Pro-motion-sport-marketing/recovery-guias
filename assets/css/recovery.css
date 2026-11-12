@@ -1,0 +1,75 @@
+/* Recovery · Guías — estilos compartidos */
+:root{
+  color-scheme: light;
+  --vino:#8E2A2F;      /* granate de la marca */
+  --vino-2:#6E1F24;
+  --rojo:#C9472B;      /* rojo del uniforme */
+  --naranja:#F28C1E;
+  --amarillo:#FDB913;
+  --menta:#2BA8A4;
+  --tinta:#2A1A1B;
+  --tinta-2:#5E4B4C;
+  --tinta-3:#8D7B7C;
+  --fondo:#FBF8F5;
+  --papel:#FFFFFF;
+  --linea:#EDE4DE;
+  --suave:#F6EEE8;
+  --grad: linear-gradient(100deg,var(--naranja),var(--amarillo));
+  --grad-vino: linear-gradient(100deg,var(--rojo),var(--vino));
+  --radio:22px;
+  --sombra:0 1px 2px rgba(42,26,27,.06),0 10px 30px -12px rgba(42,26,27,.18);
+  --titulo:'League Spartan',system-ui,sans-serif;
+  --texto:'Figtree',system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--fondo);color:var(--tinta);font-family:var(--texto);font-size:17px;line-height:1.55;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.envoltura{width:100%;max-width:1080px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:var(--titulo);line-height:1.02;letter-spacing:-.01em}
+h2{font-size:clamp(30px,7vw,46px);font-weight:800;color:var(--vino)}
+h3{font-size:clamp(26px,6vw,34px);font-weight:800}
+.ante{font-family:var(--titulo);font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--rojo)}
+.sub{color:var(--tinta-2);font-size:18px;max-width:58ch}
+.nota-pie{font-size:13px;color:var(--tinta-3)}
+
+/* Fondo con cruces de salud, como en las guías de Canva */
+.cruces{position:relative;isolation:isolate}
+.cruces::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.55;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cg fill='none' stroke-width='3'%3E%3Cpath d='M30 18h10v12h12v10H40v12H30V40H18V30h12z' stroke='%23F7C9A6'/%3E%3Cpath d='M160 120h8v10h10v8h-10v10h-8v-10h-10v-8h10z' stroke='%23A9DCDA'/%3E%3C/g%3E%3Cpath d='M118 52h6v8h8v6h-8v8h-6v-8h-8v-6h8z' fill='%23FBD9C1'/%3E%3Cpath d='M48 160h6v8h8v6h-8v8h-6v-8h-8v-6h8z' fill='%23CDEBEA'/%3E%3C/svg%3E");}
+
+/* Barra superior */
+.barra{position:sticky;top:0;z-index:50;background:rgba(251,248,245,.86);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--linea)}
+.barra .envoltura{display:flex;align-items:center;gap:12px;height:58px}
+.barra .logo img{height:38px;width:auto}
+.barra nav{display:flex;gap:6px;margin-left:auto;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12px,#000 calc(100% - 12px),transparent)}
+.barra nav::-webkit-scrollbar{display:none}
+.barra nav a{flex:none;text-decoration:none;font-weight:600;font-size:14px;padding:7px 12px;border-radius:99px;color:var(--tinta-2);white-space:nowrap}
+.barra nav a:hover,.barra nav a.activo{background:var(--suave);color:var(--vino)}
+
+/* Botones */
+.boton{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:99px;font-weight:700;font-size:17px;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease}
+.boton:active{transform:scale(.98)}
+.boton-principal{background:var(--grad);color:var(--vino-2);box-shadow:0 10px 24px -10px rgba(242,140,30,.8)}
+.boton-vino{background:var(--vino);color:#fff}
+.boton-linea{border:1.5px solid currentColor}
+.boton svg{width:20px;height:20px;flex:none}
+
+/* Insignia Rendimiento Blindado */
+.insignia{display:inline-flex;flex-direction:column;align-items:flex-start;gap:4px}
+.insignia span:first-child{font-family:var(--titulo);font-weight:800;font-size:15px;letter-spacing:.06em;color:var(--vino)}
+.insignia span:last-child{font-family:var(--titulo);font-weight:800;font-size:22px;letter-spacing:.04em;color:#fff;background:var(--grad-vino);padding:6px 14px 3px;border-radius:10px;line-height:1}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--papel);border:1px solid var(--linea);padding:7px 13px;border-radius:99px;font-size:14px;font-weight:600;color:var(--tinta-2)}
+.chip b{color:var(--vino)}
+
+.seccion{padding:72px 0}
+.cabecera-seccion{display:grid;gap:12px;margin-bottom:32px}
+
+.oculto-sin-js{display:none}
+.js .oculto-sin-js{display:revert}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
