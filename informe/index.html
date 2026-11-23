@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recovery · Diagnóstico y Plan a Diciembre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --tinta:#17171A; --hueso:#F2F0EB;
+  --rojo:#CE2030; --azul:#1E6BA8; --ambar:#FFD102; --naranja:#F4782A; --vino:#8B2828;
+  --bg:#EBE8E1; --surf:#F6F4EF; --surf2:#E3E0D8;
+  --txt:#17171A; --txt2:#5D5A54; --txt3:#8A867E;
+  --line:rgba(62,74,99,.22); --soft:rgba(62,74,99,.11); --grid:rgba(62,74,99,.055);
+  --s1:#CE2030; --s2:#1E6BA8;
+  --ok:#2E7D5B; --warn:#B8700A; --bad:#C0392B;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121214; --surf:#1B1B1E; --surf2:#232326;
+  --txt:#EDEAE3; --txt2:#A6A199; --txt3:#78746D;
+  --line:rgba(190,199,219,.20); --soft:rgba(190,199,219,.10); --grid:rgba(190,199,219,.05);
+  --s1:#ED5059; --s2:#4A93CE; --rojo:#ED5059; --azul:#4A93CE;
+  --ok:#5BB98C; --warn:#E0A44A; --bad:#EF6E62;
+}}
+:root[data-theme="dark"]{
+  --bg:#121214; --surf:#1B1B1E; --surf2:#232326;
+  --txt:#EDEAE3; --txt2:#A6A199; --txt3:#78746D;
+  --line:rgba(190,199,219,.20); --soft:rgba(190,199,219,.10); --grid:rgba(190,199,219,.05);
+  --s1:#ED5059; --s2:#4A93CE; --rojo:#ED5059; --azul:#4A93CE;
+  --ok:#5BB98C; --warn:#E0A44A; --bad:#EF6E62;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px;color:var(--txt);font-family:var(--body);font-size:16px;line-height:1.62}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px 100px}
+.eyebrow{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--txt3)}
+section{padding:58px 0 0;scroll-margin-top:70px}
+.sh{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.sh h2{font-family:var(--display);font-variation-settings:"wdth" 80,"wght" 820;
+  font-size:clamp(25px,3.6vw,36px);line-height:1;text-transform:uppercase;margin:0;text-wrap:balance}
+.sh .num{font-family:var(--mono);font-size:12px;color:var(--rojo);font-weight:600;letter-spacing:.1em}
+.sub{color:var(--txt2);font-size:15px;max-width:72ch;margin:0 0 26px}
+p{max-width:74ch}
+a{color:var(--azul)}
+/* header */
+header{padding:40px 0 0}
+.bbar{display:flex;align-items:center;gap:13px;margin-bottom:26px;flex-wrap:wrap}
+.sw{width:44px;height:8px;border-radius:99px;background:linear-gradient(90deg,#F4782A 6%,#FFD102 29%,#E41B2B 60%,#8B2828 100%)}
+h1{font-family:var(--display);font-variation-settings:"wdth" 70,"wght" 900;
+  font-size:clamp(38px,7.4vw,86px);line-height:.9;letter-spacing:-.015em;text-transform:uppercase;margin:0 0 16px;text-wrap:balance}
+h1 em{font-style:normal;color:var(--rojo)}
+.lede{font-size:clamp(16px,2vw,19px);color:var(--txt2);max-width:66ch;margin:0 0 28px}
+/* tiles */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.tile{background:var(--surf);padding:16px 18px 18px}
+.tile b{display:block;font-family:var(--display);font-variation-settings:"wdth" 76,"wght" 850;
+  font-size:clamp(26px,3.4vw,38px);line-height:1;font-variant-numeric:tabular-nums;margin:6px 0 5px}
+.tile .k{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--txt3)}
+.tile .n{font-size:12.5px;color:var(--txt2);line-height:1.35;display:block}
+.tile.bad b{color:var(--bad)} .tile.good b{color:var(--ok)}
+/* nav */
+nav.toc{margin:26px 0 0;border:1px solid var(--line);background:var(--surf);padding:13px 16px;
+  display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--mono);font-size:11.5px;letter-spacing:.05em}
+nav.toc a{color:var(--txt2);text-decoration:none;border-bottom:1px solid transparent}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--rojo);border-bottom-color:var(--rojo)}
+/* panels */
+.panel{border:1px solid var(--line);background:var(--surf);padding:22px 24px 24px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.panel h3,.panel h4{font-family:var(--display);font-variation-settings:"wdth" 84,"wght" 800;
+  text-transform:uppercase;font-size:15px;letter-spacing:.04em;margin:0 0 12px}
+.panel ul,.panel ol{margin:0;padding-left:18px;color:var(--txt2);font-size:14.5px}
+.panel li{margin:8px 0} .panel li b,.panel li strong{color:var(--txt)}
+.alert{border:1px solid var(--line);border-left:4px solid var(--rojo);background:var(--surf);padding:18px 20px;margin:20px 0}
+.alert.ok{border-left-color:var(--ok)}
+.alert h3{font-family:var(--display);font-variation-settings:"wdth" 85,"wght" 780;text-transform:uppercase;font-size:14.5px;margin:0 0 8px;letter-spacing:.03em}
+.alert p{margin:0 0 8px;font-size:14.5px;color:var(--txt2)} .alert p:last-child{margin:0}
+.alert strong{color:var(--txt)}
+/* filtros */
+.filtros{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.fil{background:var(--surf);display:grid;grid-template-columns:44px 1fr 150px;gap:16px;padding:15px 18px;align-items:start}
+.fil .i{font-family:var(--display);font-variation-settings:"wdth" 70,"wght" 900;font-size:30px;line-height:.9;color:var(--txt3)}
+.fil.block .i{color:var(--rojo)}
+.fil h4{margin:0 0 4px;font-family:var(--display);font-variation-settings:"wdth" 86,"wght" 780;
+  text-transform:uppercase;font-size:14px;letter-spacing:.04em}
+.fil p{margin:0;font-size:14px;color:var(--txt2);max-width:62ch}
+.badge{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  padding:4px 9px;border:1px solid currentColor;display:inline-block;white-space:nowrap}
+.b-ok{color:var(--ok)} .b-warn{color:var(--warn)} .b-bad{color:var(--bad)}
+@media(max-width:640px){.fil{grid-template-columns:36px 1fr}.fil .badge{grid-column:2}}
+/* chart */
+figure{margin:0 0 22px;border:1px solid var(--line);background:var(--surf);padding:20px 22px 18px}
+figcaption{font-size:13px;color:var(--txt2);margin-top:12px;border-top:1px solid var(--soft);padding-top:11px}
+figcaption b{color:var(--txt)}
+.ctitle{font-family:var(--display);font-variation-settings:"wdth" 84,"wght" 800;text-transform:uppercase;
+  font-size:14px;letter-spacing:.04em;margin:0 0 3px}
+.cnote{font-family:var(--mono);font-size:11px;color:var(--txt3);letter-spacing:.05em;margin:0 0 16px;text-transform:uppercase}
+.cwrap{overflow-x:auto}
+svg .ax{stroke:var(--line);stroke-width:1}
+svg .gl{stroke:var(--soft);stroke-width:1}
+svg text{font-family:var(--mono);font-size:11px;fill:var(--txt2)}
+svg text.val{fill:var(--txt);font-weight:600}
+svg text.lbl{font-family:var(--body);font-size:12px;fill:var(--txt2)}
+svg .mk{transition:opacity .12s} svg g.row:hover .mk{opacity:.78}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--txt2);margin:4px 0 14px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block;vertical-align:-2px;margin-right:6px}
+/* tabla */
+.tw{overflow-x:auto;border:1px solid var(--line);background:var(--surf)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:13.5px}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--soft);white-space:nowrap}
+th{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--txt3);font-weight:600;
+  position:sticky;top:0;background:var(--surf2)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:12.5px}
+td.name{white-space:normal;min-width:230px}
+tr.top td{background:color-mix(in srgb,var(--rojo) 7%,transparent)}
+.chip{font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:2px 7px;border:1px solid var(--line);color:var(--txt2)}
+/* calendario */
+.cal{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:20px}
+.calrow{background:var(--surf);display:grid;grid-template-columns:118px 92px 1fr;gap:14px;padding:14px 18px;align-items:start}
+.calrow.head{background:var(--surf2);font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--txt3)}
+.calrow .d{font-family:var(--mono);font-size:12px;color:var(--txt);font-weight:600;line-height:1.4}
+.calrow .d span{display:block;font-weight:400;color:var(--txt3);font-size:11px}
+.calrow h4{margin:0 0 5px;font-size:15px;font-weight:700;font-family:var(--body);text-transform:none;letter-spacing:0}
+.calrow p{margin:0 0 6px;font-size:13.5px;color:var(--txt2);max-width:68ch}
+.calrow .meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--txt3)}
+.calrow .meta b{color:var(--rojo)}
+@media(max-width:700px){.calrow{grid-template-columns:1fr;gap:7px}}
+/* destacadas */
+.hl{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:20px;margin:6px 0 22px}
+.hlc{text-align:center}
+.hlc img{width:100%;aspect-ratio:1;border-radius:50%;display:block;border:1px solid var(--line);background:var(--tinta)}
+.hlc b{display:block;margin-top:9px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.hlc span{display:block;font-size:11.5px;color:var(--txt3);line-height:1.35;margin-top:3px}
+.perfiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:22px;margin:4px 0 20px;max-width:620px}
+.pf{text-align:center}
+.pf img{width:100%;aspect-ratio:1;border-radius:50%;border:1px solid var(--line);display:block}
+.pf b{display:block;margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.pf span{font-size:12px;color:var(--txt3)}
+footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;
+  gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--txt3)}
+footer span{font-family:var(--mono);letter-spacing:.04em}
+@media print{body{background:#fff}nav.toc{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="bbar"><span class="sw" aria-hidden="true"></span>
+    <span class="eyebrow">Recovery · @recoveryecu · Informe de gestión</span></div>
+  <h1>Qué pasó en<br>4 meses y qué<br>hacemos <em>hasta</em><br>fin de año</h1>
+  <p class="lede">Análisis de las 16 piezas publicadas entre el 1 de agosto y el 23 de noviembre de 2026 con datos reales de Metricool, y el plan de contenidos, automatización e identidad para cerrar diciembre.</p>
+
+  <div class="tiles">
+    <div class="tile"><span class="k">Vistas de la cuenta</span><b>63.778</b><span class="n">114 días · 559 por día</span></div>
+    <div class="tile bad"><span class="k">Seguidores netos</span><b>+17</b><span class="n">3.672 → 3.689 · +0,46 %</span></div>
+    <div class="tile"><span class="k">Piezas publicadas</span><b>16</b><span class="n">10 reels · 4 carruseles · 2 fotos</span></div>
+    <div class="tile bad"><span class="k">Comentarios</span><b>50</b><span class="n">2,3 por cada 1.000 vistas</span></div>
+    <div class="tile good"><span class="k">Compartidos</span><b>260</b><span class="n">lo que mejor funciona</span></div>
+  </div>
+
+  <nav class="toc" aria-label="Secciones">
+    <a href="#diagnostico">01 Diagnóstico</a><a href="#mejor">02 Qué funcionó</a><a href="#peor">03 Qué no</a>
+    <a href="#audiencia">04 Audiencia</a><a href="#fuga">05 La fuga</a><a href="#identidad">06 Identidad</a>
+    <a href="#destacadas">07 Destacadas</a><a href="#plan">08 Plan nov–dic</a><a href="#manychat">09 ManyChat</a>
+    <a href="#amplificacion">10 Amplificación</a><a href="#decisiones">11 Decisiones</a>
+  </nav>
+
+  <div class="alert">
+    <h3>Las tres frases que resumen todo</h3>
+    <p><strong>1. El contenido sí se ve y sí se comparte, pero casi no convierte.</strong> 63.778 vistas produjeron 17 seguidores netos y 50 comentarios. La atención llega; el paso siguiente no ocurre.</p>
+    <p><strong>2. Octubre fue el mejor mes y noviembre el peor, y la diferencia es volumen.</strong> Octubre tuvo 6 piezas y 705 vistas diarias. Noviembre lleva 2 piezas y 234 vistas diarias: −67 %, y seguidores en negativo.</p>
+    <p><strong>3. El taller de pretemporada fue, de lejos, lo mejor del período.</strong> Ese arco completo —anuncio, cupos agotados, casa llena, resumen— generó las 5 mejores piezas. Diciembre debe repetir exactamente esa jugada.</p>
+  </div>
+</header>
+
+<section id="diagnostico">
+  <div class="sh"><span class="num">01</span><h2>Dónde se tapa el embudo</h2></div>
+  <p class="sub">Leemos la cuenta como el recorrido de alguien que todavía no conoce Recovery. Cada filtro deja pasar a menos gente. Se leen en orden y se actúa sobre el primero que está tapado.</p>
+
+  <div class="filtros">
+    <div class="fil"><span class="i">1</span><div><h4>Alcance · ¿te vieron?</h4>
+      <p>Mediana de 764 personas alcanzadas por pieza sobre 3.689 seguidores. No es explosivo, pero el contenido circula: 21.766 personas únicas en el período.</p></div>
+      <span class="badge b-ok">Pasa</span></div>
+    <div class="fil"><span class="i">2</span><div><h4>Retención · ¿se quedaron?</h4>
+      <p>Mediana de 18,7 % y 8,9 segundos vistos. Correcto para la categoría, con una excepción clara: todo lo que pasa de 60 segundos se desploma.</p></div>
+      <span class="badge b-warn">Pasa con aviso</span></div>
+    <div class="fil"><span class="i">3</span><div><h4>Valor · ¿les sirvió?</h4>
+      <p>13,2 guardados + compartidos por cada 1.000 vistas, y 260 compartidos en total. Este es el punto más fuerte de la cuenta: la gente reenvía el contenido de Recovery a alguien que lo necesita.</p></div>
+      <span class="badge b-ok">Pasa</span></div>
+    <div class="fil block"><span class="i">4</span><div><h4>Conversión · ¿se quedaron contigo?</h4>
+      <p>137 seguidores ganados y 121 perdidos en 4 meses. Neto: +17. Por cada 1.000 vistas la cuenta gana 0,27 seguidores. La gente ve, comparte y se va.</p></div>
+      <span class="badge b-bad">Tapado</span></div>
+    <div class="fil block"><span class="i">5</span><div><h4>Intención · ¿te buscaron?</h4>
+      <p>50 comentarios en 21.516 vistas de contenido. El reel del tendón del 12 de noviembre —el que estrenaba la guía nueva— recibió <strong>0 comentarios</strong>, y la guía solo se entrega por comentario. Ese día el embudo recibió cero personas.</p></div>
+      <span class="badge b-bad">Tapado</span></div>
+  </div>
+
+  <div class="alert" style="margin-top:22px">
+    <h3>Diagnóstico</h3>
+    <p>Los filtros 1, 2 y 3 funcionan. <strong>El problema no es el contenido: es el pedido.</strong> Recovery produce material que la gente consume y reenvía, pero la única puerta de entrada al negocio —comentar una palabra— se usa 2,3 veces por cada 1.000 vistas. Todo el plan de diciembre se construye sobre arreglar los filtros 4 y 5, no sobre producir más.</p>
+  </div>
+</section>
+
+<section id="mejor">
+  <div class="sh"><span class="num">02</span><h2>Qué funcionó mejor</h2></div>
+  <p class="sub">Las 16 piezas ordenadas por vistas. La mediana de la cuenta es 1.239 vistas: todo lo que está por encima de esa línea funcionó.</p>
+
+  <figure>
+    <p class="ctitle">Vistas por pieza</p>
+    <p class="cnote">1 ago – 23 nov 2026 · mediana de la cuenta 1.239</p>
+    <div class="cwrap">
+    <svg viewBox="0 0 760 560" width="100%" height="560" role="img" aria-label="Gráfico de barras horizontales con las vistas de cada una de las 16 piezas publicadas, de 3.260 a 593 vistas.">
+      <g id="rank"></g>
+    </svg>
+    </div>
+    <figcaption><b>Las cinco mejores piezas del período pertenecen todas al taller de pretemporada</b> o a contenido humano del equipo. Ninguna pieza puramente promocional entra al top 5.</figcaption>
+  </figure>
+
+  <div class="grid3">
+    <div class="panel"><h4>Formato ganador · repetir</h4>
+      <p style="margin:0 0 10px;font-size:14px;color:var(--txt2)">El <strong>evento real documentado</strong>: anuncio → cupos agotados → casa llena → resumen con testimonios.</p>
+      <ul><li>Las 5 piezas del arco promediaron <b>1.830 vistas</b> contra 1.239 de la mediana.</li>
+      <li>«Casa llena» fue la mejor pieza del período: <b>3.260 vistas, 58 likes, 31 compartidos</b> y los únicos seguidores atribuidos a una pieza.</li>
+      <li>Octubre, el mes construido sobre ese evento, fue el mejor: <b>21.856 vistas y +12 seguidores</b>.</li></ul></div>
+    <div class="panel"><h4>Ángulo que más circula</h4>
+      <p style="margin:0 0 10px;font-size:14px;color:var(--txt2)"><strong>Detrás de escena y prueba / resultado.</strong> Medianas de 1.692 y 1.539 vistas, muy por encima de la cuenta.</p>
+      <ul><li>Mostrar lo que pasa adentro supera a explicar lo que se ofrece.</li>
+      <li>La vacante de fisioterapeuta —puro contenido humano, sin venta— hizo <b>1.925 vistas</b>, más que cualquier pieza comercial del período.</li></ul></div>
+    <div class="panel"><h4>Ángulo que mejor vende</h4>
+      <p style="margin:0 0 10px;font-size:14px;color:var(--txt2)"><strong>Dolor concreto.</strong> No es el de más vistas, pero es el único que hace escribir a la gente.</p>
+      <ul><li>Mediana de <b>5 comentarios</b> por pieza, contra 3 de los reels y 0,5 de los carruseles.</li>
+      <li>Valor por 1.000 vistas: <b>18,8</b>, muy por encima de la mediana de 13,2.</li>
+      <li>Funciona cuando nombra la escena, no el diagnóstico: «presión al sentarte», «volvió el dolor de espalda», «duele al subir escaleras».</li></ul></div>
+  </div>
+
+  <figure style="margin-top:22px">
+    <p class="ctitle">Vistas por día, mes a mes</p>
+    <p class="cnote">La caída de noviembre es volumen de publicación, no alcance</p>
+    <div class="cwrap">
+    <svg viewBox="0 0 700 300" width="100%" height="300" role="img" aria-label="Gráfico de barras: vistas diarias de 572 en agosto, 633 en septiembre, 705 en octubre y 234 en noviembre.">
+      <g id="meses"></g>
+    </svg>
+    </div>
+    <figcaption>Agosto 4 piezas · Septiembre 4 · Octubre 6 · <b>Noviembre 2 en 23 días</b>. La cuenta responde casi linealmente a cuánto se publica.</figcaption>
+  </figure>
+</section>
+
+<section id="peor">
+  <div class="sh"><span class="num">03</span><h2>Qué funcionó peor</h2></div>
+  <p class="sub">Cuatro problemas concretos, todos corregibles sin producir más contenido.</p>
+
+  <div class="grid2">
+    <div class="panel"><h4>1 · Noviembre se apagó</h4>
+      <ul><li>2 piezas en 23 días contra 6 en octubre.</li>
+      <li>234 vistas diarias contra 705: <b>−67 %</b>.</li>
+      <li>Primer mes del período con <b>seguidores netos negativos (−4)</b>.</li>
+      <li>Sin carruseles: el último fue el 22 de octubre.</li></ul></div>
+    <div class="panel"><h4>2 · Los reels largos se caen</h4>
+      <ul><li>El reel del tendón dura <b>80 segundos</b> y retuvo <b>11,6 %</b>: la peor retención del período.</li>
+      <li>Los dos mejores retienen 21,5 % y 22,2 % y duran <b>26 y 39 segundos</b>.</li>
+      <li>La frontera está cerca de los 60 segundos. Por encima, se pierde a la mitad de la gente.</li></ul></div>
+    <div class="panel"><h4>3 · Vender reduce el alcance</h4>
+      <ul><li>Piezas de venta: mediana de <b>409 personas alcanzadas</b>.</li>
+      <li>Piezas de valor o comunidad: <b>843</b>. El doble.</li>
+      <li>Y la mitad del calendario (6 de 16) fue de venta directa.</li>
+      <li>El carrusel de incontinencia y el de Cámara Americana —ambos de venta— alcanzaron 315 y 245 personas con <b>0 comentarios</b> cada uno.</li></ul></div>
+    <div class="panel"><h4>4 · Las historias están muertas</h4>
+      <ul><li>48 historias entre el 4 de octubre y el 21 de noviembre.</li>
+      <li>Alcance mediano: <b>108 personas</b>, el 2,9 % de los seguidores.</li>
+      <li><b>5 respuestas en 48 historias.</b> Es el canal donde nacen las conversaciones por mensaje directo y hoy no produce ninguna.</li>
+      <li>En noviembre el alcance mediano cayó a 80 (2,2 %).</li></ul></div>
+  </div>
+
+  <figure style="margin-top:22px">
+    <p class="ctitle">Retención según duración del reel</p>
+    <p class="cnote">10 reels · cada punto es una pieza</p>
+    <div class="cwrap">
+    <svg viewBox="0 0 700 330" width="100%" height="330" role="img" aria-label="Diagrama de dispersión: a mayor duración del reel, menor retención. El reel de 80 segundos retiene 11,6 % y el de 39 segundos retiene 22,2 %.">
+      <g id="ret"></g>
+    </svg>
+    </div>
+    <figcaption><b>Recomendación operativa:</b> ningún reel de diciembre pasa de 45 segundos. Lo que no cabe en 45 segundos se parte en dos piezas o se convierte en guía.</figcaption>
+  </figure>
+
+  <div class="tw">
+    <table>
+      <caption class="eyebrow" style="text-align:left;padding:12px 12px 0">Las 16 piezas · datos completos</caption>
+      <thead><tr><th>Fecha</th><th>Pieza</th><th>Tipo</th><th class="n">Vistas</th><th class="n">Alcance</th>
+        <th class="n">Likes</th><th class="n">Coment.</th><th class="n">Guard.</th><th class="n">Comp.</th><th class="n">Reten.</th></tr></thead>
+      <tbody id="tabla"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="audiencia">
+  <div class="sh"><span class="num">04</span><h2>Quién está del otro lado</h2></div>
+  <p class="sub">La audiencia de Recovery es local, adulta y está equilibrada entre hombres y mujeres. Eso define qué se puede comunicar y qué no tiene sentido empujar.</p>
+
+  <div class="grid2">
+    <figure style="margin:0">
+      <p class="ctitle">Edad y género de los seguidores</p>
+      <p class="cnote">3.666 seguidores con dato</p>
+      <div class="legend"><span><i style="background:var(--s1)"></i>Mujeres</span><span><i style="background:var(--s2)"></i>Hombres</span></div>
+      <div class="cwrap">
+      <svg viewBox="0 0 520 300" width="100%" height="300" role="img" aria-label="Barras por rango de edad: 25-34 años con 625 mujeres y 636 hombres, 35-44 con 546 y 577, 45-54 con 282 y 231, 18-24 con 97 y 94, 55-64 con 122 y 63, 65+ con 33 y 23.">
+        <g id="edad"></g>
+      </svg>
+      </div>
+      <figcaption><b>El 68 % tiene entre 25 y 44 años</b> y el reparto por género es casi exacto (46,6 % mujeres, 44,5 % hombres). El suelo pélvico y el dolor de oficina tienen público; el contenido infantil o geriátrico, no.</figcaption>
+    </figure>
+
+    <div class="panel">
+      <h4>De dónde vienen</h4>
+      <ul style="margin-bottom:16px">
+        <li><b>Ecuador 86,3 %.</b> Estados Unidos 3,2 %, Venezuela 2,2 %, España 1,7 %, Colombia 1,3 %.</li>
+        <li><b>Cuenca 47,6 %.</b> Sumando Ricaurte, Turi, Valle, Gualaceo, Llacao, San Joaquín, Sayausí, Sinincay, Tarqui y Paccha, el <b>Azuay ampliado pasa del 52 %</b>.</li>
+        <li>Guayaquil 7,4 % y Quito 5,0 %: juntos, uno de cada ocho seguidores. No pueden ir a la clínica.</li>
+        <li>Azogues 1,5 % · Loja 1,2 % · Riobamba 0,8 % · Ibarra 0,7 % · Ambato 0,7 %.</li>
+      </ul>
+      <h4>Qué significa para el plan</h4>
+      <ul>
+        <li><b>La mitad de la audiencia puede ir a la clínica.</b> Para ellos: taller presencial, valoración, programas.</li>
+        <li><b>La otra mitad nunca va a ir.</b> Hoy no tienen nada que comprar ni consumir. Ahí está la oportunidad de las guías, el taller virtual y los productos digitales de la sección 10.</li>
+        <li>El público de 25 a 44 años trabaja sentado, entrena por su cuenta y tiene hijos pequeños: dolor de cuello y espalda, retorno al deporte y suelo pélvico posparto son los tres territorios con más gente.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="fuga">
+  <div class="sh"><span class="num">05</span><h2>La fuga: siete palabras en cuatro meses</h2></div>
+  <p class="sub">Este es el hallazgo más caro del informe y el más fácil de arreglar.</p>
+
+  <div class="alert">
+    <h3>Cada pieza enseñó una palabra distinta</h3>
+    <p>PRETEMPORADA · DEPORTE · RUTINA · EJERCICIO · BIENESTAR · CUELLO · TENDÓN. <strong>Siete palabras clave distintas en dieciséis piezas.</strong> La audiencia nunca aprende el mecanismo: cada publicación empieza desde cero, y el que comentó una vez no sabe que puede volver a hacerlo.</p>
+    <p>El costo concreto: el 11 de noviembre se publicó la guía del tendón —una pieza excelente, con videos, ritmo y temporizador—. El 12 de noviembre salió el reel que la entregaba. <strong>Ese reel recibió 0 comentarios. La guía recibió 0 solicitudes por ese canal.</strong></p>
+  </div>
+
+  <div class="grid2">
+    <div class="panel"><h4>Por qué falla pedir comentarios</h4>
+      <ul><li>Comentar es la acción más cara que existe en Instagram: es pública, queda asociada a un padecimiento y muchos no quieren que su círculo vea que preguntaron por incontinencia o dolor crónico.</li>
+      <li>En salud, ese pudor es el doble de fuerte. Los dos carruseles clínicos más sensibles del período —incontinencia y dolor de oficina— tuvieron <b>0 comentarios</b> los dos.</li>
+      <li>Hoy el 99,8 % de la atención que recibe Recovery no tiene ninguna otra puerta por donde entrar.</li></ul></div>
+    <div class="panel"><h4>Qué hacemos en su lugar</h4>
+      <ul><li><b>Una sola palabra permanente para siempre: GUÍA.</b> Deja de cambiar. Se repite en todas las piezas, en la bio y en las destacadas hasta que la audiencia la aprenda.</li>
+      <li><b>Tres puertas, no una:</b> comentario, mensaje directo y enlace en la biografía. La guía se consigue por donde cada persona se sienta cómoda.</li>
+      <li><b>Sticker de historias</b> en cada publicación: es la puerta privada, y hoy las historias no se usan para nada.</li>
+      <li><b>Primer comentario fijado</b> con la instrucción, para quien llega tarde al video.</li></ul></div>
+  </div>
+</section>
+
+<section id="identidad">
+  <div class="sh"><span class="num">06</span><h2>Identidad: el logo y la foto de perfil</h2></div>
+  <p class="sub">La cuenta usa todavía el logo del evento de los 10 años. Eso fecha el perfil: comunica «esto pasó», no «esto es». Propuesta: volver al isotipo oficial de la marca, el mismo del sitio web y de los uniformes.</p>
+
+  <div class="perfiles">
+    <div class="pf"><img src="assets/perfil-blanco.svg" alt="Propuesta de foto de perfil: isotipo de Recovery centrado sobre fondo blanco">
+      <b>Opción A · recomendada</b><span>Fondo blanco. Coincide con la web y con el fondo de las fotos del equipo.</span></div>
+    <div class="pf"><img src="assets/perfil-tinta.svg" alt="Propuesta alternativa de foto de perfil: isotipo de Recovery sobre fondo tinta oscuro">
+      <b>Opción B</b><span>Fondo tinta. Más contraste en el feed, menos coherencia con el uniforme.</span></div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel"><h4>Por qué cambiarlo</h4>
+      <ul><li>El logo de aniversario <b>caduca</b>: en 2027 seguirá diciendo 10 años.</li>
+      <li>No coincide con la web, los uniformes ni las guías. Quien llega desde Google ve dos marcas distintas.</li>
+      <li>A 110 píxeles, el texto del aniversario se vuelve ilegible y el isotipo pierde espacio.</li></ul></div>
+    <div class="panel"><h4>Reglas de uso</h4>
+      <ul><li><b>Margen:</b> el isotipo ocupa el 74 % del lienzo. Más grande se recorta en el círculo; más pequeño desaparece en el feed.</li>
+      <li><b>Nunca</b> sobre foto, degradado inventado ni versión plana de un solo color: el degradado naranja → amarillo → rojo → vino <b>es</b> la marca.</li>
+      <li>Mismo archivo en Instagram, Facebook, Google Business, WhatsApp Business y firma de correo. Hoy no coinciden.</li></ul></div>
+  </div>
+</section>
+
+<section id="destacadas">
+  <div class="sh"><span class="num">07</span><h2>Historias destacadas</h2></div>
+  <p class="sub">Hoy el perfil no dice qué servicios existen, qué tecnología hay, cómo es el espacio ni quién atiende. Son ocho destacadas en este orden exacto: el perfil se lee de izquierda a derecha y las tres primeras son las que más se tocan.</p>
+
+  <div class="hl">
+    <div class="hlc"><img src="assets/destacada-servicios.svg" alt="Portada de destacada: Servicios"><b>Servicios</b><span>Todo lo que trata Recovery, uno por historia</span></div>
+    <div class="hlc"><img src="assets/destacada-casos.svg" alt="Portada de destacada: Casos"><b>Casos</b><span>Antes y después, testimonios reales</span></div>
+    <div class="hlc"><img src="assets/destacada-guias.svg" alt="Portada de destacada: Guías"><b>Guías</b><span>El material gratuito y cómo pedirlo</span></div>
+    <div class="hlc"><img src="assets/destacada-equipo.svg" alt="Portada de destacada: Equipo"><b>Equipo</b><span>Quién te atiende y de qué es especialista</span></div>
+    <div class="hlc"><img src="assets/destacada-espacio.svg" alt="Portada de destacada: El espacio"><b>El espacio</b><span>Recorrido por la clínica, sala por sala</span></div>
+    <div class="hlc"><img src="assets/destacada-tecnologia.svg" alt="Portada de destacada: Tecnología"><b>Tecnología</b><span>Ecografía, tecar, ondas de choque, láser, EPI</span></div>
+    <div class="hlc"><img src="assets/destacada-talleres.svg" alt="Portada de destacada: Talleres"><b>Talleres</b><span>Los que hubo y el próximo</span></div>
+    <div class="hlc"><img src="assets/destacada-agenda.svg" alt="Portada de destacada: Agenda"><b>Agenda</b><span>Horarios, ubicación, cómo reservar</span></div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel"><h4>Criterios de las portadas</h4>
+      <ul><li><b>Sin texto dentro del círculo.</b> A 60 píxeles no se lee; el nombre ya aparece debajo. El ícono hace todo el trabajo.</li>
+      <li>Fondo tinta uniforme para que las ocho se lean como un bloque y el perfil se vea ordenado de un golpe.</li>
+      <li>Barra de degradado de marca al pie de cada una: es el único elemento que las conecta con el logo.</li>
+      <li>Los archivos están listos en <span class="chip">1080 × 1080 SVG</span> dentro de esta misma carpeta.</li></ul></div>
+    <div class="panel"><h4>Lo que falta para llenarlas</h4>
+      <p style="font-size:14px;color:var(--txt2);margin:0 0 10px">Cinco de las ocho destacadas se llenan con <strong>la producción pendiente</strong>: el equipo con el uniforme nuevo recorriendo los espacios y mostrando cada servicio.</p>
+      <ul><li>Esa grabación es el insumo de <b>Servicios, Equipo, El espacio, Tecnología y Talleres</b> a la vez.</li>
+      <li>Es la pieza de producción con mayor retorno del trimestre: se graba una vez y alimenta el perfil de forma permanente.</li>
+      <li>Recomendación: grabarla en la <b>primera semana de diciembre</b>, antes del taller, para poder usar el material en la promoción.</li></ul></div>
+  </div>
+</section>
+
+<section id="plan">
+  <div class="sh"><span class="num">08</span><h2>Plan: 23 de noviembre → 31 de diciembre</h2></div>
+  <p class="sub">Con los recursos disponibles: 4 videos y 3 carruseles al mes, más historias y automatización. Diciembre replica el arco del taller de octubre, que produjo el mejor mes del año.</p>
+
+  <p class="eyebrow" style="display:block;margin:26px 0 10px">Semana del 23 al 30 de noviembre · recuperar el ritmo</p>
+  <div class="cal">
+    <div class="calrow head"><span>Fecha</span><span>Formato</span><span>Pieza</span></div>
+    <div class="calrow"><span class="d">Mar 24 nov<span>Carrusel 1/3</span></span><span class="meta">Carrusel<br><b>Dolor concreto</b></span>
+      <div><h4>«Tu dolor de cuello no es la postura»</h4>
+      <p>Tres cosas que sí lo explican: carga sostenida, falta de descanso y movilidad bloqueada. El ángulo de dolor concreto es el único que hace comentar a esta audiencia (mediana de 5 comentarios).</p>
+      <p class="meta">Cierra con · <b>GUÍA</b> · y abre el taller del 12 de diciembre</p></div></div>
+    <div class="calrow"><span class="d">Jue 26 nov<span>Video 3/4</span></span><span class="meta">Reel ≤ 35 s<br><b>Evento</b></span>
+      <div><h4>2.º Taller gratuito: fecha confirmada</h4>
+      <p>El formato que mejor retuvo del período (el anuncio de septiembre: 26 segundos, 21,5 % de retención, 1.725 vistas). Mismo molde, tema cuello y espalda, que ya probó interés el 4 de noviembre con 7 comentarios y la mejor retención de todo el período (22,2 %).</p>
+      <p class="meta">Cierra con · <b>GUÍA</b> · enlace en bio · sticker en historias</p></div></div>
+    <div class="calrow"><span class="d">Vie 27 nov<span>Black Friday</span></span><span class="meta">Carrusel 2/3<br><b>Decisión de Recovery</b></span>
+      <div><h4>Black Friday · tres caminos posibles</h4>
+      <p>Es la única fecha comercial del período y cae este viernes. Las tres opciones están abajo, en la sección «Black Friday y fiestas». <strong>Necesitamos la decisión el martes 24 para alcanzar a producir.</strong></p>
+      <p class="meta">Si no hay decisión · se reemplaza por contenido de valor y no se pierde el espacio</p></div></div>
+    <div class="calrow"><span class="d">Dom 29 nov<span>Video 4/4</span></span><span class="meta">Reel ≤ 40 s<br><b>Detrás de escena</b></span>
+      <div><h4>Cómo es realmente una valoración en Recovery</h4>
+      <p>El ángulo de detrás de escena tiene la mediana más alta de todo el período (1.692 vistas). Muestra el proceso, no el precio: qué se mide, qué se pregunta, qué sale de ahí. Material de la producción con uniformes nuevos.</p>
+      <p class="meta">Alimenta además la destacada · <b>Servicios</b></p></div></div>
+  </div>
+
+  <p class="eyebrow" style="display:block;margin:30px 0 10px">Diciembre · 4 videos + 3 carruseles, anclados en el taller del sábado 12</p>
+  <div class="cal">
+    <div class="calrow head"><span>Semana</span><span>Formato</span><span>Pieza</span></div>
+    <div class="calrow"><span class="d">1 – 7 dic<span>Semana 1</span></span><span class="meta">Reel ≤ 35 s<br><b>Evento · V1</b></span>
+      <div><h4>Anuncio del 2.º Taller gratuito</h4>
+      <p>Cuello y espalda, sábado 12 de diciembre. Copia exacta del molde de septiembre: problema en 3 segundos, qué se lleva la persona, fecha, cupos limitados. Es el disparo que arma todo el mes.</p>
+      <p class="meta">Meta · superar 1.725 vistas, la del anuncio de septiembre</p></div></div>
+    <div class="calrow"><span class="d">1 – 7 dic<span>Semana 1</span></span><span class="meta">Carrusel · C1<br><b>Dolor concreto</b></span>
+      <div><h4>«3 señales de que tu dolor de cuello no se arregla con masajes»</h4>
+      <p>Valor puro, sin precio. Es la pieza que justifica el taller y la que se guarda. Mismo sistema visual del checklist de septiembre: casillas que se marcan al deslizar.</p>
+      <p class="meta">Cierra con · <b>GUÍA</b> · menú de ManyChat</p></div></div>
+    <div class="calrow"><span class="d">8 – 14 dic<span>Semana 2</span></span><span class="meta">Carrusel · C2<br><b>Prueba social</b></span>
+      <div><h4>«Últimos cupos» / «Cupos agotados»</h4>
+      <p>La escasez real funcionó: el carrusel de sold out de septiembre hizo 1.166 vistas sin ser contenido de valor. Se publica según cómo vayan las reservas.</p>
+      <p class="meta">Historias el mismo día con el contador de cupos</p></div></div>
+    <div class="calrow"><span class="d">Sáb 12 dic<span>Semana 2</span></span><span class="meta">Reel · V2<br><b>Detrás de escena</b></span>
+      <div><h4>El taller, en vivo</h4>
+      <p>Grabación del día: gente llegando, pruebas prácticas, caras reales. Se publica el mismo sábado por la tarde, mientras el evento todavía es noticia.</p>
+      <p class="meta">Además · 8 a 10 historias durante el taller, con sticker de preguntas</p></div></div>
+    <div class="calrow"><span class="d">15 – 21 dic<span>Semana 3</span></span><span class="meta">Reel · V3<br><b>Prueba / resultado</b></span>
+      <div><h4>«Casa llena»: testimonios del taller</h4>
+      <p>Esta es la pieza que más rinde de todo el arco. Su equivalente de septiembre fue la mejor publicación del período: 3.260 vistas, 58 likes, 31 compartidos y los únicos seguidores atribuidos a una pieza.</p>
+      <p class="meta">Meta · superar 3.260 vistas · cierra invitando a la edición de enero</p></div></div>
+    <div class="calrow"><span class="d">15 – 21 dic<span>Semana 3</span></span><span class="meta">Carrusel · C3<br><b>Navidad</b></span>
+      <div><h4>«Regala movimiento»</h4>
+      <p>Bono de regalo: valoración + sesiones, en tarjeta física y digital, canjeable hasta marzo. Es el producto de Navidad natural de una clínica: no se descuenta la terapia, se regala.</p>
+      <p class="meta">Dirigido a · quien ya es paciente y quiere regalarlo a un familiar</p></div></div>
+    <div class="calrow"><span class="d">22 – 31 dic<span>Semana 4</span></span><span class="meta">Reel · V4<br><b>Cierre de año</b></span>
+      <div><h4>«Nuestro año en movimiento»</h4>
+      <p>Recuento del año con caras del equipo y pacientes: los talleres, el espacio, la gente que volvió a moverse. Cierra abriendo enero —el mes de los propósitos— con la pretemporada del año.</p>
+      <p class="meta">Publicar · entre el 27 y el 30, no el 24 ni el 31</p></div></div>
+  </div>
+
+  <div class="grid3">
+    <div class="panel"><h4>Black Friday · 27 de noviembre</h4>
+      <p style="font-size:14px;color:var(--txt2);margin:0 0 10px">No tengo información de si Recovery quiere participar. Tres caminos, en orden de recomendación:</p>
+      <ul><li><b>A · Bono prepago.</b> Paquete de sesiones comprado ahora, usado entre enero y marzo, regalable. No descuenta la terapia: adelanta la caja y encadena directo con Navidad.</li>
+      <li><b>B · Valoración a precio especial.</b> Abarata solo la puerta de entrada, no el tratamiento. Llena la agenda de enero.</li>
+      <li><b>C · No participar</b> y usar el espacio para anunciar el taller gratuito. Es coherente con una clínica y no cuesta nada.</li></ul>
+      <p style="font-size:13.5px;color:var(--txt2);margin:12px 0 0"><strong>Lo que no recomiendo:</strong> descuento porcentual sobre sesiones sueltas. Abarata el criterio clínico y atrae a quien compra por precio, no por problema.</p></div>
+    <div class="panel"><h4>Navidad</h4>
+      <ul><li><b>Regala movimiento</b> (C3): bono de valoración + sesiones, físico y digital.</li>
+      <li>Historias los días 20 al 23 con el bono: es compra de último minuto.</li>
+      <li><b>Nada de contenido clínico del 24 al 26.</b> Nadie lee sobre tendones en Navidad.</li>
+      <li>Un saludo simple el 24, con el equipo real, sin venta.</li></ul></div>
+    <div class="panel"><h4>Fin de año y enero</h4>
+      <ul><li>El cierre (V4) no es un saludo: es el <b>abre-boca de enero</b>, el mes en que la gente decide volver a moverse.</li>
+      <li>Preventa de la <b>pretemporada de enero</b> y de la siguiente edición del taller, anunciada en el reel de cierre.</li>
+      <li>Lista de espera por ManyChat: quien comente en diciembre entra a la agenda de enero antes que nadie.</li></ul></div>
+  </div>
+</section>
+
+<section id="manychat">
+  <div class="sh"><span class="num">09</span><h2>Automatización: una palabra, un menú</h2></div>
+  <p class="sub">El arreglo del filtro 5. En vez de una palabra nueva por campaña, una sola palabra permanente que abre un menú con todas las guías.</p>
+
+  <div class="grid2">
+    <div class="panel"><h4>Cómo queda el flujo</h4>
+      <ol><li>La persona escribe <b>GUÍA</b> —en comentario, en mensaje directo o respondiendo una historia.</li>
+      <li>El bot responde: «¿Qué te está molestando?» con botones: <b>Rodilla y tendón · Espalda y oficina · Cuello · Suelo pélvico · Volver a entrenar</b>.</li>
+      <li>Cada botón entrega su guía web y marca a la persona con una etiqueta.</li>
+      <li>A las 24 horas: «¿pudiste probarlo? ¿cómo respondió?». Ahí nace la conversación.</li>
+      <li>A las 72 horas, solo a quien respondió: invitación a valoración.</li></ol>
+      <p style="font-size:13.5px;color:var(--txt2);margin:12px 0 0">Las palabras viejas (TENDÓN, RUTINA, CUELLO, PRETEMPORADA, EJERCICIO, BIENESTAR, DEPORTE) <strong>se mantienen activas como disparadores</strong> y caen al mismo menú. Nada de lo publicado se rompe.</p></div>
+    <div class="panel"><h4>Por qué esto arregla la fuga</h4>
+      <ul><li><b>Acumula.</b> Una sola palabra repetida en 7 piezas se aprende; 7 palabras distintas no se aprenden nunca.</li>
+      <li><b>Tres puertas.</b> Quien no quiere comentar en público —la mayoría, en salud— entra por mensaje o por historia.</li>
+      <li><b>Segmenta solo.</b> Cada botón dice qué le duele a esa persona. Eso es una base de datos de intención, no una lista de seguidores.</li>
+      <li><b>Mide de verdad.</b> Hoy no sabemos cuánta gente pidió la guía del tendón porque el único canal dio cero. Con el menú, cada entrada queda registrada por padecimiento.</li></ul>
+      <p style="font-size:13.5px;color:var(--txt2);margin:12px 0 0"><strong>Meta para diciembre:</strong> pasar de 2,3 comentarios por 1.000 vistas a <b>50 entradas al menú en el mes</b>. Con el volumen actual es alcanzable y es la primera cifra real de retorno que va a tener Recovery.</p></div>
+  </div>
+</section>
+
+<section id="amplificacion">
+  <div class="sh"><span class="num">10</span><h2>Amplificación: de contenido a modelo de negocio</h2></div>
+  <p class="sub">La guía del tendón que publicamos el 11 de noviembre demostró algo: hoy producir una guía web completa —con videos, ritmo de ejercicio y temporizador— cuesta prácticamente lo mismo que producir un PDF, y vale muchísimo más. Esto abre cuatro oportunidades que no dependen de publicar más.</p>
+
+  <div class="grid2">
+    <div class="panel"><h4>1 · Las guías viven en la web de Recovery</h4>
+      <ul><li>Hoy están alojadas en nuestro servidor. Lo ideal es que vivan en <b>recovery-therapy.com/guias</b>.</li>
+      <li>Beneficio inmediato: <b>posicionamiento en Google</b>. Quien busca «dolor de rodilla al subir escaleras Cuenca» aterriza en Recovery, no en un blog genérico.</li>
+      <li>El material deja de ser una campaña y pasa a ser <b>patrimonio de la marca</b>: sigue trayendo gente dos años después.</li>
+      <li>Una guía por padecimiento: rodilla y tendón (hecha), espalda y oficina, cuello, suelo pélvico, volver a entrenar.</li></ul></div>
+    <div class="panel"><h4>2 · El taller presencial se convierte en taller virtual</h4>
+      <ul><li>El taller del 12 de diciembre <b>ya se va a grabar</b>. Convertirlo en una página web con los videos, los ejercicios y el material cuesta una fracción de volver a producirlo.</li>
+      <li>Resuelve el problema del <b>52 % de la audiencia que no vive en Cuenca</b> y que hoy no tiene nada que comprar.</li>
+      <li>Y resuelve los cupos agotados: en septiembre se llenó y quedó gente fuera. Esa gente es la primera lista de compradores.</li></ul></div>
+    <div class="panel"><h4>3 · Microguías y curso como producto</h4>
+      <ul><li><b>Guía gratuita</b> (captura el contacto) → <b>microguía o curso pagado</b> de bajo precio → <b>programa presencial</b>. Tres escalones, mismo contenido, tres precios.</li>
+      <li>Una microguía de pago vendible: «Programa de 6 semanas para tu tendón», con progresión, videos y seguimiento por mensaje.</li>
+      <li>Se vende a quien ya pidió la guía gratis: es la audiencia más calificada que existe, y hoy no se le ofrece nada.</li>
+      <li>Ingreso que <b>no consume horas de box ni de fisioterapeuta</b>, que es el techo real del negocio presencial.</li></ul></div>
+    <div class="panel"><h4>4 · La base de datos es el activo</h4>
+      <ul><li>Cada persona que pide una guía deja un contacto y <b>dice qué le duele</b>.</li>
+      <li>Eso permite avisar por WhatsApp o correo cuando hay un taller de ese tema, sin depender del alcance de Instagram —que es la parte que no controlamos.</li>
+      <li>Es el único activo de marketing que no se devalúa: los seguidores se pierden (121 en 4 meses), los contactos no.</li></ul></div>
+  </div>
+
+  <div class="alert ok">
+    <h3>La lógica de fondo</h3>
+    <p>Recovery tiene hoy un negocio que cobra por hora de fisioterapeuta en Cuenca, y una audiencia de la que <strong>la mitad no vive en Cuenca</strong>. Todo lo de esta sección existe para resolver esa diferencia: convertir atención que hoy no se puede cobrar en producto que sí se puede vender, sin ocupar una camilla más.</p>
+  </div>
+</section>
+
+<section id="decisiones">
+  <div class="sh"><span class="num">11</span><h2>Qué necesitamos de Recovery</h2></div>
+  <p class="sub">Siete decisiones. Las tres primeras bloquean la producción de esta semana.</p>
+
+  <div class="cal">
+    <div class="calrow head"><span>Para cuándo</span><span>Quién</span><span>Decisión</span></div>
+    <div class="calrow"><span class="d">Mar 24 nov<span>bloquea</span></span><span class="meta"><b>Recovery</b></span>
+      <div><h4>Black Friday: ¿A, B o C?</h4><p>Bono prepago, valoración a precio especial, o no participar. Sin respuesta el martes, va la opción C por defecto y no se pierde el espacio.</p></div></div>
+    <div class="calrow"><span class="d">Mar 24 nov<span>bloquea</span></span><span class="meta"><b>Recovery</b></span>
+      <div><h4>Fecha y tema del 2.º taller</h4><p>La propuesta es <b>sábado 12 de diciembre</b>, cuello y espalda. Todo diciembre se construye sobre esa fecha: si cambia, cambia el mes entero.</p></div></div>
+    <div class="calrow"><span class="d">Mar 24 nov<span>bloquea</span></span><span class="meta"><b>Recovery</b></span>
+      <div><h4>Validación clínica</h4><p>Las señales y los ejercicios de las piezas de esta semana y del carrusel C1. Es el mismo pendiente que arrastramos desde septiembre.</p></div></div>
+    <div class="calrow"><span class="d">1 – 5 dic<span>alta prioridad</span></span><span class="meta"><b>Recovery<br>+ Pro Motion</b></span>
+      <div><h4>Producción completa: equipo, espacios y servicios</h4><p>Un día de grabación con el uniforme nuevo. Alimenta cinco destacadas, el reel de valoración y buena parte de diciembre. Es la producción con mayor retorno del trimestre.</p></div></div>
+    <div class="calrow"><span class="d">Esta semana<span>rápido</span></span><span class="meta"><b>Recovery</b></span>
+      <div><h4>Cambio de foto de perfil</h4><p>Reemplazar el logo de los 10 años por el isotipo oficial, en Instagram, Facebook, Google Business y WhatsApp Business. Los archivos están listos en esta carpeta.</p></div></div>
+    <div class="calrow"><span class="d">Dic<span>habilita</span></span><span class="meta"><b>Recovery</b></span>
+      <div><h4>Acceso a la web para alojar las guías</h4><p>Para mover las guías a recovery-therapy.com/guias y empezar a capitalizar el posicionamiento en Google.</p></div></div>
+    <div class="calrow"><span class="d">Dic<span>a conversar</span></span><span class="meta"><b>Recovery</b></span>
+      <div><h4>Interés en el modelo digital</h4><p>Si hay intención de vender taller virtual o microguías, se graba el taller del 12 con ese formato en mente. Decidirlo después cuesta volver a producir.</p></div></div>
+  </div>
+</section>
+
+<footer>
+  <span>Pro Motion Sport Marketing · Dirección de Producción</span>
+  <span>Recovery · datos de Metricool al 23 nov 2026</span>
+</footer>
+</div>
+
+<script>
+const PIEZAS=[
+{f:"30 sep",n:"Casa llena: éxito del taller",t:"Carrusel",v:3260,a:1343,l:58,c:1,g:3,s:31,r:null},
+{f:"18 ago",n:"Programa Pretemporada (regreso a canchas)",t:"Reel",v:2475,a:1518,l:27,c:11,g:3,s:39,r:14.31},
+{f:"27 oct",n:"Vacante fisioterapeuta",t:"Foto",v:1925,a:869,l:31,c:0,g:6,s:7,r:null},
+{f:"11 sep",n:"Anuncio Taller Pretemporada gratuito",t:"Reel",v:1725,a:1046,l:17,c:3,g:2,s:21,r:21.51},
+{f:"16 oct",n:"Resumen taller (2): testimonios",t:"Reel",v:1539,a:926,l:37,c:2,g:4,s:7,r:19.04},
+{f:"09 oct",n:"Resumen taller (1)",t:"Reel",v:1458,a:817,l:38,c:3,g:4,s:40,r:18.82},
+{f:"24 ago",n:"Rendimiento Blindado: estiramientos",t:"Reel",v:1328,a:820,l:43,c:8,g:10,s:22,r:18.52},
+{f:"31 ago",n:"Back to Routine (espalda de oficina)",t:"Reel",v:1312,a:840,l:29,c:3,g:6,s:21,r:14.32},
+{f:"25 sep",n:"Cupos agotados del taller",t:"Carrusel",v:1166,a:404,l:14,c:2,g:3,s:14,r:null},
+{f:"19 oct",n:"Cuidado con los trucos virales",t:"Reel",v:1001,a:711,l:16,c:9,g:7,s:6,r:19.17},
+{f:"04 nov",n:"Taller de cuello y espalda",t:"Reel",v:887,a:485,l:28,c:7,g:3,s:18,r:22.19},
+{f:"22 oct",n:"Incontinencia: los ejercicios de redes no curan",t:"Carrusel",v:794,a:315,l:10,c:0,g:1,s:6,r:null},
+{f:"26 oct",n:"Suelo pélvico: presión al sentarte",t:"Reel",v:739,a:391,l:21,c:1,g:2,s:6,r:14.38},
+{f:"12 nov",n:"Rendimiento Blindado: tendón",t:"Reel",v:715,a:428,l:24,c:0,g:5,s:4,r:11.61},
+{f:"30 oct",n:"Aviso de feriado",t:"Foto",v:599,a:276,l:3,c:0,g:1,s:0,r:null},
+{f:"16 sep",n:"Back to Routine · Cámara Americana",t:"Carrusel",v:593,a:245,l:9,c:0,g:6,s:18,r:null}];
+
+const NS="http://www.w3.org/2000/svg";
+const el=(t,a={})=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;};
+const txt=(x,y,s,a={})=>{const e=el("text",{x,y,...a});e.textContent=s;return e;};
+
+/* ---- ranking ---- */
+(()=>{const g=document.getElementById("rank");if(!g)return;
+const L=250,R=700,T=14,bh=28,max=3400;
+const x=v=>L+(v/max)*(R-L);
+[0,1000,2000,3000].forEach(v=>{g.appendChild(el("line",{x1:x(v),y1:T-6,x2:x(v),y2:T+PIEZAS.length*bh-6,class:"gl"}));
+  g.appendChild(txt(x(v),T+PIEZAS.length*bh+12,v.toLocaleString("es"),{"text-anchor":"middle"}));});
+const med=x(1239);
+g.appendChild(el("line",{x1:med,y1:T-6,x2:med,y2:T+PIEZAS.length*bh-6,stroke:"var(--txt3)","stroke-width":1,"stroke-dasharray":"4 3"}));
+g.appendChild(txt(med+5,T+2,"mediana 1.239",{"font-size":10,fill:"var(--txt3)"}));
+PIEZAS.forEach((p,i)=>{const y=T+i*bh,row=el("g",{class:"row"});
+  row.appendChild(txt(L-10,y+13,p.n.length>34?p.n.slice(0,33)+"…":p.n,{"text-anchor":"end",class:"lbl"}));
+  row.appendChild(txt(4,y+13,p.f,{"font-size":10,fill:"var(--txt3)"}));
+  row.appendChild(txt(62,y+13,p.t,{"font-size":9.5,fill:"var(--txt3)"}));
+  const w=Math.max(x(p.v)-L,2);
+  row.appendChild(el("rect",{x:L,y:y+3,width:w,height:15,rx:4,fill:"var(--s1)",opacity:i<5?1:.62,class:"mk"}));
+  row.appendChild(txt(L+w+7,y+15,p.v.toLocaleString("es"),{class:"val","font-size":11}));
+  const tt=el("title");tt.textContent=`${p.n} · ${p.v.toLocaleString("es")} vistas · ${p.a} de alcance · ${p.c} comentarios`;
+  row.appendChild(tt);g.appendChild(row);});
+})();
+
+/* ---- meses ---- */
+(()=>{const g=document.getElementById("meses");if(!g)return;
+const D=[{m:"Agosto",v:572,p:4},{m:"Septiembre",v:633,p:4},{m:"Octubre",v:705,p:6},{m:"Noviembre",v:234,p:2}];
+const B=228,T=24,L=60,bw=92,gap=56,max=760;
+const y=v=>B-(v/max)*(B-T);
+[0,200,400,600].forEach(v=>{g.appendChild(el("line",{x1:L-10,y1:y(v),x2:640,y2:y(v),class:"gl"}));
+  g.appendChild(txt(L-18,y(v)+4,v,{"text-anchor":"end","font-size":10}));});
+g.appendChild(el("line",{x1:L-10,y1:B,x2:640,y2:B,class:"ax"}));
+D.forEach((d,i)=>{const bx=L+i*(bw+gap),h=B-y(d.v),row=el("g",{class:"row"});
+  row.appendChild(el("rect",{x:bx,y:y(d.v),width:bw,height:h,rx:4,fill:"var(--s1)",opacity:d.v<300?.55:1,class:"mk"}));
+  row.appendChild(txt(bx+bw/2,y(d.v)-9,d.v,{"text-anchor":"middle",class:"val","font-size":13}));
+  row.appendChild(txt(bx+bw/2,B+18,d.m,{"text-anchor":"middle",class:"lbl"}));
+  row.appendChild(txt(bx+bw/2,B+34,d.p+(d.p===1?" pieza":" piezas"),{"text-anchor":"middle","font-size":10,fill:"var(--txt3)"}));
+  const tt=el("title");tt.textContent=`${d.m}: ${d.v} vistas por día · ${d.p} piezas publicadas`;row.appendChild(tt);
+  g.appendChild(row);});
+g.appendChild(txt(L-18,T-8,"vistas / día",{"font-size":10,fill:"var(--txt3)"}));
+})();
+
+/* ---- retencion ---- */
+(()=>{const g=document.getElementById("ret");if(!g)return;
+const P=[[26,21.51,"Anuncio del taller"],[39,22.19,"Taller cuello"],[46,14.38,"Suelo pélvico"],[51,19.04,"Resumen taller 2"],
+[53,14.31,"Pretemporada"],[53,18.82,"Resumen taller 1"],[54,19.17,"Trucos virales"],[55,14.32,"Back to Routine"],
+[68,18.52,"Estiramientos"],[80,11.61,"Tendón"]];
+const L=56,R=660,T=24,B=250;
+const x=d=>L+((d-20)/68)*(R-L), y=r=>B-((r-9)/15)*(B-T);
+[10,14,18,22].forEach(v=>{g.appendChild(el("line",{x1:L,y1:y(v),x2:R,y2:y(v),class:"gl"}));
+  g.appendChild(txt(L-10,y(v)+4,v+"%",{"text-anchor":"end","font-size":10}));});
+[30,45,60,75].forEach(v=>{g.appendChild(txt(x(v),B+20,v+"s",{"text-anchor":"middle","font-size":10}));});
+g.appendChild(el("line",{x1:L,y1:B,x2:R,y2:B,class:"ax"}));
+g.appendChild(el("rect",{x:x(60),y:T,width:R-x(60),height:B-T,fill:"var(--s1)",opacity:.07}));
+g.appendChild(txt(x(60)+8,T+14,"más de 60 s",{"font-size":10,fill:"var(--txt3)"}));
+P.forEach(([d,r,n])=>{const row=el("g",{class:"row"});
+  row.appendChild(el("circle",{cx:x(d),cy:y(r),r:7,fill:"var(--s1)",opacity:.85,stroke:"var(--surf)","stroke-width":2,class:"mk"}));
+  const tt=el("title");tt.textContent=`${n}: ${d} s · ${r}% de retención`;row.appendChild(tt);g.appendChild(row);});
+[["Taller cuello",39,22.19,10,-14],["Tendón",80,11.61,-16,-16],["Anuncio del taller",26,21.51,10,-14]].forEach(([n,d,r,dx,dy])=>{
+  g.appendChild(txt(x(d)+dx,y(r)+dy,n,{"font-size":10.5,fill:"var(--txt2)","text-anchor":dx<0?"end":"start"}));});
+g.appendChild(txt(L-10,T-8,"retención",{"font-size":10,fill:"var(--txt3)","text-anchor":"end"}));
+g.appendChild(txt(R,B+20,"duración",{"font-size":10,fill:"var(--txt3)","text-anchor":"end"}));
+})();
+
+/* ---- edad ---- */
+(()=>{const g=document.getElementById("edad");if(!g)return;
+const D=[["25–34",625,636],["35–44",546,577],["45–54",282,231],["18–24",97,94],["55–64",122,63],["65+",33,23]];
+const L=64,R=470,T=14,rh=42,max=700;
+const w=v=>(v/max)*(R-L);
+D.forEach((d,i)=>{const y=T+i*rh,row=el("g",{class:"row"});
+  row.appendChild(txt(L-10,y+22,d[0],{"text-anchor":"end",class:"lbl"}));
+  row.appendChild(el("rect",{x:L,y:y+2,width:Math.max(w(d[1]),2),height:14,rx:4,fill:"var(--s1)",class:"mk"}));
+  row.appendChild(el("rect",{x:L,y:y+20,width:Math.max(w(d[2]),2),height:14,rx:4,fill:"var(--s2)",class:"mk"}));
+  row.appendChild(txt(L+w(d[1])+7,y+14,d[1],{class:"val","font-size":10.5}));
+  row.appendChild(txt(L+w(d[2])+7,y+32,d[2],{class:"val","font-size":10.5}));
+  const tt=el("title");tt.textContent=`${d[0]} años · ${d[1]} mujeres · ${d[2]} hombres`;row.appendChild(tt);
+  g.appendChild(row);});
+})();
+
+/* ---- tabla ---- */
+(()=>{const tb=document.getElementById("tabla");if(!tb)return;
+PIEZAS.forEach((p,i)=>{const tr=document.createElement("tr");if(i<5)tr.className="top";
+tr.innerHTML=`<td>${p.f}</td><td class="name">${p.n}</td><td><span class="chip">${p.t}</span></td>
+<td class="n">${p.v.toLocaleString("es")}</td><td class="n">${p.a.toLocaleString("es")}</td><td class="n">${p.l}</td>
+<td class="n">${p.c}</td><td class="n">${p.g}</td><td class="n">${p.s}</td><td class="n">${p.r?p.r.toFixed(1)+"%":"—"}</td>`;
+tb.appendChild(tr);});
+})();
+</script>
+</body>
+</html>
