@@ -51,9 +51,14 @@ h1 .g{font-stretch:70%;font-weight:900;
 .hero p{max-width:60ch;color:rgba(239,236,230,.82);font-size:clamp(15px,1.9vw,18px);margin:0}
 
 /* ============ TIRA DE CIFRAS ============ */
-.tira{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--borde);
-  border-top:1px solid var(--borde);border-bottom:1px solid var(--borde)}
-.tira div{background:var(--carbon);padding:20px 18px}
+.tirawrap{background:var(--carbon);border-top:1px solid var(--borde);border-bottom:1px solid var(--borde)}
+.tira{max-width:1120px;margin:0 auto;padding:0 20px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr))}
+.tira>div{padding:20px 20px;border-left:1px solid var(--borde)}
+.tira>div:first-child{border-left:0;padding-left:0}
+.tira>div:last-child{padding-right:0}
+@media(max-width:900px){.tira>div{border-left:0;border-top:1px solid var(--borde);padding-left:0;padding-right:0}
+  .tira>div:first-child{border-top:0}}
 .tira .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--txt3);display:block}
 .tira b{display:block;font-family:var(--display);font-stretch:76%;font-weight:850;
   font-size:clamp(28px,4vw,42px);line-height:1.06;color:var(--blanco);margin:8px 0 4px;font-variant-numeric:tabular-nums}
@@ -290,12 +295,14 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </div>
 
+<div class="tirawrap">
 <div class="tira">
   <div><span class="k">Vistas del año</span><b>407.719</b><span class="n">326 días · 1.250 por día</span></div>
   <div><span class="k">Seguidores netos</span><b class="grad">+473</b><span class="n">863 ganados · 390 perdidos</span></div>
   <div><span class="k">Piezas publicadas</span><b>47</b><span class="n">una cada 7 días · 28 reels, 15 carruseles, 4 fotos</span></div>
   <div><span class="k">Inversión en pauta</span><b class="rojo">$0</b><span class="n">el año fue 100 % orgánico</span></div>
   <div><span class="k">Días sin publicar</span><b class="rojo">99</b><span class="n">seguidos, del 11 may al 18 ago</span></div>
+</div>
 </div>
 
 <div class="wrap">
