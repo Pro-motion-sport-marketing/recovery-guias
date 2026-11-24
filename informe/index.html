@@ -169,6 +169,29 @@ tr.top td:first-child{box-shadow:inset 3px 0 0 var(--rojo)}
 .chip{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;
   border:1px solid var(--borde);color:var(--txt3)}
 
+/* persona */
+.emp{display:grid;grid-template-columns:repeat(auto-fit,minmax(252px,1fr));gap:1px;background:var(--borde);
+  border:1px solid var(--borde);margin:4px 0 18px}
+.emp>div{background:var(--negro);padding:17px 19px 19px}
+.emp h5{margin:0 0 11px;font-family:var(--display);font-stretch:80%;font-weight:860;text-transform:uppercase;
+  font-size:15px;letter-spacing:.06em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.emp ul{margin:0;padding-left:15px;font-size:13px;color:var(--txt2);line-height:1.5}
+.emp li{margin:5px 0}
+.emp li b{color:var(--blanco)}
+.ficha{display:flex;gap:18px;align-items:center;flex-wrap:wrap;background:var(--negro);border:1px solid var(--borde);
+  border-left:5px solid transparent;border-image:var(--grad) 1;padding:18px 20px;margin:0 0 16px}
+.ficha .nm{font-family:var(--display);font-stretch:76%;font-weight:900;font-size:30px;text-transform:uppercase;
+  color:var(--blanco);line-height:1}
+.ficha .ed{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--txt3);display:block;margin-top:5px}
+.ficha p{margin:0;font-size:14.5px;color:var(--txt2);max-width:62ch;flex:1;min-width:240px}
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--borde);
+  border:1px solid var(--borde);margin:14px 0 6px}
+.split>div{background:var(--negro);padding:15px 16px;text-align:center}
+.split b{display:block;font-family:var(--display);font-stretch:76%;font-weight:880;font-size:32px;line-height:1;color:var(--blanco)}
+.split b.g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.split span{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--txt3);margin-top:7px}
+.split i{display:block;font-style:normal;font-size:12px;color:var(--txt2);margin-top:6px;line-height:1.35}
+
 /* tarjetas de publicacion */
 .posts{display:grid;grid-template-columns:repeat(auto-fill,minmax(216px,1fr));gap:16px;margin:6px 0 4px}
 .post{background:var(--carbon);border:1px solid var(--borde);border-radius:3px;overflow:hidden;
@@ -498,7 +521,105 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 </details>
 
 <details>
-  <summary><span class="n">07</span><div><h2>Por qué hace falta pauta</h2><p class="d">El año fue 100 % orgánico. Con 7 piezas al mes, eso no alcanza para adquirir audiencia ni pacientes.</p></div><span class="ch"></span></summary>
+  <summary><span class="n">07</span><div><h2>A quién le hablamos</h2><p class="d">Hay un solo cliente objetivo definido, y solo el 23 % del contenido le habla a ella.</p></div><span class="ch"></span></summary>
+  <div class="body">
+    <p>Pro Motion hizo un primer ejercicio de design thinking con el equipo de Recovery y de ahí salió un perfil. Es el <b>único</b> que existe hoy. Vale la pena mirarlo contra los datos del año, porque confirma unas cosas y desmiente otras.</p>
+
+    <div class="ficha">
+      <div><span class="nm">Mónica</span><span class="ed">35 a 45 años · Cuenca</span></div>
+      <p>Ama de casa con poco tiempo que aplaza su dolor. Tiene dolor de cuello y de espalda, tal vez suelo pélvico, y tiene incontinencia —pero <b>piensa que es normal</b>.</p>
+    </div>
+
+    <div class="emp">
+      <div><h5>Piensa</h5><ul>
+        <li>Que es <b>cosa de la edad</b> y con el tiempo se le pasa.</li>
+        <li>Que <b>no tiene tiempo</b> y que puede aguantar un poco más.</li>
+        <li>Que tratarse es <b>muy caro y muy demorado</b>.</li>
+        <li>Que con unos videos de TikTok o unos ejercicios caseros se soluciona.</li>
+        <li>Que lo que dijo el doctor es la última palabra.</li>
+        <li>Que <b>no hay buenas opciones de tratamiento en Cuenca</b>.</li></ul></div>
+      <div><h5>Dice</h5><ul>
+        <li>«Yo estoy bien, son unos dolorcitos.»</li>
+        <li>«Es por la edad» · «es por el ejercicio de ayer».</li>
+        <li>«Solo la cirugía es la solución.»</li>
+        <li>«No tengo quién me cuide a las guaguas.»</li>
+        <li>«Vi esto en TikTok, ¿ustedes hacen?»</li>
+        <li>«Me dijeron que esto le pasa a todos.»</li></ul></div>
+      <div><h5>Hace</h5><ul>
+        <li>Se automedica y copia lo que vio en YouTube.</li>
+        <li>Hace lo mismo que la vecina porque tenían el mismo problema.</li>
+        <li>Se aguanta y <b>aprende a vivir con el dolor</b>.</li>
+        <li>Modifica sus hábitos según sus limitaciones.</li>
+        <li>Deja de entrenar, de salir y de hacer actividades con los hijos.</li></ul></div>
+      <div><h5>Siente</h5><ul>
+        <li><b>Vergüenza.</b></li>
+        <li>Miedo de no curarse y frustración por lo que ya no puede hacer.</li>
+        <li>Que está sola con este dolor y que no le entienden.</li>
+        <li>Que gasta plata y no encuentra solución.</li>
+        <li>Que en cada consulta le engañan.</li>
+        <li>Que perdió capacidad de atracción como mujer.</li></ul></div>
+    </div>
+
+    <h4 style="margin-top:26px">Qué confirman los datos</h4>
+    <p>Las <b>cinco piezas con mejor tasa de comentarios de todo el año son las cinco que atacan una frase de ese mapa</b>. No es casualidad: cuando el contenido nombra lo que ella ya piensa, ella escribe.</p>
+    <div class="tw" style="margin-top:12px"><table style="min-width:580px">
+      <thead><tr><th>Pieza</th><th>Frase del mapa que ataca</th><th class="n">Com. / 1.000</th></tr></thead>
+      <tbody>
+        <tr class="top"><td class="name">Taller de cuello y espalda</td><td>«Me duele el cuello y siempre vuelve»</td><td class="n">14,4</td></tr>
+        <tr class="top"><td class="name">Cuidado con los trucos virales</td><td>«Vi esto en TikTok, ¿ustedes hacen?»</td><td class="n">12,7</td></tr>
+        <tr class="top"><td class="name">¿Crees que no tienes 40 minutos?</td><td>«Piensa que no tiene tiempo»</td><td class="n">11,6</td></tr>
+        <tr class="top"><td class="name">Te dijeron que la cirugía era tu única salida</td><td>«Solo la cirugía es la solución»</td><td class="n">11,2</td></tr>
+        <tr class="top"><td class="name">Estiramientos antes de entrenar</td><td>«Hace lo que vio en un video»</td><td class="n">9,7</td></tr>
+        <tr><td class="name" style="color:var(--txt3)">Mediana de la cuenta</td><td style="color:var(--txt3)">—</td><td class="n" style="color:var(--txt3)">1,8</td></tr>
+      </tbody></table></div>
+
+    <h4 style="margin-top:26px">Y aquí está el problema</h4>
+    <p>De las 47 piezas del año, <b>muy pocas le hablan directamente a Mónica</b>. El calendario se arma alrededor de lo que Recovery tiene en agenda —la pretemporada, el back to routine, el aniversario, el feriado— y no alrededor de lo que a ella le duele.</p>
+    <div class="split">
+      <div><b class="g">23 %</b><span>Le habla a Mónica</span><i>11 piezas · 7,2 comentarios por 1.000</i></div>
+      <div><b>62 %</b><span>Habla de la agenda</span><i>29 piezas · 1,7 comentarios por 1.000</i></div>
+      <div><b>15 %</b><span>Otro</span><i>7 piezas · 1,3 comentarios por 1.000</i></div>
+    </div>
+    <p style="margin-top:14px"><b>Lo que menos se publica es exactamente lo que mejor funciona.</b> Las piezas que le hablan a ella hacen escribir a la gente <b>cuatro veces más</b> que las que anuncian una promoción o un evento.</p>
+
+    <div class="g2" style="margin-top:20px">
+      <div class="box acc"><h4>La contradicción del suelo pélvico</h4>
+        <p>Es un tema central del perfil —tiene incontinencia y cree que es normal— y sin embargo es <b>lo que peor rinde de todo el año</b>: el carrusel de incontinencia hizo 316 de alcance y <b>0 comentarios</b>; el reel de suelo pélvico, 392 y 1 comentario.</p>
+        <p style="margin-bottom:0">El propio mapa explica por qué: <b>siente vergüenza</b>. Es el único tema donde el pudor es tan fuerte que no va a comentar en público, y justamente ahí el CTA le pide un comentario público. <b>El tema más íntimo está usando el mecanismo más expuesto.</b> Suelo pélvico tiene que ir por mensaje directo o por pauta, nunca por comentario.</p></div>
+      <div class="box"><h4>Lo que el mapa pide y no estamos dando</h4>
+        <ul><li><b>«No hay buenas opciones en Cuenca»</b> y «no hay las soluciones que vi en otros países»: Recovery tiene ecografía, tecar, ondas de choque, láser y EPI, y casi nunca lo muestra. Es un problema de autoridad, no de oferta.</li>
+        <li><b>«No tengo quién me cuide a las guaguas»</b> y «yo les cuido a mis papás»: barrera logística real que no se ha tocado nunca. Conecta directo con las rutinas grabadas y el fisio online del tablero.</li>
+        <li><b>«Siento que en cada consulta me engañan»</b>: se resuelve con casos reales y testimonios, no con argumentos.</li></ul></div>
+    </div>
+
+    <div class="box acc" style="margin-top:18px">
+      <h4>Falta identificar los demás perfiles</h4>
+      <p>Mónica es el único cliente objetivo definido, y <b>no alcanza</b>. La audiencia real de Instagram está casi partida en mitades: <b>46,6 % mujeres y 44,5 % hombres</b>. Un perfil femenino de 35 a 45 cubre, como mucho, una cuarta parte de la gente que ya sigue la cuenta.</p>
+      <p style="margin-bottom:0">Los otros cuatro que se ven en los datos y todavía no están escritos:</p>
+      <ul style="margin-top:10px">
+        <li><b>El deportista amateur que vuelve</b> — es quien hizo funcionar la pretemporada, el taller y todo el arco de octubre.</li>
+        <li><b>El ejecutivo de oficina</b> — dolor lumbar y cervical por horas sentado; es el público del Back to Routine y del beneficio de la Cámara Americana.</li>
+        <li><b>El postquirúrgico o traumatizado</b> — el que llega derivado y necesita acompañamiento largo.</li>
+        <li><b>El deportista de alto rendimiento</b> — el de Paula Torres y el ciclo olímpico. Da autoridad aunque no dé volumen.</li>
+      </ul>
+      <p style="margin-top:12px;margin-bottom:0"><b>Propuesta:</b> repetir el ejercicio de design thinking con el equipo clínico para dos perfiles más antes de que arranque la pauta, porque cada perfil es un público distinto en Meta y una creatividad distinta. Sin eso, la campaña se segmenta a ciegas.</p>
+    </div>
+
+    <h4 style="margin-top:26px">Sobre el tablero de importancia y factibilidad</h4>
+    <div class="g2">
+      <div class="box"><h4>Todo quedó en la esquina baja</h4>
+        <p>Las 14 ideas están apiladas entre 1 y 2 en los dos ejes. Ninguna llegó al cuadrante de mucha importancia y mucha factibilidad, lo que normalmente significa que el ejercicio se quedó corto en generar ideas de alto impacto —o que se calificó con un criterio muy duro.</p></div>
+      <div class="box ok"><h4>Tres de esas ideas ya están resueltas</h4>
+        <ul><li><b>«Educación inicial demostrativa visual e interactiva»</b> —la idea mejor calificada del tablero— <b>ya existe</b>: es exactamente la guía del tendón, con videos, ritmo y temporizador. Hoy su factibilidad es 5, no 1.</li>
+        <li><b>«Recibir talleres con personas con el mismo problema»</b>: ya se hizo y se llenó. Factibilidad probada.</li>
+        <li><b>«Rutinas grabadas personalizadas online»</b>: es el mismo formato de guía con un paso más.</li></ul>
+        <p style="margin:10px 0 0;font-size:13.5px">Vale la pena volver a calificar el tablero con esto sobre la mesa: lo que parecía difícil ya está construido.</p></div>
+    </div>
+  </div>
+</details>
+
+<details>
+  <summary><span class="n">08</span><div><h2>Por qué hace falta pauta</h2><p class="d">El año fue 100 % orgánico. Con 7 piezas al mes, eso no alcanza para adquirir audiencia ni pacientes.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="box acc">
       <h4>El dato que lo resume</h4>
@@ -544,7 +665,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 </details>
 
 <details>
-  <summary><span class="n">08</span><div><h2>Identidad: el logo y la foto de perfil</h2><p class="d">La cuenta usa todavía el logo del evento de los 10 años. Eso fecha el perfil.</p></div><span class="ch"></span></summary>
+  <summary><span class="n">09</span><div><h2>Identidad: el logo y la foto de perfil</h2><p class="d">La cuenta usa todavía el logo del evento de los 10 años. Eso fecha el perfil.</p></div><span class="ch"></span></summary>
   <div class="body">
     <p>El perfil comunica hoy «esto pasó», no «esto es». Propuesta: volver al isotipo oficial, el mismo del sitio web y de los uniformes.</p>
     <div class="pf2">
@@ -565,7 +686,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 </details>
 
 <details>
-  <summary><span class="n">09</span><div><h2>Historias destacadas</h2><p class="d">Hoy ninguna dice qué servicios existen. Ocho destacadas, con las portadas ya hechas.</p></div><span class="ch"></span></summary>
+  <summary><span class="n">10</span><div><h2>Historias destacadas</h2><p class="d">Hoy ninguna dice qué servicios existen. Ocho destacadas, con las portadas ya hechas.</p></div><span class="ch"></span></summary>
   <div class="body">
     <p>Las destacadas actuales son todas de eventos: Rehabilitación, 2026, Eventos 2025, Olímpicos, Kms atletar, Fiesta 10/10, Festival 10/10. <b>Ninguna responde qué trata Recovery, con qué tecnología, quién atiende ni cómo agendar.</b> Estas ocho van en este orden exacto: el perfil se lee de izquierda a derecha y las tres primeras son las que más se tocan.</p>
     <div class="hl">
@@ -594,7 +715,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 </details>
 
 <details>
-  <summary><span class="n">10</span><div><h2>Plan: 23 de noviembre → 31 de diciembre</h2><p class="d">4 videos y 3 carruseles al mes. Diciembre replica el arco del taller de octubre.</p></div><span class="ch"></span></summary>
+  <summary><span class="n">11</span><div><h2>Plan: 23 de noviembre → 31 de diciembre</h2><p class="d">4 videos y 3 carruseles al mes. Diciembre replica el arco del taller de octubre.</p></div><span class="ch"></span></summary>
   <div class="body">
     <p class="mono" style="display:block;margin:0 0 10px">Semana del 23 al 30 de noviembre · recuperar el ritmo</p>
     <div class="cal">
@@ -671,7 +792,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 </details>
 
 <details>
-  <summary><span class="n">11</span><div><h2>Automatización: una palabra, un menú</h2><p class="d">El arreglo del filtro 5. En vez de una palabra nueva por campaña, una permanente que abre un menú.</p></div><span class="ch"></span></summary>
+  <summary><span class="n">12</span><div><h2>Automatización: una palabra, un menú</h2><p class="d">El arreglo del filtro 5. En vez de una palabra nueva por campaña, una permanente que abre un menú.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="g2">
       <div class="box"><h4>Cómo queda el flujo</h4>
@@ -702,7 +823,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 </details>
 
 <details>
-  <summary><span class="n">12</span><div><h2>Amplificación: de contenido a modelo de negocio</h2><p class="d">Cuatro oportunidades que no dependen de publicar más.</p></div><span class="ch"></span></summary>
+  <summary><span class="n">13</span><div><h2>Amplificación: de contenido a modelo de negocio</h2><p class="d">Cuatro oportunidades que no dependen de publicar más.</p></div><span class="ch"></span></summary>
   <div class="body">
     <p>La guía del tendón demostró algo: hoy producir una guía web completa —con videos, ritmo y temporizador— cuesta prácticamente lo mismo que producir un PDF, y vale muchísimo más.</p>
     <div class="g2">
@@ -733,7 +854,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 </details>
 
 <details>
-  <summary><span class="n">13</span><div><h2>Qué necesitamos de Recovery</h2><p class="d">Siete decisiones. Las tres primeras bloquean la producción de esta semana.</p></div><span class="ch"></span></summary>
+  <summary><span class="n">14</span><div><h2>Qué necesitamos de Recovery</h2><p class="d">Siete decisiones. Las tres primeras bloquean la producción de esta semana.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="cal">
       <div class="crow hd"><span>Para cuándo</span><span>Quién</span><span>Decisión</span></div>
