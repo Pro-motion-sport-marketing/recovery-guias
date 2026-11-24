@@ -214,6 +214,10 @@ tr.top td:first-child{box-shadow:inset 3px 0 0 var(--rojo)}
 .planes{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:16px;margin:6px 0 4px}
 .plan{background:var(--carbon);border:1px solid var(--borde);border-radius:3px;overflow:hidden;display:flex;flex-direction:column}
 .plan .bar{height:4px;background:var(--vel2)}
+.plan .sello{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  padding:4px 9px;border-radius:2px;display:inline-block;margin-bottom:11px}
+.plan .sello.dic{background:var(--grad);color:#17171A}
+.plan .sello.ene{background:var(--vel2);color:var(--txt2);border:1px solid var(--borde)}
 .plan.act .bar{background:var(--grad)}
 .plan.act{box-shadow:var(--sh)}
 .plan .bd{padding:20px 22px 22px;flex:1;display:flex;flex-direction:column}
@@ -848,7 +852,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 </details>
 
 <details id="s09">
-  <summary><span class="n">09</span><div><h2>Qué incluye el plan actual y qué no</h2><p class="d">Recovery paga un plan mínimo viable. Mucho de lo que este informe recomienda está fuera de él.</p></div><span class="ch"></span></summary>
+  <summary><span class="n">09</span><div><h2>Qué incluye el plan actual y qué no</h2><p class="d">Diciembre se mantiene en $450 por la reactivación. Desde enero, $550.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="box acc">
       <h4>Antes de seguir, hay que ponerlo sobre la mesa</h4>
@@ -856,10 +860,18 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
       <p style="margin-top:10px;margin-bottom:0">Recovery paga hoy <b>$450 mensuales más IVA</b>. Es un plan mínimo viable, no un plan máximo posible. Conviene que quede claro qué cubre ese valor y qué no, para que la decisión de diciembre se tome con la información completa.</p>
     </div>
 
+    <div class="box ok" style="margin-top:18px;border-left:3px solid transparent;border-image:var(--grad) 1">
+      <h4>La propuesta para la reactivación</h4>
+      <p>Diciembre vuelve con más organización y más estructura que lo que veníamos haciendo: un plan a tres meses, una campaña de pauta montada sobre creatividades ya validadas, historias semanales y las destacadas construidas desde cero.</p>
+      <p style="margin-top:10px"><b>Por esa reactivación, en diciembre no cobramos el valor adicional.</b> El mes se factura a los <b>$450 de siempre</b>, con la gestión de pauta en Meta Ads y la producción de historias y destacadas incluidas.</p>
+      <p style="margin-top:10px;margin-bottom:0">Pero conviene decirlo ahora y no en enero: <b>ese trabajo tiene un valor propio</b>. Gestionar campañas en Meta Ads —armar públicos, creatividades, presupuestos y leer resultados— y producir material semanal de historias y destacadas <b>no depende de la cantidad de piezas del plan</b>: es trabajo distinto, que se suma. <b>Desde enero ese valor se reconoce y el plan pasa a $550 mensuales más IVA.</b></p>
+    </div>
+
     <div class="planes" style="margin-top:20px">
       <div class="plan act"><div class="bar"></div><div class="bd">
+        <span class="sello dic">Diciembre</span>
         <span class="et">Plan actual · mínimo viable</span>
-        <div class="pr">$450<small>mensuales + IVA</small></div>
+        <div class="pr">$450<small>mensuales + IVA · en diciembre incluye pauta e historias sin costo adicional</small></div>
         <h5>Incluye</h5>
         <ul>
           <li><b>4 videos</b> al mes</li>
@@ -876,6 +888,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
       </div></div>
 
       <div class="plan"><div class="bar"></div><div class="bd">
+        <span class="sello ene">Desde enero</span>
         <span class="et">Siguiente escalón</span>
         <div class="pr">$550<small>mensuales + IVA · son $100 más</small></div>
         <h5>Suma a lo anterior</h5>
@@ -891,6 +904,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
       </div></div>
 
       <div class="plan"><div class="bar"></div><div class="bd">
+        <span class="sello ene">Opcional</span>
         <span class="et">Con TikTok propio</span>
         <div class="pr">$700<small>mensuales + IVA</small></div>
         <h5>Suma a lo anterior</h5>
@@ -924,7 +938,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
     <div class="box acc" style="margin-top:18px">
       <h4>Los dos presupuestos, otra vez, porque es lo que más se confunde</h4>
       <p><b>Ninguno de los tres planes incluye la inversión publicitaria.</b> El fee es el trabajo: estrategia, producción, diseño, guías, gestión. La pauta es dinero que va a Meta para poner ese trabajo delante de gente que todavía no sigue a Recovery.</p>
-      <p style="margin-top:10px;margin-bottom:0">Si el objetivo comercial fuera <b>$2.000 mensuales</b> en citas desde redes, el escenario completo sería: <b>$550 de gestión + $200 de pauta = $750 al mes</b>, y de ahí se mide cuánto cuesta cada paciente nuevo. Hoy se paga $450 y $0 de pauta, lo que explica buena parte de lo que se ve en este informe.</p>
+      <p style="margin-top:10px;margin-bottom:0">Si el objetivo comercial fuera <b>$2.000 mensuales</b> en citas desde redes, el escenario sería: en <b>diciembre $450 de gestión + $200 de pauta = $650</b>, y <b>desde enero $550 + $200 = $750 al mes</b>. De ahí se mide cuánto cuesta cada paciente nuevo. Hoy se paga $450 y $0 de pauta, lo que explica buena parte de lo que se ve en este informe.</p>
     </div>
   </div>
 </details>
@@ -994,7 +1008,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
       <div class="crow"><span class="d">1 – 7 dic<span>Semana 1</span></span><span class="fm">Pauta<b>Arranca</b></span>
         <div><h5>Primera campaña pagada, con contenido que ya existe</h5>
         <p>No requiere producir nada. Se pautan las cuatro piezas atemporales que ya rindieron mejor de forma orgánica, apuntando a las guías. Es la única forma de saber cuánto cuesta un contacto antes de invertir más.</p>
-        <p class="mt">Meta · <b>establecer el costo por contacto</b></p></div></div>
+        <p class="mt">Meta · <b>establecer el costo por contacto</b> · gestión incluida este mes sin costo adicional</p></div></div>
       <div class="crow"><span class="d">1 – 7 dic<span>Semana 1</span></span><span class="fm">Reel ≤ 40 s<b>Detrás de escena · V1</b></span>
         <div><h5>Volvemos: cómo es una valoración en Recovery</h5>
         <p>Pieza de reactivación tras el silencio de noviembre. El ángulo con la mediana más alta del segundo semestre. Muestra el proceso, no el precio. Sale de la producción con uniformes nuevos.</p>
@@ -1126,7 +1140,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
       <div class="crow"><span class="d">Esta semana<span>sostiene todo</span></span><span class="fm"><b>Recovery<br>+ Pro Motion</b></span>
         <div><h5>Confirmar la reactivación del servicio en diciembre</h5><p>Los 99 días sin publicar de junio y julio, y el noviembre en blanco, se deben a que no estuvo definido si Recovery quería o necesitaba continuar. <b>Mientras eso no se cierre, ningún plan se sostiene.</b></p></div></div>
       <div class="crow"><span class="d">1.ª sem. dic<span>define el alcance</span></span><span class="fm"><b>Recovery</b></span>
-        <div><h5>¿Se mantiene el plan de $450 o se sube?</h5><p>El plan actual es el mínimo viable y no incluye historias, gestión de pauta ni TikTok. El siguiente escalón son <b>$550</b> y suma historias, gestión de pauta y republicación en TikTok; <b>$700</b> suma TikTok propio con 8 videos. La inversión publicitaria va aparte en los tres casos. Detalle en la sección 09.</p></div></div>
+        <div><h5>Confirmar el plan desde enero</h5><p><b>Diciembre va a $450</b>, con gestión de pauta e historias incluidas como cortesía de reactivación. <b>Desde enero el plan pasa a $550</b> para reconocer ese trabajo, que es adicional y no depende de la cantidad de piezas. <b>$700</b> si además quieren TikTok propio con 8 videos. La inversión publicitaria va aparte en los tres casos. Detalle en la sección 09.</p></div></div>
       <div class="crow"><span class="d">1.ª sem. dic<span>bloquea la pauta</span></span><span class="fm"><b>Recovery</b></span>
         <div><h5>El objetivo comercial mensual</h5><p>Cuánto dinero quiere generar Recovery al mes en citas que vengan de redes. De ahí sale el presupuesto de pauta —el 10 %— y de ahí sale saber si el plan alcanza o se queda corto. Un rango basta para empezar.</p></div></div>
       <div class="crow"><span class="d">1.ª sem. dic<span>bloquea la medición</span></span><span class="fm"><b>Recovery</b></span>
