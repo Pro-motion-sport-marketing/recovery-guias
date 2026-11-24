@@ -192,6 +192,23 @@ tr.top td:first-child{box-shadow:inset 3px 0 0 var(--rojo)}
 .chip{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;
   border:1px solid var(--borde);color:var(--txt3)}
 
+/* web */
+.ficha-tec{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--borde);
+  border:1px solid var(--borde);margin:4px 0 18px}
+.ficha-tec>div{background:var(--negro);padding:15px 17px}
+.ficha-tec dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--txt3);margin:0 0 6px}
+.ficha-tec dd{margin:0;font-size:14.5px;font-weight:600;color:var(--blanco);line-height:1.3}
+.ficha-tec dd small{display:block;font-weight:400;font-size:12px;color:var(--txt2);margin-top:4px}
+.evid{border:1px solid var(--borde);background:var(--negro);margin:4px 0 18px}
+.evid img{display:block;width:100%;height:auto;border-bottom:1px solid var(--borde)}
+.evid figcaption{padding:13px 17px;font-size:13.5px;color:var(--txt2);margin:0;border:0}
+.evid figcaption b{color:var(--blanco)}
+.pasos{counter-reset:pp;list-style:none;padding:0;margin:0}
+.pasos li{counter-increment:pp;position:relative;padding:0 0 0 40px;margin:14px 0;font-size:14.5px;color:var(--txt2)}
+.pasos li::before{content:counter(pp);position:absolute;left:0;top:-2px;width:26px;height:26px;border-radius:50%;
+  background:var(--grad);color:#17171A;font-family:var(--mono);font-size:12px;font-weight:700;display:grid;place-items:center}
+.pasos li b{color:var(--blanco)}
+
 /* indice */
 .indice{margin-top:34px;padding-top:26px;border-top:1px solid var(--borde)}
 .indice nav{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:1px;background:var(--borde);
@@ -427,7 +444,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 
   <div class="indice">
     <p class="mono" style="display:block;margin:0 0 12px;color:var(--txt2)">Índice · toca una sección para abrirla</p>
-    <nav aria-label="Secciones del informe"><a href="#s01"><i>01</i><b>El año, mes a mes</b><u>›</u></a><a href="#s02"><i>02</i><b>El embudo: dónde se tapa</b><u>›</u></a><a href="#s03"><i>03</i><b>Qué funcionó mejor</b><u>›</u></a><a href="#s04"><i>04</i><b>Qué funcionó peor</b><u>›</u></a><a href="#s05"><i>05</i><b>Quién está del otro lado</b><u>›</u></a><a href="#s06"><i>06</i><b>La fuga: ocho palabras en un año</b><u>›</u></a><a href="#s07"><i>07</i><b>A quién le hablamos</b><u>›</u></a><a href="#s08"><i>08</i><b>Por qué hace falta pauta</b><u>›</u></a><a href="#s09"><i>09</i><b>Qué incluye el plan actual y qué no</b><u>›</u></a><a href="#s10"><i>10</i><b>Identidad: el logo y la foto de perfil</b><u>›</u></a><a href="#s11"><i>11</i><b>Historias destacadas</b><u>›</u></a><a href="#s12"><i>12</i><b>Plan: diciembre, enero y febrero</b><u>›</u></a><a href="#s13"><i>13</i><b>Automatización: una palabra, un menú</b><u>›</u></a><a href="#s14"><i>14</i><b>Amplificación: de contenido a modelo de negocio</b><u>›</u></a><a href="#s15"><i>15</i><b>Qué necesitamos de Recovery</b><u>›</u></a></nav>
+    <nav aria-label="Secciones del informe"><a href="#s01"><i>01</i><b>El año, mes a mes</b><u>›</u></a><a href="#s02"><i>02</i><b>El embudo: dónde se tapa</b><u>›</u></a><a href="#s03"><i>03</i><b>Qué funcionó mejor</b><u>›</u></a><a href="#s04"><i>04</i><b>Qué funcionó peor</b><u>›</u></a><a href="#s05"><i>05</i><b>Quién está del otro lado</b><u>›</u></a><a href="#s06"><i>06</i><b>La fuga: ocho palabras en un año</b><u>›</u></a><a href="#s07"><i>07</i><b>A quién le hablamos</b><u>›</u></a><a href="#s08"><i>08</i><b>Por qué hace falta pauta</b><u>›</u></a><a href="#s09"><i>09</i><b>Qué incluye el plan actual y qué no</b><u>›</u></a><a href="#s10"><i>10</i><b>La página web: el activo dormido</b><u>›</u></a><a href="#s11"><i>11</i><b>Identidad: el logo y la foto de perfil</b><u>›</u></a><a href="#s12"><i>12</i><b>Historias destacadas</b><u>›</u></a><a href="#s13"><i>13</i><b>Plan: diciembre, enero y febrero</b><u>›</u></a><a href="#s14"><i>14</i><b>Automatización: una palabra, un menú</b><u>›</u></a><a href="#s15"><i>15</i><b>Amplificación: de contenido a modelo de negocio</b><u>›</u></a><a href="#s16"><i>16</i><b>Qué necesitamos de Recovery</b><u>›</u></a></nav>
   </div>
 
 <div class="secwrap">
@@ -813,9 +830,9 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 
     <h4 style="margin-top:26px">Tres cosas que necesitamos de Recovery para dimensionar esto</h4>
     <div class="g3">
-      <div class="box acc"><h4>1 · El catálogo completo de servicios</h4>
+      <div class="box acc"><h4>1 · El catálogo de servicios <span style="color:var(--txt3);font-weight:400">(resuelto)</span></h4>
         <p style="font-size:14px;margin:0 0 10px">Qué trata Recovery exactamente, por área, con el nombre que usan internamente y el precio o el rango.</p>
-        <ul><li>Sin eso no se puede construir la destacada de Servicios ni segmentar la pauta por padecimiento.</li>
+        <ul><li><b>Ya lo tienen publicado en su web</b>: 16 servicios en 6 áreas. De ahí salen la destacada de Servicios y la segmentación de la pauta.</li>
         <li>Tampoco se puede saber qué servicio conviene empujar: hoy se comunica lo que está en agenda, no lo que más margen o más capacidad libre tiene.</li></ul></div>
       <div class="box acc"><h4>2 · Cómo funciona el agendamiento hoy</h4>
         <p style="font-size:14px;margin:0 0 10px">Quién agenda, en qué herramienta, y si queda registro de por dónde llegó el paciente.</p>
@@ -944,7 +961,126 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 </details>
 
 <details id="s10">
-  <summary><span class="n">10</span><div><h2>Identidad: el logo y la foto de perfil</h2><p class="d">La cuenta usa todavía el logo del evento de los 10 años. Eso fecha el perfil.</p></div><span class="ch"></span></summary>
+  <summary><span class="n">10</span><div><h2>La página web: el activo dormido</h2><p class="d">Tienen un buen sitio con 14 páginas de servicio publicadas y vacías.</p></div><span class="ch"></span></summary>
+  <div class="body">
+    <div class="box acc">
+      <h4>Lo primero, porque resta todos los días</h4>
+      <p>Recovery tiene <b>14 páginas de servicio publicadas y sin contenido</b>. Suelo pélvico, incontinencia urinaria, bruxismo, vértigo, fisioterapia deportiva, análisis de carrera, talleres… las catorce dicen «Contenido en desarrollo» y pesan unos 400 caracteres cada una.</p>
+      <p style="margin-top:10px;margin-bottom:0">Una de ellas incluso muestra al público el texto interno de maquetación: <i>«Espacio para imagen del servicio — Archivo: public/images/servicios/suelo-pelvico.webp»</i>.</p>
+    </div>
+
+    <figure class="evid">
+      <img src="assets/web-pagina-vacia.jpg" alt="Página de suelo pélvico del sitio de Recovery mostrando el aviso Contenido en desarrollo">
+      <figcaption><b>recovery-therapy.com/servicios/suelo-pelvico/</b> — así se ve hoy la página a la que llega alguien que busca «suelo pélvico Cuenca» en Google.</figcaption>
+    </figure>
+
+    <div class="g3">
+      <div class="box acc"><h4>Por qué esto duele</h4>
+        <ul><li><b>Google tiene 14 páginas de contenido delgado</b> indexadas bajo el dominio. Eso penaliza al sitio entero, no solo a esas páginas.</li>
+        <li>Quien llega desde una búsqueda <b>se va</b>, porque no encuentra nada.</li>
+        <li>Y es exactamente Mónica, que ya cree que «no hay buenas opciones de tratamiento en Cuenca». <b>La página se lo confirma.</b></li></ul></div>
+      <div class="box ok"><h4>Por qué se arregla rápido</h4>
+        <ul><li><b>El contenido base ya existe en el inicio del sitio</b>: los 16 servicios están ahí con su descripción.</li>
+        <li>Llenar esas páginas es ampliar lo que ya está escrito, no redactar desde cero.</li>
+        <li>Las URLs ya son las correctas: <code style="font-family:var(--mono);font-size:12px">/servicios/incontinencia-urinaria/</code> es justo lo que un buscador necesita.</li></ul></div>
+      <div class="box"><h4>Y por qué importa más que antes</h4>
+        <ul><li>Cada vez más gente no busca en Google: le pregunta a una IA cuál es su problema y a quién acudir.</li>
+        <li>Esos motores citan <b>contenido estructurado y específico</b>, que es justo lo que esas páginas deberían tener.</li>
+        <li>Hoy el sitio tiene <b>un solo bloque de datos estructurados</b> en total.</li></ul></div>
+    </div>
+
+    <h4 style="margin-top:28px">Qué hay montado hoy</h4>
+    <dl class="ficha-tec">
+      <div><dt>El sitio</dt><dd>Astro v7<small>Moderno, rápido y muy bueno para buscadores. No hay que rehacerlo.</small></dd></div>
+      <div><dt>Alojamiento</dt><dd>Hostinger<small>Servidor compartido con los archivos ya compilados.</small></dd></div>
+      <div><dt>Dominio y DNS</dt><dd>GoDaddy<small>El dominio es y seguirá siendo de Recovery.</small></dd></div>
+      <div><dt>Agendamiento</dt><dd>Enlace a WhatsApp<small>Sin sistema propio y sin registro de por dónde llegó el paciente.</small></dd></div>
+    </dl>
+    <p><b>La conclusión es que el sitio no se rehace.</b> Está bien construido y las URLs ya están bien pensadas. Lo que falta es llenarlo, mantenerlo vivo y conectarlo con el resto del trabajo.</p>
+
+    <h4 style="margin-top:28px">Qué significa tomar el control</h4>
+    <p>Nada complicado. Son tres accesos que hay que pedir:</p>
+    <ol class="pasos">
+      <li><b>El código del proyecto.</b> La carpeta de Astro o el enlace al repositorio. Es lo único verdaderamente importante: es la diferencia entre tener los planos del edificio o solo las fotos.</li>
+      <li><b>El acceso al alojamiento</b>, para poder publicar los cambios.</li>
+      <li><b>El acceso al dominio</b>, no para quedárnoslo —es de Recovery siempre— sino para poder apuntarlo si el sitio se mueve.</li>
+    </ol>
+    <p style="margin-top:14px">Con eso, la recomendación es pasar el sitio a <b>GitHub con publicación automática</b>: cada cambio se publica solo al guardarlo. <b>Es exactamente el mismo sistema con el que ya funcionan las guías de Recovery</b>, así que el sitio y las guías quedarían en un solo lugar — que es justamente lo que queremos para que las guías vivan bajo su dominio.</p>
+
+    <div class="box acc" style="margin-top:18px">
+      <h4>Lo que define el precio del arranque</h4>
+      <p><b>Si entregan el código del proyecto:</b> es continuación, no reconstrucción. El arranque cubre bien el trabajo.</p>
+      <p style="margin-top:9px"><b>Si solo existen los archivos ya compilados:</b> se puede trabajar igual, más despacio, o reconstruir el proyecto desde las páginas que ya existen.</p>
+      <p style="margin-top:9px;margin-bottom:0"><b>Si no hay acceso a nada:</b> ahí sí hay que rehacer el sitio y se cotiza aparte, con su número real. <b>Por eso el arranque se ofrece sujeto a que entreguen el proyecto.</b></p>
+    </div>
+
+    <h4 style="margin-top:28px">La propuesta</h4>
+    <div class="planes">
+      <div class="plan act"><div class="bar"></div><div class="bd">
+        <span class="sello dic">Pago único</span>
+        <span class="et">Arranque</span>
+        <div class="pr">$350<small>una sola vez · sujeto a que entreguen el proyecto</small></div>
+        <h5>Incluye</h5>
+        <ul>
+          <li><b>Llenar las 14 páginas de servicio</b> partiendo del contenido que ya existe</li>
+          <li>Tomar el control y pasar a publicación automática</li>
+          <li>Auditoría técnica de buscadores</li>
+          <li>Datos estructurados de clínica y servicios, para Google y para los buscadores de IA</li>
+          <li>Analítica y Search Console conectados</li>
+          <li>Arquitectura de <code style="font-family:var(--mono);font-size:12px">/guias/</code> montada</li>
+        </ul>
+      </div></div>
+
+      <div class="plan"><div class="bar"></div><div class="bd">
+        <span class="et">Nivel 1 · mantener</span>
+        <div class="pr">$50<small>mensuales + IVA</small></div>
+        <h5>La casa de las guías</h5>
+        <ul>
+          <li>Las guías que ya produce el plan de contenido <b>pasan a vivir en su dominio</b></li>
+          <li>Publicación y mantenimiento del sitio al día</li>
+          <li>Sin producción nueva: aloja y sostiene lo que el plan mensual ya genera</li>
+        </ul>
+        <div class="no"><h5>Para quién</h5><ul><li>Si no quieren tocar nada más que sumar guías</li></ul></div>
+      </div></div>
+
+      <div class="plan"><div class="bar"></div><div class="bd">
+        <span class="et">Nivel 2 · posicionar</span>
+        <div class="pr">$150<small>mensuales + IVA · incluye el nivel 1</small></div>
+        <h5>Contenido que posiciona</h5>
+        <ul>
+          <li><b>Artículos de fondo por padecimiento</b></li>
+          <li>Ampliación continua de las páginas de servicio</li>
+          <li><b>Preguntas frecuentes estructuradas</b> para que los buscadores de IA las citen</li>
+          <li>Landing pages de campaña cuando haga falta</li>
+        </ul>
+        <div class="no"><h5>Ojo</h5><ul><li>Esto <b>no duplica</b> el plan de redes: aquel produce vertical y corto para Instagram; este produce largo y estructurado para buscadores</li></ul></div>
+      </div></div>
+
+      <div class="plan"><div class="bar"></div><div class="bd">
+        <span class="sello ene">Módulo · se suma a cualquiera</span>
+        <span class="et">Agendamiento</span>
+        <div class="pr">$200<small>mensuales + IVA</small></div>
+        <h5>Agendamiento y medición</h5>
+        <ul>
+          <li>Sistema de citas <b>en su propia web</b>, conectado a Google Calendar</li>
+          <li>Todo queda registrado en una sola fuente de datos</li>
+          <li><b>Registro del origen de cada cita</b></li>
+        </ul>
+        <div class="no"><h5>Por qué importa tanto</h5><ul><li>Es la única forma de responder <b>«¿cuántos pacientes nuevos trajo el marketing?»</b>. Sin esto, la pauta se mide en vistas y no en pacientes.</li></ul></div>
+      </div></div>
+    </div>
+
+    <div class="box ok" style="margin-top:20px;border-left:3px solid transparent;border-image:var(--grad) 1">
+      <h4>Por qué estos valores funcionan en nuestro modelo</h4>
+      <p>En el desarrollo web tradicional, lo caro no es la página: <b>es el ida y vuelta</b>. Cambiar un texto, mover un botón o agregar una sección entra en cola, se cotiza, se agenda y se entrega días o semanas después. Por eso casi todas las webs de clínicas terminan congeladas el día que se lanzan.</p>
+      <p style="margin-top:10px"><b>Nuestro modelo de desarrollo asistido por inteligencia artificial cambia esa economía.</b> Un texto, un botón, una página de servicio, una landing de campaña o una guía nueva se resuelven <b>el mismo día</b>, con precisión y sin perder coherencia con el resto del sitio. Eso es lo que permite ofrecer mantenimiento vivo a $50 y producción continua a $150: no estamos cobrando por horas de cola, estamos cobrando por resultado.</p>
+      <p style="margin-top:10px;margin-bottom:0">Lo que sí toma más tiempo —y conviene decirlo— son las <b>integraciones con terceros</b>, como el sistema de agendamiento con Google Calendar. Eso no es un cambio de texto: es conectar dos sistemas y probarlos. Por eso va como módulo aparte.</p>
+    </div>
+  </div>
+</details>
+
+<details id="s11">
+  <summary><span class="n">11</span><div><h2>Identidad: el logo y la foto de perfil</h2><p class="d">La cuenta usa todavía el logo del evento de los 10 años. Eso fecha el perfil.</p></div><span class="ch"></span></summary>
   <div class="body">
     <p>El perfil comunica hoy «esto pasó», no «esto es». Propuesta: volver al isotipo oficial, el mismo del sitio web y de los uniformes.</p>
     <div class="pf2">
@@ -964,8 +1100,8 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </details>
 
-<details id="s11">
-  <summary><span class="n">11</span><div><h2>Historias destacadas</h2><p class="d">Hoy ninguna dice qué servicios existen. Ocho destacadas, con las portadas ya hechas.</p></div><span class="ch"></span></summary>
+<details id="s12">
+  <summary><span class="n">12</span><div><h2>Historias destacadas</h2><p class="d">Hoy ninguna dice qué servicios existen. Ocho destacadas, con las portadas ya hechas.</p></div><span class="ch"></span></summary>
   <div class="body">
     <p>Las destacadas actuales son todas de eventos: Rehabilitación, 2026, Eventos 2025, Olímpicos, Kms atletar, Fiesta 10/10, Festival 10/10. <b>Ninguna responde qué trata Recovery, con qué tecnología, quién atiende ni cómo agendar.</b> Estas ocho van en este orden exacto: el perfil se lee de izquierda a derecha y las tres primeras son las que más se tocan.</p>
     <div class="hl">
@@ -993,8 +1129,8 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </details>
 
-<details id="s12">
-  <summary><span class="n">12</span><div><h2>Plan: diciembre, enero y febrero</h2><p class="d">El servicio se reactiva en diciembre. El trimestre se construye hacia el aniversario de febrero.</p></div><span class="ch"></span></summary>
+<details id="s13">
+  <summary><span class="n">13</span><div><h2>Plan: diciembre, enero y febrero</h2><p class="d">El servicio se reactiva en diciembre. El trimestre se construye hacia el aniversario de febrero.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="box acc">
       <h4>El punto de partida</h4>
@@ -1070,8 +1206,8 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </details>
 
-<details id="s13">
-  <summary><span class="n">13</span><div><h2>Automatización: una palabra, un menú</h2><p class="d">El arreglo del filtro 5. En vez de una palabra nueva por campaña, una permanente que abre un menú.</p></div><span class="ch"></span></summary>
+<details id="s14">
+  <summary><span class="n">14</span><div><h2>Automatización: una palabra, un menú</h2><p class="d">El arreglo del filtro 5. En vez de una palabra nueva por campaña, una permanente que abre un menú.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="g2">
       <div class="box"><h4>Cómo queda el flujo</h4>
@@ -1101,8 +1237,8 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </details>
 
-<details id="s14">
-  <summary><span class="n">14</span><div><h2>Amplificación: de contenido a modelo de negocio</h2><p class="d">Cuatro oportunidades que no dependen de publicar más.</p></div><span class="ch"></span></summary>
+<details id="s15">
+  <summary><span class="n">15</span><div><h2>Amplificación: de contenido a modelo de negocio</h2><p class="d">Cuatro oportunidades que no dependen de publicar más.</p></div><span class="ch"></span></summary>
   <div class="body">
     <p>La guía del tendón demostró algo: hoy producir una guía web completa —con videos, ritmo y temporizador— cuesta prácticamente lo mismo que producir un PDF, y vale muchísimo más.</p>
     <div class="g2">
@@ -1132,8 +1268,8 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </details>
 
-<details id="s15">
-  <summary><span class="n">15</span><div><h2>Qué necesitamos de Recovery</h2><p class="d">Nueve definiciones. Las primeras determinan si el trimestre se puede planificar o no.</p></div><span class="ch"></span></summary>
+<details id="s16">
+  <summary><span class="n">16</span><div><h2>Qué necesitamos de Recovery</h2><p class="d">Nueve definiciones. Las primeras determinan si el trimestre se puede planificar o no.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="cal">
       <div class="crow hd"><span>Para cuándo</span><span>Quién</span><span>Definición</span></div>
@@ -1146,7 +1282,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
       <div class="crow"><span class="d">1.ª sem. dic<span>bloquea la medición</span></span><span class="fm"><b>Recovery</b></span>
         <div><h5>Cómo funciona el agendamiento y cómo marcamos el origen</h5><p>Quién agenda, en qué herramienta, y dónde podría quedar registrado de dónde llegó cada paciente nuevo. Sin esto no existe la métrica de pacientes nuevos atribuidos a redes.</p></div></div>
       <div class="crow"><span class="d">1.ª sem. dic<span>alta prioridad</span></span><span class="fm"><b>Recovery</b></span>
-        <div><h5>El catálogo completo de servicios</h5><p>Qué trata Recovery por área, con el nombre interno y el rango de precio. Alimenta la destacada de Servicios, la segmentación de la pauta y la decisión de qué empujar.</p></div></div>
+        <div><h5>Los accesos de la página web</h5><p>El código del proyecto, el alojamiento y el dominio. El catálogo de servicios <b>ya no hace falta pedirlo</b>: están los 16 publicados en su propio sitio. Lo que falta son las 14 páginas vacías, que es justo lo que resuelve la sección 10.</p></div></div>
       <div class="crow"><span class="d">Antes del 15 dic<span>condiciona febrero</span></span><span class="fm"><b>Recovery</b></span>
         <div><h5>¿Hay evento de aniversario el 1 de febrero?</h5><p>Son 11 años. El Sport Fest de 2026 produjo el mejor mes del año con diferencia. Si va, la expectativa arranca en enero y hay que empezar a construirla en diciembre. Si no va, febrero se queda sin motor.</p></div></div>
       <div class="crow"><span class="d">1 – 5 dic<span>alto retorno</span></span><span class="fm"><b>Recovery<br>+ Pro Motion</b></span>
