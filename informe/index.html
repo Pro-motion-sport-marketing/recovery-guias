@@ -1384,7 +1384,8 @@ tb.appendChild(tr);});})();
   if(location.hash){
     const d=document.querySelector(location.hash);
     if(d&&d.tagName==="DETAILS"){d.open=true;d.querySelectorAll("[data-posts]").forEach(buildPosts);
-      setTimeout(()=>d.scrollIntoView({block:"start"}),60);}
+      const ir=()=>d.scrollIntoView({block:"start"});
+      setTimeout(ir,80); window.addEventListener("load",()=>setTimeout(ir,120),{once:true});}
   }
 })();
 
