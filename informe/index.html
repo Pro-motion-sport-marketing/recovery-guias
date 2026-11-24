@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&subset=latin,latin-ext&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap">
 <style>
 :root{
-  --negro:#0A0A0B; --carbon:#131315; --carbon2:#1B1B1E; --borde:rgba(255,255,255,.09);
+  --negro:#0A0A0B; --carbon:#131315; --carbon2:#1B1B1E; --borde:var(--borde);
   --blanco:#FFFFFF; --txt:#EFECE6; --txt2:#A29E97; --txt3:#6E6A64;
   --rojo:#E41B2B; --rojo-cl:#F2555F; --ambar:#FFD102; --naranja:#F4782A; --vino:#8B2828;
   --azul:#4A93CE;
@@ -18,6 +18,22 @@
   --body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   --sh:0 2px 4px rgba(0,0,0,.4),0 18px 44px -22px rgba(0,0,0,.95);
+  --vel:rgba(255,255,255,.10);   /* velos sobre fondo */
+  --vel2:var(--vel2);
+  --gl:var(--gl);    /* rejilla de graficos */
+  --ax:var(--ax);    /* ejes */
+  --guia:rgba(255,255,255,.35);  /* linea de mediana */
+  --flojo:rgba(242,85,95,.42);   /* barras atenuadas */
+  --anota:#FFD102;               /* anotaciones del grafico */
+}
+:root[data-theme="light"]{
+  --negro:#FBFAF7; --carbon:#FFFFFF; --carbon2:#F1EEE8; --borde:rgba(23,23,26,.14);
+  --blanco:#17171A; --txt:#2B2926; --txt2:#5E5A54; --txt3:#8B867E;
+  --rojo:#C8102E; --rojo-cl:#C8102E; --azul:#1E6BA8;
+  --sh:0 1px 2px rgba(23,23,26,.05),0 14px 34px -20px rgba(23,23,26,.28);
+  --vel:rgba(23,23,26,.07); --vel2:rgba(23,23,26,.10);
+  --gl:rgba(23,23,26,.09); --ax:rgba(23,23,26,.24); --guia:rgba(23,23,26,.38);
+  --flojo:rgba(200,16,46,.30); --anota:#9A6B00;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -30,18 +46,18 @@ img{max-width:100%}
 .gradrule{height:4px;border-radius:99px;background:var(--grad);border:0;margin:0}
 
 /* ============ HERO ============ */
-.hero{position:relative;min-height:min(86vh,720px);display:flex;align-items:flex-end;overflow:hidden;
+.hero{color-scheme:dark;position:relative;min-height:min(86vh,720px);display:flex;align-items:flex-end;overflow:hidden;
   margin-bottom:0;background:var(--negro)}
 .hero .ph{position:absolute;inset:0}
 .hero .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;filter:grayscale(.35) contrast(1.08) brightness(.72)}
 .hero .ph::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(10,10,11,.72) 0%,rgba(10,10,11,.28) 32%,rgba(10,10,11,.92) 76%,var(--negro) 100%)}
+  background:linear-gradient(180deg,rgba(10,10,11,.72) 0%,rgba(10,10,11,.28) 32%,rgba(10,10,11,.94) 76%,#0A0A0B 100%)}
 .hero .in{position:relative;width:100%;max-width:1120px;margin:0 auto;padding:40px 20px 54px}
 .hero .top{display:flex;align-items:center;gap:13px;margin-bottom:auto;padding-bottom:120px}
 .hero .top img{width:58px;height:auto}
 .hero .top span{font-family:var(--mono);font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:rgba(255,255,255,.78)}
 h1{font-family:var(--display);font-size:clamp(40px,8.2vw,104px);line-height:.98;margin:0 0 20px;
-  text-transform:uppercase;color:var(--blanco);letter-spacing:-.018em;text-wrap:balance}
+  text-transform:uppercase;color:#fff;letter-spacing:-.018em;text-wrap:balance}
 h1 span{display:block;padding-block:.02em}
 h1 .l{font-stretch:74%;font-weight:300}
 h1 .b{font-stretch:70%;font-weight:900}
@@ -74,7 +90,7 @@ h1 .g{font-stretch:70%;font-weight:900;
 .card{background:var(--carbon);border:1px solid var(--borde);border-radius:3px;padding:0;overflow:hidden;
   box-shadow:var(--sh);display:flex;flex-direction:column}
 .card .bar{height:4px;background:var(--grad)}
-.card .bar.mute{background:rgba(255,255,255,.14)}
+.card .bar.mute{background:var(--vel2)}
 .card .bar.rojo{background:var(--rojo)}
 .card .bd{padding:20px 22px 22px;flex:1;display:flex;flex-direction:column}
 .card .et{font-family:var(--mono);font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--txt3)}
@@ -154,10 +170,12 @@ figcaption{font-size:13px;color:var(--txt2);margin-top:12px;border-top:1px solid
 figcaption b{color:var(--txt)}
 .cw{overflow-x:auto}
 svg text{font-family:var(--mono);font-size:11px;fill:var(--txt2)}
+svg .gl{stroke:var(--gl)}
+svg .ax{stroke:var(--ax)}
 svg text.val{fill:var(--blanco);font-weight:600}
 svg text.lbl{font-family:var(--body);font-size:12px;fill:var(--txt2)}
-svg .gl{stroke:rgba(255,255,255,.08);stroke-width:1}
-svg .ax{stroke:rgba(255,255,255,.18);stroke-width:1}
+svg .gl{stroke:var(--gl);stroke-width:1}
+svg .ax{stroke:var(--ax);stroke-width:1}
 g.row:hover rect,g.row:hover circle{opacity:.72}
 .leg{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--txt2);margin:0 0 12px}
 .leg i{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:-1px;margin-right:6px}
@@ -174,10 +192,21 @@ tr.top td:first-child{box-shadow:inset 3px 0 0 var(--rojo)}
 .chip{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;
   border:1px solid var(--borde);color:var(--txt3)}
 
+/* indice */
+.indice{margin-top:34px;padding-top:26px;border-top:1px solid var(--borde)}
+.indice nav{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:1px;background:var(--borde);
+  border:1px solid var(--borde)}
+.indice a{background:var(--carbon);padding:12px 15px;text-decoration:none;color:var(--txt2);font-size:13.5px;
+  display:flex;gap:11px;align-items:baseline;transition:background .13s,color .13s}
+.indice a:hover,.indice a:focus-visible{background:var(--carbon2);color:var(--blanco)}
+.indice a:focus-visible{outline:2px solid var(--rojo);outline-offset:-2px}
+.indice a i{font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--txt3);flex:none}
+.indice a:hover i{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
 /* planes */
 .planes{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:16px;margin:6px 0 4px}
 .plan{background:var(--carbon);border:1px solid var(--borde);border-radius:3px;overflow:hidden;display:flex;flex-direction:column}
-.plan .bar{height:4px;background:rgba(255,255,255,.14)}
+.plan .bar{height:4px;background:var(--vel2)}
 .plan.act .bar{background:var(--grad)}
 .plan.act{box-shadow:var(--sh)}
 .plan .bd{padding:20px 22px 22px;flex:1;display:flex;flex-direction:column}
@@ -201,7 +230,7 @@ tr.top td:first-child{box-shadow:inset 3px 0 0 var(--rojo)}
   cursor:pointer;display:flex;align-items:center;gap:7px;transition:all .14s;font-family:var(--mono)}
 .mch:hover{border-color:var(--txt3);color:var(--txt)}
 .mch:focus-visible{outline:2px solid var(--rojo);outline-offset:2px}
-.mch i{font-style:normal;font-size:9.5px;background:rgba(255,255,255,.1);padding:2px 6px;border-radius:2px;color:var(--txt2)}
+.mch i{font-style:normal;font-size:9.5px;background:var(--vel);padding:2px 6px;border-radius:2px;color:var(--txt2)}
 .mch[aria-pressed="true"]{background:var(--grad);border-color:transparent;color:#17171A}
 .mch[aria-pressed="true"] i{background:rgba(23,23,26,.22);color:#17171A}
 .mch.cero{opacity:.55}
@@ -302,9 +331,27 @@ svg g.bar rect.sel{stroke:#fff;stroke-width:2}
 
 footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);display:flex;justify-content:space-between;
   gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--txt3)}
+
+/* conmutador de tema */
+.tema{position:fixed;top:14px;right:14px;z-index:60;display:flex;gap:2px;padding:3px;
+  background:var(--carbon);border:1px solid var(--borde);border-radius:99px;box-shadow:var(--sh)}
+.tema button{border:0;background:none;cursor:pointer;width:34px;height:30px;border-radius:99px;
+  display:grid;place-items:center;color:var(--txt3);transition:background .14s,color .14s}
+.tema button:hover{color:var(--txt)}
+.tema button[aria-pressed="true"]{background:var(--grad);color:#17171A}
+.tema button:focus-visible{outline:2px solid var(--rojo);outline-offset:2px}
+.tema svg{width:16px;height:16px;display:block}
+@media print{.tema{display:none}}
+@media(max-width:620px){.tema{top:auto;bottom:12px;right:12px}}
 </style>
 </head>
 <body>
+<div class="tema" role="group" aria-label="Tema del informe">
+  <button type="button" id="t-osc" aria-pressed="true" title="Fondo oscuro" aria-label="Fondo oscuro">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5A8.6 8.6 0 0 1 9.5 3.5a8.6 8.6 0 1 0 11 11Z"/></svg></button>
+  <button type="button" id="t-cla" aria-pressed="false" title="Fondo claro" aria-label="Fondo claro">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg></button>
+</div>
 
 <div class="hero">
   <div class="ph"><img src="assets/foto-expertas.jpg" alt="Equipo de fisioterapeutas de Recovery con el uniforme de la marca"></div>
@@ -366,9 +413,15 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 </div>
 
 <!-- ============ SECCIONES ============ -->
+
+  <div class="indice">
+    <p class="mono" style="display:block;margin:0 0 11px">Índice · toca una sección para abrirla</p>
+    <nav aria-label="Secciones del informe"><a href="#s01"><i>01</i>El año, mes a mes</a><a href="#s02"><i>02</i>El embudo: dónde se tapa</a><a href="#s03"><i>03</i>Qué funcionó mejor</a><a href="#s04"><i>04</i>Qué funcionó peor</a><a href="#s05"><i>05</i>Quién está del otro lado</a><a href="#s06"><i>06</i>La fuga: siete palabras en cuatro meses</a><a href="#s07"><i>07</i>A quién le hablamos</a><a href="#s08"><i>08</i>Por qué hace falta pauta</a><a href="#s09"><i>09</i>Qué incluye el plan actual y qué no</a><a href="#s10"><i>10</i>Identidad: el logo y la foto de perfil</a><a href="#s11"><i>11</i>Historias destacadas</a><a href="#s12"><i>12</i>Plan: diciembre, enero y febrero</a><a href="#s13"><i>13</i>Automatización: una palabra, un menú</a><a href="#s14"><i>14</i>Amplificación: de contenido a modelo de negocio</a><a href="#s15"><i>15</i>Qué necesitamos de Recovery</a></nav>
+  </div>
+
 <div class="secwrap">
 
-<details open>
+<details id="s01" open>
   <summary><span class="n">01</span><div><h2>El año, mes a mes</h2><p class="d">Dónde estuvieron los picos, dónde los silencios y qué los causó.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="box acc" style="margin-bottom:18px">
@@ -425,7 +478,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </details>
 
-<details>
+<details id="s02">
   <summary><span class="n">02</span><div><h2>El embudo: dónde se tapa</h2><p class="d">Los 5 filtros, en orden. Alcance, retención y valor pasan. Conversión e intención están tapados.</p></div><span class="ch"></span></summary>
   <div class="body">
 <div class="filtros">
@@ -459,7 +512,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </details>
 
-<details>
+<details id="s03">
   <summary><span class="n">03</span><div><h2>Qué funcionó mejor</h2><p class="d">Las 6 mejores piezas del año y por qué. Cinco de las seis pertenecen a un evento.</p></div><span class="ch"></span></summary>
   <div class="body">
     <figure>
@@ -503,7 +556,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </details>
 
-<details>
+<details id="s04">
   <summary><span class="n">04</span><div><h2>Qué funcionó peor</h2><p class="d">Cuatro problemas concretos, todos corregibles sin producir más contenido.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="g2">
@@ -547,7 +600,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </details>
 
-<details>
+<details id="s05">
   <summary><span class="n">05</span><div><h2>Quién está del otro lado</h2><p class="d">Local, adulta y equilibrada entre hombres y mujeres. La mitad no vive en Cuenca.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="g2">
@@ -572,7 +625,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </details>
 
-<details>
+<details id="s06">
   <summary><span class="n">06</span><div><h2>La fuga: siete palabras en cuatro meses</h2><p class="d">El hallazgo más caro del informe, y el más fácil de arreglar.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="box acc">
@@ -594,7 +647,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </details>
 
-<details>
+<details id="s07">
   <summary><span class="n">07</span><div><h2>A quién le hablamos</h2><p class="d">Hay un solo cliente objetivo definido, y solo el 23 % del contenido le habla a ella.</p></div><span class="ch"></span></summary>
   <div class="body">
     <p>Pro Motion hizo un primer ejercicio de design thinking con el equipo de Recovery y de ahí salió un perfil. Es el <b>único</b> que existe hoy. Vale la pena mirarlo contra los datos del año, porque confirma unas cosas y desmiente otras.</p>
@@ -692,7 +745,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </details>
 
-<details>
+<details id="s08">
   <summary><span class="n">08</span><div><h2>Por qué hace falta pauta</h2><p class="d">El año fue 100 % orgánico. Con 7 piezas al mes, eso no alcanza para adquirir audiencia ni pacientes.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="box acc">
@@ -787,7 +840,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </details>
 
-<details>
+<details id="s09">
   <summary><span class="n">09</span><div><h2>Qué incluye el plan actual y qué no</h2><p class="d">Recovery paga un plan mínimo viable. Mucho de lo que este informe recomienda está fuera de él.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="box acc">
@@ -869,7 +922,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </details>
 
-<details>
+<details id="s10">
   <summary><span class="n">10</span><div><h2>Identidad: el logo y la foto de perfil</h2><p class="d">La cuenta usa todavía el logo del evento de los 10 años. Eso fecha el perfil.</p></div><span class="ch"></span></summary>
   <div class="body">
     <p>El perfil comunica hoy «esto pasó», no «esto es». Propuesta: volver al isotipo oficial, el mismo del sitio web y de los uniformes.</p>
@@ -890,7 +943,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </details>
 
-<details>
+<details id="s11">
   <summary><span class="n">11</span><div><h2>Historias destacadas</h2><p class="d">Hoy ninguna dice qué servicios existen. Ocho destacadas, con las portadas ya hechas.</p></div><span class="ch"></span></summary>
   <div class="body">
     <p>Las destacadas actuales son todas de eventos: Rehabilitación, 2026, Eventos 2025, Olímpicos, Kms atletar, Fiesta 10/10, Festival 10/10. <b>Ninguna responde qué trata Recovery, con qué tecnología, quién atiende ni cómo agendar.</b> Estas ocho van en este orden exacto: el perfil se lee de izquierda a derecha y las tres primeras son las que más se tocan.</p>
@@ -919,7 +972,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </details>
 
-<details>
+<details id="s12">
   <summary><span class="n">12</span><div><h2>Plan: diciembre, enero y febrero</h2><p class="d">El servicio se reactiva en diciembre. El trimestre se construye hacia el aniversario de febrero.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="box acc">
@@ -996,7 +1049,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </details>
 
-<details>
+<details id="s13">
   <summary><span class="n">13</span><div><h2>Automatización: una palabra, un menú</h2><p class="d">El arreglo del filtro 5. En vez de una palabra nueva por campaña, una permanente que abre un menú.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="g2">
@@ -1027,7 +1080,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </details>
 
-<details>
+<details id="s14">
   <summary><span class="n">14</span><div><h2>Amplificación: de contenido a modelo de negocio</h2><p class="d">Cuatro oportunidades que no dependen de publicar más.</p></div><span class="ch"></span></summary>
   <div class="body">
     <p>La guía del tendón demostró algo: hoy producir una guía web completa —con videos, ritmo y temporizador— cuesta prácticamente lo mismo que producir un PDF, y vale muchísimo más.</p>
@@ -1058,7 +1111,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
   </div>
 </details>
 
-<details>
+<details id="s15">
   <summary><span class="n">15</span><div><h2>Qué necesitamos de Recovery</h2><p class="d">Nueve definiciones. Las primeras determinan si el trimestre se puede planificar o no.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="cal">
@@ -1191,16 +1244,16 @@ d.appendChild(lg);g.appendChild(d);
 g.appendChild(el("line",{x1:L-8,y1:B,x2:R,y2:B,class:"ax"}));
 D.forEach(([m,v,c],i)=>{const bx=L+i*((R-L)/D.length)+8,h=B-y(v),row=el("g",{class:"row bar"});
  row.addEventListener("click",()=>{pintaMes(i);document.getElementById("mhead").scrollIntoView({behavior:"smooth",block:"center"});});
- row.appendChild(el("rect",{x:bx,y:y(v),width:bw,height:h,rx:4,fill:v<600?"rgba(242,85,95,.42)":"url(#ga)"}));
+ row.appendChild(el("rect",{x:bx,y:y(v),width:bw,height:h,rx:4,fill:v<600?"var(--flojo)":"url(#ga)"}));
  row.appendChild(tx(bx+bw/2,y(v)-9,v.toLocaleString("es"),{"text-anchor":"middle",class:"val","font-size":11}));
- row.appendChild(tx(bx+bw/2,B+17,m,{"text-anchor":"middle","font-size":10.5,fill:"#A29E97"}));
+ row.appendChild(tx(bx+bw/2,B+17,m,{"text-anchor":"middle","font-size":10.5,fill:"var(--txt2)"}));
  row.appendChild(tx(bx+bw/2,B+32,c===0?"sin piezas":c+(c===1?" pieza":" piezas"),{"text-anchor":"middle","font-size":9,fill:c===0?"#E8414C":"#6E6A64"}));
  const t=el("title");t.textContent=`${m}: ${v.toLocaleString("es")} vistas/día · ${c} piezas publicadas`;row.appendChild(t);
  g.appendChild(row);});
 [["Sport Fest",1,2912],["Mundial de Paula",3,1989],["Taller",9,705]].forEach(([n,i,v])=>{
  const bx=L+i*((R-L)/D.length)+8+bw/2;
- g.appendChild(tx(bx,y(v)-26,n,{"text-anchor":"middle","font-size":10,fill:"#FFD102"}));});
-g.appendChild(tx(L-16,T-10,"vistas / día",{"font-size":9.5,fill:"#6E6A64","text-anchor":"end"}));})();
+ g.appendChild(tx(bx,y(v)-26,n,{"text-anchor":"middle","font-size":10,fill:"var(--anota)"}));});
+g.appendChild(tx(L-16,T-10,"vistas / día",{"font-size":9.5,fill:"var(--txt3)","text-anchor":"end"}));})();
 
 /* ranking */
 (()=>{const g=document.getElementById("rank");if(!g)return;
@@ -1209,13 +1262,13 @@ g.appendChild(gradDef("gr",L,R));
 [0,1000,2000,3000].forEach(v=>{g.appendChild(el("line",{x1:x(v),y1:T-6,x2:x(v),y2:T+PIEZAS.length*bh-8,class:"gl"}));
  g.appendChild(tx(x(v),T+PIEZAS.length*bh+10,v.toLocaleString("es"),{"text-anchor":"middle","font-size":10}));});
 const m=x(1239);
-g.appendChild(el("line",{x1:m,y1:T-6,x2:m,y2:T+PIEZAS.length*bh-8,stroke:"rgba(255,255,255,.35)","stroke-width":1,"stroke-dasharray":"4 3"}));
-g.appendChild(tx(m+6,T+2,"mediana 1.239",{"font-size":9.5,fill:"#6E6A64"}));
+g.appendChild(el("line",{x1:m,y1:T-6,x2:m,y2:T+PIEZAS.length*bh-8,stroke:"var(--guia)","stroke-width":1,"stroke-dasharray":"4 3"}));
+g.appendChild(tx(m+6,T+2,"mediana 1.239",{"font-size":9.5,fill:"var(--txt3)"}));
 PIEZAS.forEach((p,i)=>{const y=T+i*bh,row=el("g",{class:"row"});
  row.appendChild(tx(L-10,y+12,p.n.length>36?p.n.slice(0,35)+"…":p.n,{"text-anchor":"end",class:"lbl","font-size":11.5}));
- row.appendChild(tx(L-10,y+24,p.f+" · "+p.t,{"text-anchor":"end","font-size":9,fill:"#6E6A64"}));
+ row.appendChild(tx(L-10,y+24,p.f+" · "+p.t,{"text-anchor":"end","font-size":9,fill:"var(--txt3)"}));
  const w=Math.max(x(p.v)-L,2);
- row.appendChild(el("rect",{x:L,y:y+4,width:w,height:17,rx:4,fill:i<5?"url(#gr)":"rgba(242,85,95,.42)"}));
+ row.appendChild(el("rect",{x:L,y:y+4,width:w,height:17,rx:4,fill:i<5?"url(#gr)":"var(--flojo)"}));
  row.appendChild(tx(L+w+8,y+17,p.v.toLocaleString("es"),{class:"val","font-size":11}));
  const t=el("title");t.textContent=`${p.n} · ${p.v.toLocaleString("es")} vistas · ${p.a} de alcance · ${p.c} comentarios`;
  row.appendChild(t);g.appendChild(row);});})();
@@ -1232,12 +1285,12 @@ d.appendChild(lg);g.appendChild(d);
  g.appendChild(tx(L-18,y(v)+4,v,{"text-anchor":"end","font-size":10}));});
 g.appendChild(el("line",{x1:L-10,y1:B,x2:636,y2:B,class:"ax"}));
 D.forEach(([m,v,p],i)=>{const bx=L+i*(bw+gap),h=B-y(v),row=el("g",{class:"row"});
- row.appendChild(el("rect",{x:bx,y:y(v),width:bw,height:h,rx:4,fill:v<300?"rgba(242,85,95,.38)":"url(#gv)"}));
+ row.appendChild(el("rect",{x:bx,y:y(v),width:bw,height:h,rx:4,fill:v<300?"var(--flojo)":"url(#gv)"}));
  row.appendChild(tx(bx+bw/2,y(v)-10,v,{"text-anchor":"middle",class:"val","font-size":13}));
  row.appendChild(tx(bx+bw/2,B+18,m,{"text-anchor":"middle",class:"lbl"}));
- row.appendChild(tx(bx+bw/2,B+34,p+" piezas",{"text-anchor":"middle","font-size":10,fill:"#6E6A64"}));
+ row.appendChild(tx(bx+bw/2,B+34,p+" piezas",{"text-anchor":"middle","font-size":10,fill:"var(--txt3)"}));
  const t=el("title");t.textContent=`${m}: ${v} vistas por día · ${p} piezas`;row.appendChild(t);g.appendChild(row);});
-g.appendChild(tx(L-18,T-8,"vistas / día",{"font-size":9.5,fill:"#6E6A64","text-anchor":"end"}));})();
+g.appendChild(tx(L-18,T-8,"vistas / día",{"font-size":9.5,fill:"var(--txt3)","text-anchor":"end"}));})();
 
 /* retencion */
 (()=>{const g=document.getElementById("ret");if(!g)return;
@@ -1249,14 +1302,14 @@ const L=54,R=656,T=22,B=248,x=d=>L+((d-20)/68)*(R-L),y=r=>B-((r-9)/15)*(B-T);
  g.appendChild(tx(L-10,y(v)+4,v+"%",{"text-anchor":"end","font-size":10}));});
 [30,45,60,75].forEach(v=>g.appendChild(tx(x(v),B+20,v+"s",{"text-anchor":"middle","font-size":10})));
 g.appendChild(el("line",{x1:L,y1:B,x2:R,y2:B,class:"ax"}));
-g.appendChild(el("rect",{x:x(60),y:T,width:R-x(60),height:B-T,fill:"#E41B2B",opacity:.10}));
-g.appendChild(tx(x(60)+8,T+14,"más de 60 s",{"font-size":9.5,fill:"#A29E97"}));
+g.appendChild(el("rect",{x:x(60),y:T,width:R-x(60),height:B-T,fill:"var(--rojo)",opacity:.10}));
+g.appendChild(tx(x(60)+8,T+14,"más de 60 s",{"font-size":9.5,fill:"var(--txt2)"}));
 P.forEach(([d,r,n])=>{const row=el("g",{class:"row"});
- row.appendChild(el("circle",{cx:x(d),cy:y(r),r:7,fill:"#F2555F",stroke:"#0A0A0B","stroke-width":2}));
+ row.appendChild(el("circle",{cx:x(d),cy:y(r),r:7,fill:"var(--rojo-cl)",stroke:"var(--negro)","stroke-width":2}));
  const t=el("title");t.textContent=`${n}: ${d} s · ${r}% de retención`;row.appendChild(t);g.appendChild(row);});
 [["Taller cuello",39,22.19,10,-13],["Tendón",80,11.61,-15,-14],["Anuncio",26,21.51,10,-13]].forEach(([n,d,r,dx,dy])=>
- g.appendChild(tx(x(d)+dx,y(r)+dy,n,{"font-size":10,fill:"#A29E97","text-anchor":dx<0?"end":"start"})));
-g.appendChild(tx(L-10,T-8,"retención",{"font-size":9.5,fill:"#6E6A64","text-anchor":"end"}));})();
+ g.appendChild(tx(x(d)+dx,y(r)+dy,n,{"font-size":10,fill:"var(--txt2)","text-anchor":dx<0?"end":"start"})));
+g.appendChild(tx(L-10,T-8,"retención",{"font-size":9.5,fill:"var(--txt3)","text-anchor":"end"}));})();
 
 /* edad */
 (()=>{const g=document.getElementById("edad");if(!g)return;
@@ -1264,8 +1317,8 @@ const D=[["25–34",625,636],["35–44",546,577],["45–54",282,231],["18–24",
 const L=62,R=466,T=12,rh=44,max=700,w=v=>(v/max)*(R-L);
 D.forEach((d,i)=>{const y=T+i*rh,row=el("g",{class:"row"});
  row.appendChild(tx(L-10,y+23,d[0],{"text-anchor":"end",class:"lbl"}));
- row.appendChild(el("rect",{x:L,y:y+2,width:Math.max(w(d[1]),2),height:15,rx:4,fill:"#F2555F"}));
- row.appendChild(el("rect",{x:L,y:y+21,width:Math.max(w(d[2]),2),height:15,rx:4,fill:"#4A93CE"}));
+ row.appendChild(el("rect",{x:L,y:y+2,width:Math.max(w(d[1]),2),height:15,rx:4,fill:"var(--rojo-cl)"}));
+ row.appendChild(el("rect",{x:L,y:y+21,width:Math.max(w(d[2]),2),height:15,rx:4,fill:"var(--azul)"}));
  row.appendChild(tx(L+w(d[1])+7,y+15,d[1],{class:"val","font-size":10.5}));
  row.appendChild(tx(L+w(d[2])+7,y+34,d[2],{class:"val","font-size":10.5}));
  const t=el("title");t.textContent=`${d[0]} años · ${d[1]} mujeres · ${d[2]} hombres`;row.appendChild(t);g.appendChild(row);});})();
@@ -1277,6 +1330,42 @@ tr.innerHTML=`<td>${p.f}</td><td class="name">${p.n}</td><td><span class="chip">
 <td class="n">${p.v.toLocaleString("es")}</td><td class="n">${p.a.toLocaleString("es")}</td><td class="n">${p.l}</td>
 <td class="n">${p.c}</td><td class="n">${p.g}</td><td class="n">${p.s}</td><td class="n">${p.r?p.r.toFixed(1)+"%":"—"}</td>`;
 tb.appendChild(tr);});})();
+
+/* tema claro / oscuro */
+(()=>{
+  const R=document.documentElement, osc=document.getElementById("t-osc"), cla=document.getElementById("t-cla");
+  if(!osc||!cla)return;
+  const pon=t=>{
+    R.setAttribute("data-theme",t);
+    osc.setAttribute("aria-pressed",t==="dark");
+    cla.setAttribute("aria-pressed",t==="light");
+    try{localStorage.setItem("recovery-tema",t);}catch(e){}
+  };
+  let g="dark"; try{g=localStorage.getItem("recovery-tema")||"dark";}catch(e){}
+  pon(g==="light"?"light":"dark");
+  osc.addEventListener("click",()=>pon("dark"));
+  cla.addEventListener("click",()=>pon("light"));
+})();
+
+/* el indice abre la seccion y la lleva a la vista */
+(()=>{
+  document.querySelectorAll(".indice a").forEach(a=>{
+    a.addEventListener("click",e=>{
+      const d=document.querySelector(a.getAttribute("href"));
+      if(!d)return;
+      e.preventDefault();
+      d.open=true;
+      d.querySelectorAll("[data-posts]").forEach(buildPosts);
+      d.scrollIntoView({behavior:"smooth",block:"start"});
+      history.replaceState(null,"",a.getAttribute("href"));
+    });
+  });
+  if(location.hash){
+    const d=document.querySelector(location.hash);
+    if(d&&d.tagName==="DETAILS"){d.open=true;d.querySelectorAll("[data-posts]").forEach(buildPosts);
+      setTimeout(()=>d.scrollIntoView({block:"start"}),60);}
+  }
+})();
 
 /* tarjetas de publicacion con miniatura propia */
 function buildPosts(c){
