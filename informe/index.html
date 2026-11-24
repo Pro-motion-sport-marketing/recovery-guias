@@ -1014,6 +1014,33 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
       <p style="margin-top:9px;margin-bottom:0"><b>Si no hay acceso a nada:</b> ahí sí hay que rehacer el sitio y se cotiza aparte, con su número real. <b>Por eso el arranque se ofrece sujeto a que entreguen el proyecto.</b></p>
     </div>
 
+    <h4 style="margin-top:28px">Dónde viven las guías: tres caminos</h4>
+    <p>Las guías de Recovery hoy están alojadas en nuestro servidor. Para que vivan bajo su dominio —que es lo que les conviene— hay tres opciones, y se diferencian sobre todo en <b>cuánta dependencia generan</b>.</p>
+    <div class="g3" style="margin-top:14px">
+      <div class="box ok"><h4>A · Subdominio <span style="color:var(--txt3);font-weight:400">— recomendado</span></h4>
+        <p style="font-size:14px;margin:0 0 10px"><code style="font-family:var(--mono);font-size:12.5px;color:var(--blanco)">guias.recovery-therapy.com</code></p>
+        <ul><li>Requiere <b>un solo cambio de dos minutos</b> en el dominio: agregar un registro que apunte el subdominio.</li>
+        <li>Después de eso, <b>nunca más hace falta pedir nada</b>. Las guías se publican igual que hoy y aparecen bajo la marca de Recovery.</li>
+        <li>No toca el sitio actual y es reversible.</li>
+        <li>Único costo: un subdominio hereda algo menos de fuerza de posicionamiento que una subcarpeta. A esta escala, poco.</li></ul></div>
+      <div class="box"><h4>B · Subcarpeta</h4>
+        <p style="font-size:14px;margin:0 0 10px"><code style="font-family:var(--mono);font-size:12.5px;color:var(--blanco)">recovery-therapy.com/guias/</code></p>
+        <ul><li>Es <b>lo mejor para buscadores</b>: hereda toda la autoridad del dominio.</li>
+        <li>Pero una subcarpeta la tiene que servir el mismo servidor del sitio principal, así que <b>solo sale limpia si tenemos el proyecto</b>: las guías pasan a ser parte del sitio.</li>
+        <li>Va incluida en el arranque, cuando entreguen el código.</li></ul></div>
+      <div class="box acc"><h4>C · Como está hoy</h4>
+        <p style="font-size:14px;margin:0 0 10px">En el servidor de Pro Motion</p>
+        <ul><li>Funciona, no cuesta nada y no depende de nadie.</li>
+        <li>Pero <b>el valor de posicionamiento se lo queda nuestro dominio, no el de Recovery</b>.</li>
+        <li>Y en un mensaje directo, un enlace de su propia marca pesa más que uno ajeno.</li></ul></div>
+    </div>
+
+    <div class="box ok" style="margin-top:16px;border-left:3px solid transparent;border-image:var(--grad) 1">
+      <h4>Lo que les pedimos, en una frase</h4>
+      <p style="font-family:var(--mono);font-size:13.5px;color:var(--blanco);background:var(--carbon2);padding:14px 16px;border-radius:3px;margin:0 0 10px;line-height:1.6">Agregar un registro CNAME: <b>guias</b> → <b>pro-motion-sport-marketing.github.io</b></p>
+      <p style="margin:0">Eso es todo. No afecta al sitio actual, no hay riesgo de caída y se puede deshacer. <b>Con eso las guías pasan a vivir bajo el dominio de Recovery sin ningún costo adicional</b> y sin volver a depender de su equipo de sistemas.</p>
+    </div>
+
     <h4 style="margin-top:28px">La propuesta</h4>
     <div class="planes">
       <div class="plan act"><div class="bar"></div><div class="bd">
@@ -1027,7 +1054,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
           <li>Auditoría técnica de buscadores</li>
           <li>Datos estructurados de clínica y servicios, para Google y para los buscadores de IA</li>
           <li>Analítica y Search Console conectados</li>
-          <li>Arquitectura de <code style="font-family:var(--mono);font-size:12px">/guias/</code> montada</li>
+          <li>Arquitectura de <code style="font-family:var(--mono);font-size:12px">/guias/</code> montada <b>dentro del propio sitio</b>, que es la mejor posición posible para buscadores</li>
         </ul>
       </div></div>
 
@@ -1036,11 +1063,12 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
         <div class="pr">$50<small>mensuales + IVA</small></div>
         <h5>La casa de las guías</h5>
         <ul>
-          <li>Las guías que ya produce el plan de contenido <b>pasan a vivir en su dominio</b></li>
+          <li>Las guías pasan a <code style="font-family:var(--mono);font-size:12px">guias.recovery-therapy.com</code> <b>con un solo cambio de dominio</b></li>
           <li>Publicación y mantenimiento del sitio al día</li>
           <li>Sin producción nueva: aloja y sostiene lo que el plan mensual ya genera</li>
+          <li><b>Sin tocar el sitio actual</b> y sin dependencia permanente de su equipo de sistemas</li>
         </ul>
-        <div class="no"><h5>Para quién</h5><ul><li>Si no quieren tocar nada más que sumar guías</li></ul></div>
+        <div class="no"><h5>Para quién</h5><ul><li>Si no quieren tocar nada más que sumar guías. Es el camino más rápido y el de menor riesgo.</li></ul></div>
       </div></div>
 
       <div class="plan"><div class="bar"></div><div class="bd">
