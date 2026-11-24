@@ -174,6 +174,26 @@ tr.top td:first-child{box-shadow:inset 3px 0 0 var(--rojo)}
 .chip{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;
   border:1px solid var(--borde);color:var(--txt3)}
 
+/* planes */
+.planes{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:16px;margin:6px 0 4px}
+.plan{background:var(--carbon);border:1px solid var(--borde);border-radius:3px;overflow:hidden;display:flex;flex-direction:column}
+.plan .bar{height:4px;background:rgba(255,255,255,.14)}
+.plan.act .bar{background:var(--grad)}
+.plan.act{box-shadow:var(--sh)}
+.plan .bd{padding:20px 22px 22px;flex:1;display:flex;flex-direction:column}
+.plan .et{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--txt3)}
+.plan.act .et{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
+.plan .pr{font-family:var(--display);font-stretch:74%;font-weight:900;font-size:42px;line-height:1;color:var(--blanco);margin:9px 0 2px}
+.plan .pr small{font-family:var(--body);font-size:12px;font-weight:400;color:var(--txt3);letter-spacing:0;display:block;margin-top:6px}
+.plan h5{margin:12px 0 9px;font-family:var(--display);font-stretch:86%;font-weight:780;text-transform:uppercase;
+  font-size:12.5px;letter-spacing:.07em;color:var(--blanco)}
+.plan ul{margin:0;padding-left:16px;font-size:13.5px;color:var(--txt2);line-height:1.5}
+.plan li{margin:6px 0}
+.plan li b{color:var(--txt)}
+.plan .no{margin-top:14px;padding-top:12px;border-top:1px solid var(--borde)}
+.plan .no h5{margin-top:0;color:var(--rojo-cl)}
+.plan .no ul{color:var(--txt3)}
+
 /* navegador de meses */
 .meses{display:flex;flex-wrap:wrap;gap:7px;margin:4px 0 16px}
 .mch{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
@@ -430,7 +450,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
       <h4>Las tres causas, en orden</h4>
       <p>Los filtros 1, 2 y 3 funcionan: lo que se publica se ve y se comparte. Lo que no ocurre es la conversión. Hay tres razones y las tres son corregibles.</p>
       <ol style="margin-top:12px">
-        <li><b>La frecuencia es demasiado baja para sostener la atención.</b> El plan contratado son 7 piezas al mes —4 videos y 3 carruseles—, es decir <b>1,6 publicaciones por semana</b>. En la práctica, bajo gestión mensual —de marzo a noviembre— se publicaron <b>2,6 al mes</b>. Una cuenta local necesita aparecer varias veces por semana para que la audiencia no se enfríe entre un contenido y el siguiente. Los meses con más piezas tienen más vistas (correlación de 0,57), y el peor mes del año es el de menos piezas.</li>
+        <li><b>La frecuencia es demasiado baja para sostener la atención.</b> El plan contratado son 7 piezas al mes —4 videos y 3 carruseles—, es decir <b>1,6 publicaciones por semana</b>. En la práctica, bajo gestión mensual —de marzo a noviembre— se publicaron <b>2,6 al mes</b>. Y conviene decirlo con todas las letras: <b>esas 7 piezas son exactamente lo que cubre el plan contratado de $450</b>. Subir la frecuencia no es un problema de ejecución, es una decisión de presupuesto (sección 09). Una cuenta local necesita aparecer varias veces por semana para que la audiencia no se enfríe entre un contenido y el siguiente. Los meses con más piezas tienen más vistas (correlación de 0,57), y el peor mes del año es el de menos piezas.</li>
         <li><b>No hubo un solo dólar de pauta.</b> Todo 2026 fue orgánico. Con 7 piezas al mes y sin inversión, la adquisición de audiencia nueva depende enteramente de que ocurra un hecho extraordinario. Y eso es exactamente lo que pasó: los tres picos del año fueron el Sport Fest, el título mundial de Paula Torres y el taller de pretemporada. <b>Ninguno es repetible a voluntad.</b></li>
         <li><b>La única puerta de entrada es comentar en público.</b> 2,3 comentarios por cada 1.000 vistas. En salud, pedirle a alguien que escriba públicamente que le duele algo es la acción más cara que existe.</li>
       </ol>
@@ -768,7 +788,89 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 </details>
 
 <details>
-  <summary><span class="n">09</span><div><h2>Identidad: el logo y la foto de perfil</h2><p class="d">La cuenta usa todavía el logo del evento de los 10 años. Eso fecha el perfil.</p></div><span class="ch"></span></summary>
+  <summary><span class="n">09</span><div><h2>Qué incluye el plan actual y qué no</h2><p class="d">Recovery paga un plan mínimo viable. Mucho de lo que este informe recomienda está fuera de él.</p></div><span class="ch"></span></summary>
+  <div class="body">
+    <div class="box acc">
+      <h4>Antes de seguir, hay que ponerlo sobre la mesa</h4>
+      <p>Varias de las conclusiones de este informe —el ritmo de 1,6 publicaciones por semana, las historias muertas, la ausencia de pauta— <b>no son fallas de ejecución: son el techo del plan contratado</b>.</p>
+      <p style="margin-top:10px;margin-bottom:0">Recovery paga hoy <b>$450 mensuales más IVA</b>. Es un plan mínimo viable, no un plan máximo posible. Conviene que quede claro qué cubre ese valor y qué no, para que la decisión de diciembre se tome con la información completa.</p>
+    </div>
+
+    <div class="planes" style="margin-top:20px">
+      <div class="plan act"><div class="bar"></div><div class="bd">
+        <span class="et">Plan actual · mínimo viable</span>
+        <div class="pr">$450<small>mensuales + IVA</small></div>
+        <h5>Incluye</h5>
+        <ul>
+          <li><b>4 videos</b> al mes</li>
+          <li><b>3 posts carrusel</b> al mes</li>
+          <li><b>Hasta 4 guías interactivas</b> al mes</li>
+          <li>Estrategia, guion, dirección de arte, diseño y programación de todo lo anterior</li>
+        </ul>
+        <div class="no"><h5>No incluye</h5><ul>
+          <li>Inversión publicitaria</li>
+          <li>Gestión de pauta</li>
+          <li>Estrategia de historias</li>
+          <li>Gestión de TikTok</li>
+        </ul></div>
+      </div></div>
+
+      <div class="plan"><div class="bar"></div><div class="bd">
+        <span class="et">Siguiente escalón</span>
+        <div class="pr">$550<small>mensuales + IVA · son $100 más</small></div>
+        <h5>Suma a lo anterior</h5>
+        <ul>
+          <li><b>Estrategia de historias</b> con una cantidad adecuada y sostenida</li>
+          <li><b>Gestión de una estrategia de pauta mínima</b>: armado de campañas, públicos, creatividades y lectura de resultados</li>
+          <li><b>Republicación en TikTok</b> del contenido de Instagram</li>
+        </ul>
+        <div class="no"><h5>No incluye</h5><ul>
+          <li>La inversión publicitaria en sí</li>
+          <li>Contenido propio para TikTok</li>
+        </ul></div>
+      </div></div>
+
+      <div class="plan"><div class="bar"></div><div class="bd">
+        <span class="et">Con TikTok propio</span>
+        <div class="pr">$700<small>mensuales + IVA</small></div>
+        <h5>Suma a lo anterior</h5>
+        <ul>
+          <li><b>8 videos al mes</b> — dos publicaciones semanales en TikTok</li>
+          <li>Contenido <b>pensado para TikTok</b>, no reciclado de Instagram</li>
+          <li><b>Gestión de TikTok Ads</b> incluida</li>
+        </ul>
+        <div class="no"><h5>No incluye</h5><ul>
+          <li>La inversión publicitaria en sí</li>
+        </ul></div>
+      </div></div>
+    </div>
+
+    <div class="g2" style="margin-top:20px">
+      <div class="box"><h4>Lo que el plan actual sí está entregando</h4>
+        <p style="margin:0 0 10px">Por $450 al mes salen <b>11 entregables</b>: 7 piezas publicadas y hasta 4 guías interactivas.</p>
+        <ul>
+          <li>Cada guía es, técnicamente, <b>una micropágina web</b>: la del tendón tiene videos, ritmo de cada ejercicio y temporizador. <b>Son cuatro páginas web al mes.</b></li>
+          <li>Prácticamente cada video sale acompañado de su propio entregable de valor para la audiencia.</li>
+          <li>Ese material no caduca: sigue trayendo gente meses después, a diferencia de un post.</li>
+        </ul></div>
+      <div class="box acc"><h4>Por qué TikTok necesita su propio plan</h4>
+        <ul>
+          <li><b>En TikTok solo se publican videos</b>, no carruseles. De las 7 piezas del plan actual, solo 4 son video.</li>
+          <li>Repartidas entre las dos plataformas, eso daría <b>un video al mes en TikTok</b>, que no sostiene nada.</li>
+          <li>Por eso la republicación entra en el plan de $550 —es barato y suma—, pero una estrategia real de TikTok arranca en 8 videos al mes.</li>
+        </ul></div>
+    </div>
+
+    <div class="box acc" style="margin-top:18px">
+      <h4>Los dos presupuestos, otra vez, porque es lo que más se confunde</h4>
+      <p><b>Ninguno de los tres planes incluye la inversión publicitaria.</b> El fee es el trabajo: estrategia, producción, diseño, guías, gestión. La pauta es dinero que va a Meta para poner ese trabajo delante de gente que todavía no sigue a Recovery.</p>
+      <p style="margin-top:10px;margin-bottom:0">Si el objetivo comercial fuera <b>$2.000 mensuales</b> en citas desde redes, el escenario completo sería: <b>$550 de gestión + $200 de pauta = $750 al mes</b>, y de ahí se mide cuánto cuesta cada paciente nuevo. Hoy se paga $450 y $0 de pauta, lo que explica buena parte de lo que se ve en este informe.</p>
+    </div>
+  </div>
+</details>
+
+<details>
+  <summary><span class="n">10</span><div><h2>Identidad: el logo y la foto de perfil</h2><p class="d">La cuenta usa todavía el logo del evento de los 10 años. Eso fecha el perfil.</p></div><span class="ch"></span></summary>
   <div class="body">
     <p>El perfil comunica hoy «esto pasó», no «esto es». Propuesta: volver al isotipo oficial, el mismo del sitio web y de los uniformes.</p>
     <div class="pf2">
@@ -789,7 +891,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 </details>
 
 <details>
-  <summary><span class="n">10</span><div><h2>Historias destacadas</h2><p class="d">Hoy ninguna dice qué servicios existen. Ocho destacadas, con las portadas ya hechas.</p></div><span class="ch"></span></summary>
+  <summary><span class="n">11</span><div><h2>Historias destacadas</h2><p class="d">Hoy ninguna dice qué servicios existen. Ocho destacadas, con las portadas ya hechas.</p></div><span class="ch"></span></summary>
   <div class="body">
     <p>Las destacadas actuales son todas de eventos: Rehabilitación, 2026, Eventos 2025, Olímpicos, Kms atletar, Fiesta 10/10, Festival 10/10. <b>Ninguna responde qué trata Recovery, con qué tecnología, quién atiende ni cómo agendar.</b> Estas ocho van en este orden exacto: el perfil se lee de izquierda a derecha y las tres primeras son las que más se tocan.</p>
     <div class="hl">
@@ -818,7 +920,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 </details>
 
 <details>
-  <summary><span class="n">11</span><div><h2>Plan: diciembre, enero y febrero</h2><p class="d">El servicio se reactiva en diciembre. El trimestre se construye hacia el aniversario de febrero.</p></div><span class="ch"></span></summary>
+  <summary><span class="n">12</span><div><h2>Plan: diciembre, enero y febrero</h2><p class="d">El servicio se reactiva en diciembre. El trimestre se construye hacia el aniversario de febrero.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="box acc">
       <h4>El punto de partida</h4>
@@ -895,7 +997,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 </details>
 
 <details>
-  <summary><span class="n">12</span><div><h2>Automatización: una palabra, un menú</h2><p class="d">El arreglo del filtro 5. En vez de una palabra nueva por campaña, una permanente que abre un menú.</p></div><span class="ch"></span></summary>
+  <summary><span class="n">13</span><div><h2>Automatización: una palabra, un menú</h2><p class="d">El arreglo del filtro 5. En vez de una palabra nueva por campaña, una permanente que abre un menú.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="g2">
       <div class="box"><h4>Cómo queda el flujo</h4>
@@ -926,7 +1028,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 </details>
 
 <details>
-  <summary><span class="n">13</span><div><h2>Amplificación: de contenido a modelo de negocio</h2><p class="d">Cuatro oportunidades que no dependen de publicar más.</p></div><span class="ch"></span></summary>
+  <summary><span class="n">14</span><div><h2>Amplificación: de contenido a modelo de negocio</h2><p class="d">Cuatro oportunidades que no dependen de publicar más.</p></div><span class="ch"></span></summary>
   <div class="body">
     <p>La guía del tendón demostró algo: hoy producir una guía web completa —con videos, ritmo y temporizador— cuesta prácticamente lo mismo que producir un PDF, y vale muchísimo más.</p>
     <div class="g2">
@@ -957,12 +1059,14 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 </details>
 
 <details>
-  <summary><span class="n">14</span><div><h2>Qué necesitamos de Recovery</h2><p class="d">Ocho definiciones. Las tres primeras determinan si el trimestre se puede planificar o no.</p></div><span class="ch"></span></summary>
+  <summary><span class="n">15</span><div><h2>Qué necesitamos de Recovery</h2><p class="d">Nueve definiciones. Las primeras determinan si el trimestre se puede planificar o no.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="cal">
       <div class="crow hd"><span>Para cuándo</span><span>Quién</span><span>Definición</span></div>
       <div class="crow"><span class="d">Esta semana<span>sostiene todo</span></span><span class="fm"><b>Recovery<br>+ Pro Motion</b></span>
         <div><h5>Confirmar la reactivación del servicio en diciembre</h5><p>Los 99 días sin publicar de junio y julio, y el noviembre en blanco, se deben a que no estuvo definido si Recovery quería o necesitaba continuar. <b>Mientras eso no se cierre, ningún plan se sostiene.</b></p></div></div>
+      <div class="crow"><span class="d">1.ª sem. dic<span>define el alcance</span></span><span class="fm"><b>Recovery</b></span>
+        <div><h5>¿Se mantiene el plan de $450 o se sube?</h5><p>El plan actual es el mínimo viable y no incluye historias, gestión de pauta ni TikTok. El siguiente escalón son <b>$550</b> y suma historias, gestión de pauta y republicación en TikTok; <b>$700</b> suma TikTok propio con 8 videos. La inversión publicitaria va aparte en los tres casos. Detalle en la sección 09.</p></div></div>
       <div class="crow"><span class="d">1.ª sem. dic<span>bloquea la pauta</span></span><span class="fm"><b>Recovery</b></span>
         <div><h5>El objetivo comercial mensual</h5><p>Cuánto dinero quiere generar Recovery al mes en citas que vengan de redes. De ahí sale el presupuesto de pauta —el 10 %— y de ahí sale saber si el plan alcanza o se queda corto. Un rango basta para empezar.</p></div></div>
       <div class="crow"><span class="d">1.ª sem. dic<span>bloquea la medición</span></span><span class="fm"><b>Recovery</b></span>
