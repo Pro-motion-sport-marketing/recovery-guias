@@ -194,14 +194,21 @@ tr.top td:first-child{box-shadow:inset 3px 0 0 var(--rojo)}
 
 /* indice */
 .indice{margin-top:34px;padding-top:26px;border-top:1px solid var(--borde)}
-.indice nav{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:1px;background:var(--borde);
+.indice nav{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:1px;background:var(--borde);
   border:1px solid var(--borde)}
-.indice a{background:var(--carbon);padding:12px 15px;text-decoration:none;color:var(--txt2);font-size:13.5px;
-  display:flex;gap:11px;align-items:baseline;transition:background .13s,color .13s}
-.indice a:hover,.indice a:focus-visible{background:var(--carbon2);color:var(--blanco)}
+.indice a{background:var(--carbon);padding:16px 16px 16px 18px;text-decoration:none;color:var(--blanco);
+  font-size:15.5px;font-weight:600;line-height:1.3;display:grid;grid-template-columns:28px 1fr 16px;gap:12px;
+  align-items:center;transition:background .13s;position:relative}
+.indice a::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--grad);
+  opacity:0;transition:opacity .13s}
+.indice a:hover,.indice a:focus-visible{background:var(--carbon2)}
+.indice a:hover::before,.indice a:focus-visible::before{opacity:1}
 .indice a:focus-visible{outline:2px solid var(--rojo);outline-offset:-2px}
-.indice a i{font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--txt3);flex:none}
-.indice a:hover i{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.indice a i{font-style:normal;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.04em;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.indice a b{font-weight:600}
+.indice a u{text-decoration:none;color:var(--txt3);font-size:17px;line-height:1;justify-self:end;transition:color .13s,transform .13s}
+.indice a:hover u{color:var(--rojo-cl);transform:translateX(2px)}
 
 /* planes */
 .planes{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:16px;margin:6px 0 4px}
@@ -415,8 +422,8 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 <!-- ============ SECCIONES ============ -->
 
   <div class="indice">
-    <p class="mono" style="display:block;margin:0 0 11px">Índice · toca una sección para abrirla</p>
-    <nav aria-label="Secciones del informe"><a href="#s01"><i>01</i>El año, mes a mes</a><a href="#s02"><i>02</i>El embudo: dónde se tapa</a><a href="#s03"><i>03</i>Qué funcionó mejor</a><a href="#s04"><i>04</i>Qué funcionó peor</a><a href="#s05"><i>05</i>Quién está del otro lado</a><a href="#s06"><i>06</i>La fuga: siete palabras en cuatro meses</a><a href="#s07"><i>07</i>A quién le hablamos</a><a href="#s08"><i>08</i>Por qué hace falta pauta</a><a href="#s09"><i>09</i>Qué incluye el plan actual y qué no</a><a href="#s10"><i>10</i>Identidad: el logo y la foto de perfil</a><a href="#s11"><i>11</i>Historias destacadas</a><a href="#s12"><i>12</i>Plan: diciembre, enero y febrero</a><a href="#s13"><i>13</i>Automatización: una palabra, un menú</a><a href="#s14"><i>14</i>Amplificación: de contenido a modelo de negocio</a><a href="#s15"><i>15</i>Qué necesitamos de Recovery</a></nav>
+    <p class="mono" style="display:block;margin:0 0 12px;color:var(--txt2)">Índice · toca una sección para abrirla</p>
+    <nav aria-label="Secciones del informe"><a href="#s01"><i>01</i><b>El año, mes a mes</b><u>›</u></a><a href="#s02"><i>02</i><b>El embudo: dónde se tapa</b><u>›</u></a><a href="#s03"><i>03</i><b>Qué funcionó mejor</b><u>›</u></a><a href="#s04"><i>04</i><b>Qué funcionó peor</b><u>›</u></a><a href="#s05"><i>05</i><b>Quién está del otro lado</b><u>›</u></a><a href="#s06"><i>06</i><b>La fuga: ocho palabras en un año</b><u>›</u></a><a href="#s07"><i>07</i><b>A quién le hablamos</b><u>›</u></a><a href="#s08"><i>08</i><b>Por qué hace falta pauta</b><u>›</u></a><a href="#s09"><i>09</i><b>Qué incluye el plan actual y qué no</b><u>›</u></a><a href="#s10"><i>10</i><b>Identidad: el logo y la foto de perfil</b><u>›</u></a><a href="#s11"><i>11</i><b>Historias destacadas</b><u>›</u></a><a href="#s12"><i>12</i><b>Plan: diciembre, enero y febrero</b><u>›</u></a><a href="#s13"><i>13</i><b>Automatización: una palabra, un menú</b><u>›</u></a><a href="#s14"><i>14</i><b>Amplificación: de contenido a modelo de negocio</b><u>›</u></a><a href="#s15"><i>15</i><b>Qué necesitamos de Recovery</b><u>›</u></a></nav>
   </div>
 
 <div class="secwrap">
@@ -626,11 +633,11 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 </details>
 
 <details id="s06">
-  <summary><span class="n">06</span><div><h2>La fuga: siete palabras en cuatro meses</h2><p class="d">El hallazgo más caro del informe, y el más fácil de arreglar.</p></div><span class="ch"></span></summary>
+  <summary><span class="n">06</span><div><h2>La fuga: ocho palabras en un año</h2><p class="d">El hallazgo más caro del informe, y el más fácil de arreglar.</p></div><span class="ch"></span></summary>
   <div class="body">
     <div class="box acc">
-      <h4>Cada pieza enseñó una palabra distinta</h4>
-      <p>PRETEMPORADA · DEPORTE · RUTINA · EJERCICIO · BIENESTAR · CUELLO · TENDÓN. <b>Siete palabras clave en dieciséis piezas.</b> La audiencia nunca aprende el mecanismo: cada publicación empieza de cero y quien comentó una vez no sabe que puede volver a hacerlo.</p>
+      <h4>Casi cada pieza enseñó una palabra distinta</h4>
+      <p>DOLOR · PRETEMPORADA · DEPORTE · RUTINA · EJERCICIO · BIENESTAR · CUELLO · TENDÓN. <b>Ocho palabras clave distintas en un año.</b> La audiencia nunca aprende el mecanismo: cada publicación empieza de cero y quien comentó una vez no sabe que puede volver a hacerlo.</p>
       <p style="margin-bottom:0">El costo concreto: el 11 de noviembre se publicó la guía del tendón —con videos, ritmo y temporizador—. El 12 salió el reel que la entregaba. <b>Ese reel recibió 0 comentarios.</b></p>
     </div>
     <div class="g2" style="margin-top:18px">
@@ -1059,7 +1066,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
         <li>Cada botón entrega su guía web y marca a la persona con una etiqueta.</li>
         <li>A las 24 horas: «¿pudiste probarlo? ¿cómo respondió?». Ahí nace la conversación.</li>
         <li>A las 72 horas, solo a quien respondió: invitación a valoración.</li></ol>
-        <p style="margin:12px 0 0;font-size:13.5px">Las palabras viejas (TENDÓN, RUTINA, CUELLO, PRETEMPORADA, EJERCICIO, BIENESTAR, DEPORTE) <b>se mantienen activas</b> y caen al mismo menú. Nada de lo publicado se rompe.</p></div>
+        <p style="margin:12px 0 0;font-size:13.5px">Las palabras viejas (DOLOR, TENDÓN, RUTINA, CUELLO, PRETEMPORADA, EJERCICIO, BIENESTAR, DEPORTE) <b>se mantienen activas</b> y caen al mismo menú. Nada de lo publicado se rompe.</p></div>
       <div class="box ok"><h4>Por qué esto arregla la fuga</h4>
         <ul><li><b>Acumula.</b> Una palabra repetida en 7 piezas se aprende; 7 palabras distintas no se aprenden nunca.</li>
         <li><b>Tres puertas.</b> Quien no quiere comentar en público —la mayoría, en salud— entra por mensaje o historia.</li>
