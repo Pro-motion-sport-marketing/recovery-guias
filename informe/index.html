@@ -169,6 +169,29 @@ tr.top td:first-child{box-shadow:inset 3px 0 0 var(--rojo)}
 .chip{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;
   border:1px solid var(--borde);color:var(--txt3)}
 
+/* navegador de meses */
+.meses{display:flex;flex-wrap:wrap;gap:7px;margin:4px 0 16px}
+.mch{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  background:var(--negro);border:1px solid var(--borde);color:var(--txt2);padding:9px 13px;border-radius:3px;
+  cursor:pointer;display:flex;align-items:center;gap:7px;transition:all .14s;font-family:var(--mono)}
+.mch:hover{border-color:var(--txt3);color:var(--txt)}
+.mch:focus-visible{outline:2px solid var(--rojo);outline-offset:2px}
+.mch i{font-style:normal;font-size:9.5px;background:rgba(255,255,255,.1);padding:2px 6px;border-radius:2px;color:var(--txt2)}
+.mch[aria-pressed="true"]{background:var(--grad);border-color:transparent;color:#17171A}
+.mch[aria-pressed="true"] i{background:rgba(23,23,26,.22);color:#17171A}
+.mch.cero{opacity:.55}
+.mhead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:18px 0 12px;
+  padding-bottom:10px;border-bottom:1px solid var(--borde)}
+.mhead b{font-family:var(--display);font-stretch:80%;font-weight:860;text-transform:uppercase;font-size:19px;color:var(--blanco)}
+.mhead span{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--txt3)}
+.vacio{background:var(--negro);border:1px solid var(--borde);border-left:4px solid var(--rojo);padding:20px 22px}
+.vacio b{display:block;font-family:var(--display);font-stretch:84%;font-weight:820;text-transform:uppercase;
+  font-size:14px;letter-spacing:.05em;color:var(--blanco);margin-bottom:8px}
+.vacio p{margin:0;font-size:14px;color:var(--txt2);max-width:70ch}
+svg g.bar{cursor:pointer}
+svg g.bar:hover rect{opacity:.8}
+svg g.bar rect.sel{stroke:#fff;stroke-width:2}
+
 /* persona */
 .emp{display:grid;grid-template-columns:repeat(auto-fit,minmax(252px,1fr));gap:1px;background:var(--borde);
   border:1px solid var(--borde);margin:4px 0 18px}
@@ -328,6 +351,12 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
       <figcaption><b>Dos cosas que saltan a la vista.</b> El año tiene una pendiente descendente clara desde febrero, y los tres picos coinciden con hechos concretos, no con la cadencia de publicación.</figcaption>
     </figure>
 
+    <h4 style="margin-top:4px">Explora las publicaciones de cada mes</h4>
+    <p style="margin:0 0 12px">Toca un mes —o una barra del gráfico— para ver qué se publicó. Cada pieza abre la publicación real en Instagram.</p>
+    <div class="meses" id="meses-chips" role="group" aria-label="Elegir mes"></div>
+    <div class="mhead" id="mhead"></div>
+    <div class="posts" id="galeria-mes"></div>
+
     <div class="g3" style="margin-top:20px">
       <div class="box"><h4>Pico 1 · Enero–febrero</h4>
         <p style="margin:0 0 10px"><b>10/10 Recovery Sport Fest.</b> El evento de los 10 años, el 1 de febrero.</p>
@@ -341,12 +370,15 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
       <div class="box"><h4>Pico 3 · Julio y octubre</h4>
         <p style="margin:0 0 10px">Julio hizo <b>+106 seguidores sin publicar nada</b> en el feed. Octubre, el taller.</p>
         <ul><li>El repunte de julio <b>hay que verificarlo</b>: no corresponde a publicaciones. Probablemente historias, menciones o cobertura deportiva.</li>
-        <li>Octubre fue el mejor mes del segundo semestre, con 7 piezas y el taller.</li></ul></div>
+        <li>Octubre fue el mejor mes del segundo semestre, con 7 piezas y el taller.</li>
+        <li><b>Junio y julio no se publicó por una razón concreta</b>, no por falta de ideas: ver abajo.</li></ul></div>
     </div>
 
     <div class="box acc" style="margin-top:18px">
-      <h4>El silencio más caro del año</h4>
-      <p><b>99 días seguidos sin publicar en el feed, del 11 de mayo al 18 de agosto.</b> Mayo cerró en 1.056 vistas diarias y junio cayó a 510, el piso del año. Hubo además otros dos silencios de más de tres semanas en marzo y abril. Hoy llevamos 12 días sin publicar.</p>
+      <h4>El silencio más caro del año, y por qué ocurrió</h4>
+      <p><b>99 días seguidos sin publicar en el feed, del 11 de mayo al 18 de agosto.</b> Mayo cerró en 1.056 vistas diarias y junio cayó a 510, el piso del año. Hubo además otros dos silencios de más de tres semanas en marzo y abril.</p>
+      <p style="margin-top:10px"><b>La causa no fue de producción.</b> Hubo un desfase de comunicación con el equipo de Recovery y no estaba definido si querían o necesitaban continuar con el servicio publicitario. Mientras esa decisión quedó en el aire, el calendario se detuvo.</p>
+      <p style="margin-top:10px;margin-bottom:0"><b>Y está volviendo a pasar.</b> Noviembre lleva 2 piezas y hoy son 12 días sin publicar, por el mismo motivo. Es el riesgo más concreto del cierre de año y es el único de todo este informe que no se resuelve con contenido, pauta ni diseño: se resuelve <b>definiendo la continuidad del servicio</b>. Está como primera decisión en la sección final.</p>
     </div>
   </div>
 </details>
@@ -903,6 +935,64 @@ const PIEZAS=[
 {f:"30 oct",n:"Aviso de feriado",t:"Foto",v:599,a:276,l:3,c:0,g:1,s:0,r:null},
 {f:"16 sep",n:"Back to Routine · Cámara Americana",t:"Carrusel",v:593,a:245,l:9,c:0,g:6,s:18,r:null}];
 
+const PZ=[{"c":"DS_Q6UpjXGH","d":"2026-01-02","t":"Mitos sobre la fisioterapia","k":"Carrusel","r":0,"a":286,"v":728,"l":9,"m":0,"s":6,"g":"Educación"},{"c":"DTNhF3tkVLP","d":"2026-01-07","t":"Formación del equipo 2026","k":"Reel","r":1,"a":788,"v":1253,"l":20,"m":1,"s":10,"g":"Equipo"},{"c":"DTjd7PAjfuF","d":"2026-01-16","t":"Traumatismo: cómo lo tratamos","k":"Carrusel","r":0,"a":456,"v":947,"l":13,"m":0,"s":8,"g":"Servicio"},{"c":"DTrFmYPDXuQ","d":"2026-01-19","t":"10 años: historias que no se miden en trofeos","k":"Reel","r":1,"a":1695,"v":2722,"l":79,"m":12,"s":20,"g":"Evento"},{"c":"DTyz5l4jafP","d":"2026-01-22","t":"¡Lo logramos! Invitación al Sport Fest","k":"Reel","r":1,"a":2457,"v":3720,"l":89,"m":7,"s":23,"g":"Evento"},{"c":"DT3sqTZARij","d":"2026-01-23","t":"10 años y 5 caminando juntos","k":"Reel","r":1,"a":809,"v":1512,"l":37,"m":0,"s":6,"g":"Evento"},{"c":"DT34-oSDUQQ","d":"2026-01-24","t":"No necesitas una lesión para ir a fisioterapia","k":"Reel","r":1,"a":423,"v":588,"l":11,"m":1,"s":10,"g":"Educación"},{"c":"DT6StweAS5D","d":"2026-01-24","t":"Si no corres, bailas","k":"Reel","r":1,"a":569,"v":904,"l":11,"m":0,"s":11,"g":"Evento"},{"c":"DT9HOqFjUbw","d":"2026-01-26","t":"De un cubículo en 2016 a 10 años","k":"Carrusel","r":0,"a":1152,"v":3885,"l":74,"m":4,"s":14,"g":"Evento"},{"c":"DT_uny2DXQJ","d":"2026-01-27","t":"8 años con deportistas de élite","k":"Reel","r":1,"a":1518,"v":2227,"l":46,"m":3,"s":12,"g":"Evento"},{"c":"DUCZASLjYfx","d":"2026-01-28","t":"Más que una carrera: el cronograma","k":"Carrusel","r":0,"a":2980,"v":5972,"l":63,"m":3,"s":61,"g":"Evento"},{"c":"DUEAVrzkd-w","d":"2026-01-28","t":"Últimos 10 cupos","k":"Reel","r":1,"a":1406,"v":2275,"l":103,"m":6,"s":21,"g":"Evento"},{"c":"DUGsACOgcD-","d":"2026-01-29","t":"Actividades para todos","k":"Reel","r":1,"a":1725,"v":2543,"l":18,"m":1,"s":7,"g":"Evento"},{"c":"DULlaZgkXmm","d":"2026-01-31","t":"La previa ya está aquí","k":"Carrusel","r":0,"a":750,"v":2004,"l":37,"m":0,"s":10,"g":"Evento"},{"c":"DULosqqEQVW","d":"2026-01-31","t":"Gracias a los auspiciantes","k":"Carrusel","r":0,"a":1240,"v":8504,"l":24,"m":2,"s":29,"g":"Evento"},{"c":"DUMnlUUjRc3","d":"2026-02-01","t":"Dorsales entregados","k":"Reel","r":1,"a":1129,"v":1789,"l":38,"m":2,"s":16,"g":"Evento"},{"c":"DUNwFK4ji25","d":"2026-02-01","t":"El box se traslada al parque","k":"Carrusel","r":0,"a":2237,"v":6374,"l":57,"m":0,"s":12,"g":"Evento"},{"c":"DUOA-msETzT","d":"2026-02-01","t":"Listos para el 10/10 Sport Fest","k":"Reel","r":1,"a":1069,"v":1940,"l":43,"m":1,"s":5,"g":"Evento"},{"c":"DUOJJPcET-H","d":"2026-02-01","t":"Comenzamos los 5K","k":"Carrusel","r":0,"a":995,"v":2576,"l":76,"m":0,"s":8,"g":"Evento"},{"c":"DUOcFLHEWQ8","d":"2026-02-01","t":"Qué increíble día","k":"Reel","r":1,"a":1355,"v":2214,"l":89,"m":5,"s":4,"g":"Evento"},{"c":"DUUaQANDYW3","d":"2026-02-04","t":"Un día 10/10: resumen del festival","k":"Carrusel","r":0,"a":1081,"v":2820,"l":76,"m":4,"s":5,"g":"Evento"},{"c":"DUZR311Aeni","d":"2026-02-05","t":"10 años de sueños, kilómetros y comunidad","k":"Reel","r":1,"a":1588,"v":2673,"l":43,"m":2,"s":4,"g":"Evento"},{"c":"DUrySLVjdja","d":"2026-02-13","t":"Se acerca un regalo exclusivo","k":"Reel","r":1,"a":850,"v":1322,"l":25,"m":0,"s":12,"g":"Sorteo"},{"c":"DVBbtrDkZFA","d":"2026-02-21","t":"Sorteo especial Recovery","k":"Reel","r":1,"a":825,"v":1236,"l":21,"m":3,"s":12,"g":"Sorteo"},{"c":"DVbl2AoEbbk","d":"2026-03-03","t":"Nos vemos en Expo Business Beauty","k":"Reel","r":1,"a":726,"v":1326,"l":31,"m":2,"s":9,"g":"Evento"},{"c":"DVpR2yRDXVL","d":"2026-03-09","t":"8M: nuestra fuerza","k":"Carrusel","r":0,"a":746,"v":1941,"l":43,"m":4,"s":7,"g":"Comunidad"},{"c":"DVxC0Smjd6o","d":"2026-03-12","t":"¿Crees que no tienes 40 minutos?","k":"Reel","r":1,"a":1121,"v":1980,"l":32,"m":13,"s":11,"g":"Dolor concreto"},{"c":"DWFiIoTjT0B","d":"2026-03-20","t":"2x1 en masaje deportivo · Media Maratón","k":"Foto","r":0,"a":596,"v":1218,"l":14,"m":1,"s":5,"g":"Promoción"},{"c":"DXCPGjvEkdV","d":"2026-04-12","t":"Paula Torres, campeona mundial de marcha","k":"Foto","r":0,"a":689,"v":1462,"l":60,"m":1,"s":4,"g":"Atleta"},{"c":"DX_4B1PyKal","d":"2026-05-06","t":"Te dijeron que la cirugía era tu única salida","k":"Reel","r":1,"a":716,"v":1140,"l":17,"m":8,"s":19,"g":"Dolor concreto"},{"c":"DYLrnVDjdru","d":"2026-05-11","t":"Día de la Madre","k":"Carrusel","r":0,"a":327,"v":776,"l":13,"m":0,"s":1,"g":"Comunidad"},{"c":"DcKd0CttNpi","d":"2026-08-18","t":"Programa Pretemporada","k":"Reel","r":1,"a":1524,"v":2476,"l":27,"m":11,"s":39,"g":"Dolor concreto"},{"c":"DcbIZ5aSvdP","d":"2026-08-24","t":"Rendimiento Blindado: estiramientos","k":"Reel","r":1,"a":823,"v":1329,"l":43,"m":8,"s":22,"g":"Creencia"},{"c":"DcuO20zSBmR","d":"2026-08-31","t":"Back to Routine: espalda de oficina","k":"Reel","r":1,"a":841,"v":1313,"l":29,"m":3,"s":21,"g":"Dolor concreto"},{"c":"DdKKEfqypnT","d":"2026-09-11","t":"Anuncio del taller gratuito","k":"Reel","r":1,"a":1046,"v":1725,"l":17,"m":3,"s":21,"g":"Evento"},{"c":"DdXffd8FCuy","d":"2026-09-16","t":"Back to Routine · Cámara Americana","k":"Carrusel","r":0,"a":246,"v":594,"l":9,"m":0,"s":18,"g":"Objeción"},{"c":"DdsTORckRm2","d":"2026-09-25","t":"Cupos agotados del taller","k":"Carrusel","r":0,"a":404,"v":1166,"l":14,"m":2,"s":14,"g":"Evento"},{"c":"Dd5IzOUFEa6","d":"2026-09-30","t":"Casa llena: éxito del taller","k":"Carrusel","r":0,"a":1345,"v":3260,"l":58,"m":1,"s":31,"g":"Evento"},{"c":"DeQiIViy9uP","d":"2026-10-09","t":"Resumen del taller","k":"Reel","r":1,"a":817,"v":1459,"l":38,"m":3,"s":40,"g":"Evento"},{"c":"DejuVURxZ4P","d":"2026-10-16","t":"Resumen del taller: testimonios","k":"Reel","r":1,"a":926,"v":1541,"l":37,"m":2,"s":7,"g":"Evento"},{"c":"Dep_VeMy87c","d":"2026-10-19","t":"Cuidado con los trucos virales","k":"Reel","r":1,"a":711,"v":1001,"l":16,"m":9,"s":6,"g":"Creencia"},{"c":"De0IqnAEdEy","d":"2026-10-22","t":"Incontinencia: los ejercicios de redes","k":"Carrusel","r":0,"a":316,"v":795,"l":10,"m":0,"s":6,"g":"Creencia"},{"c":"De8OwrRxR_O","d":"2026-10-26","t":"Suelo pélvico: presión al sentarte","k":"Reel","r":1,"a":392,"v":741,"l":21,"m":1,"s":6,"g":"Dolor concreto"},{"c":"De_0ZUiRLgu","d":"2026-10-27","t":"Vacante fisioterapeuta","k":"Foto","r":0,"a":869,"v":1925,"l":31,"m":0,"s":7,"g":"Equipo","off":1},{"c":"DfIBuzSya8B","d":"2026-10-30","t":"Aviso de feriado","k":"Foto","r":0,"a":277,"v":601,"l":3,"m":0,"s":0,"g":"Servicio"},{"c":"DfVq_-0ymV5","d":"2026-11-04","t":"Taller de cuello y espalda","k":"Reel","r":1,"a":486,"v":892,"l":28,"m":7,"s":18,"g":"Dolor concreto"},{"c":"Dfn6ae1yuq8","d":"2026-11-12","t":"Rendimiento Blindado: tendón","k":"Reel","r":1,"a":431,"v":721,"l":24,"m":0,"s":4,"g":"Método"}];
+const MES=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre"];
+const MAB=["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov"];
+const VD=[2263,2912,1572,1989,1056,510,1152,572,633,705,234];
+const NOTA={5:"En junio no se publicó ninguna pieza. No fue falta de ideas: hubo un desfase de comunicación con el equipo de Recovery y no estaba definido si querían continuar con el servicio publicitario. El mes cerró en 510 vistas diarias, el piso del año.",
+            6:"Julio tampoco tuvo publicaciones, por el mismo motivo que junio. Aun así el mes sumó 35.729 vistas y +106 seguidores —el segundo mejor crecimiento del año— sin una sola pieza en el feed. Ese repunte hay que verificarlo: probablemente vino de historias, menciones o cobertura deportiva."};
+function cardPZ(p){
+  const off=p.off===1;
+  const el=document.createElement(off?"div":"a");
+  if(!off){el.href="https://www.instagram.com/"+(p.r?"reel":"p")+"/"+p.c+"/";el.target="_blank";el.rel="noopener";}
+  el.className="post"+(off?" off":"");
+  const esc=t=>String(t).replace(/"/g,"&quot;");
+  const dia=p.d.slice(8)+" "+MAB[parseInt(p.d.slice(5,7),10)-1].toLowerCase();
+  const im = off
+    ? '<div class="im"><span class="nod">Esta publicación<br>ya no está disponible<br>en Instagram</span></div>'
+    : '<div class="im"><img src="assets/posts/'+p.c+'.jpg" alt="'+esc(p.t)+'" loading="lazy">'
+      +'<span class="fm">'+p.k+'</span>'
+      +'<span class="ti"><b>'+p.t+'</b><i>'+dia+' · '+p.g+'</i></span></div>';
+  el.innerHTML = im
+    +'<div class="mt">'
+      +'<div><b>'+p.a.toLocaleString("es")+'</b><span>alcance</span></div>'
+      +'<div><b>'+p.l+'</b><span>likes</span></div>'
+      +'<div><b class="'+(p.m===0?"ko":"")+'">'+p.m+'</b><span>coment.</span></div>'
+      +'<div><b>'+p.s+'</b><span>comp.</span></div>'
+    +'</div>'
+    +'<div class="go"><span>'+(off?"Archivada":"Ver en Instagram")+'</span><span>'+(off?"":"↗")+'</span></div>';
+  return el;
+}
+function pintaMes(i){
+  const g=document.getElementById("galeria-mes"), h=document.getElementById("mhead");
+  if(!g||!h)return;
+  const lote=PZ.filter(p=>parseInt(p.d.slice(5,7),10)-1===i);
+  document.querySelectorAll("#meses-chips .mch").forEach((b,k)=>b.setAttribute("aria-pressed",k===i?"true":"false"));
+  document.querySelectorAll("#anio g.bar rect").forEach((r,k)=>r.classList.toggle("sel",k===i));
+  h.innerHTML='<b>'+MES[i]+' 2026</b><span>'+(lote.length?lote.length+(lote.length===1?" pieza":" piezas"):"sin piezas")
+    +' · '+VD[i].toLocaleString("es")+' vistas por día</span>';
+  g.innerHTML="";
+  if(!lote.length){
+    g.style.display="block";
+    g.innerHTML='<div class="vacio"><b>Mes sin publicaciones</b><p>'+NOTA[i]+'</p></div>';
+    return;
+  }
+  g.style.display="";
+  lote.forEach(p=>g.appendChild(cardPZ(p)));
+}
+(()=>{
+  const c=document.getElementById("meses-chips"); if(!c)return;
+  MES.forEach((m,i)=>{
+    const n=PZ.filter(p=>parseInt(p.d.slice(5,7),10)-1===i).length;
+    const b=document.createElement("button");
+    b.type="button"; b.className="mch"+(n?"":" cero"); b.setAttribute("aria-pressed","false");
+    b.innerHTML=MAB[i]+'<i>'+n+'</i>';
+    b.addEventListener("click",()=>pintaMes(i));
+    c.appendChild(b);
+  });
+  pintaMes(1);
+})();
+
 const NS="http://www.w3.org/2000/svg";
 const el=(t,a={})=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;};
 const tx=(x,y,s,a={})=>{const e=el("text",{x,y,...a});e.textContent=s;return e;};
@@ -922,7 +1012,8 @@ d.appendChild(lg);g.appendChild(d);
 [0,1000,2000,3000].forEach(v=>{g.appendChild(el("line",{x1:L-8,y1:y(v),x2:R,y2:y(v),class:"gl"}));
  g.appendChild(tx(L-16,y(v)+4,v.toLocaleString("es"),{"text-anchor":"end","font-size":10}));});
 g.appendChild(el("line",{x1:L-8,y1:B,x2:R,y2:B,class:"ax"}));
-D.forEach(([m,v,c],i)=>{const bx=L+i*((R-L)/D.length)+8,h=B-y(v),row=el("g",{class:"row"});
+D.forEach(([m,v,c],i)=>{const bx=L+i*((R-L)/D.length)+8,h=B-y(v),row=el("g",{class:"row bar"});
+ row.addEventListener("click",()=>{pintaMes(i);document.getElementById("mhead").scrollIntoView({behavior:"smooth",block:"center"});});
  row.appendChild(el("rect",{x:bx,y:y(v),width:bw,height:h,rx:4,fill:v<600?"rgba(242,85,95,.42)":"url(#ga)"}));
  row.appendChild(tx(bx+bw/2,y(v)-9,v.toLocaleString("es"),{"text-anchor":"middle",class:"val","font-size":11}));
  row.appendChild(tx(bx+bw/2,B+17,m,{"text-anchor":"middle","font-size":10.5,fill:"#A29E97"}));
