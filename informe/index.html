@@ -209,6 +209,46 @@ tr.top td:first-child{box-shadow:inset 3px 0 0 var(--rojo)}
   background:var(--grad);color:#17171A;font-family:var(--mono);font-size:12px;font-weight:700;display:grid;place-items:center}
 .pasos li b{color:var(--blanco)}
 
+/* resumen ejecutivo ampliado */
+.bloque{margin-top:44px}
+.bloque>.mono{display:block;margin:0 0 7px;color:var(--rojo-cl)}
+.bloque h3{font-family:var(--display);font-stretch:78%;font-weight:870;text-transform:uppercase;
+  font-size:clamp(21px,3vw,31px);line-height:1.02;margin:0 0 7px;color:var(--blanco)}
+.bloque>p{color:var(--txt2);font-size:15px;max-width:72ch;margin:0 0 20px}
+.hall{display:grid;gap:1px;background:var(--borde);border:1px solid var(--borde)}
+.hall>div{background:var(--carbon);display:grid;grid-template-columns:70px 1fr;gap:18px;padding:18px 20px;align-items:center}
+.hall .cif{font-family:var(--display);font-stretch:72%;font-weight:900;font-size:30px;line-height:1;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;text-align:center}
+.hall .cif small{display:block;font-family:var(--mono);font-size:8.5px;font-weight:600;letter-spacing:.1em;
+  -webkit-text-fill-color:var(--txt3);margin-top:5px}
+.hall h5{margin:0 0 4px;font-size:15.5px;font-weight:700;color:var(--blanco);line-height:1.3}
+.hall p{margin:0;font-size:13.8px;color:var(--txt2);max-width:74ch}
+.mov{display:grid;grid-template-columns:repeat(auto-fit,minmax(252px,1fr));gap:16px}
+.mov>div{background:var(--carbon);border:1px solid var(--borde);border-top:3px solid transparent;
+  border-image:var(--grad) 1;padding:19px 21px 21px}
+.mov .n{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--rojo-cl);display:block;margin-bottom:9px}
+.mov h5{margin:0 0 9px;font-family:var(--display);font-stretch:82%;font-weight:840;text-transform:uppercase;
+  font-size:16px;letter-spacing:.03em;color:var(--blanco);line-height:1.1}
+.mov p{margin:0 0 9px;font-size:13.8px;color:var(--txt2)}
+.mov p:last-child{margin:0}
+.mov b{color:var(--txt)}
+.cost{overflow-x:auto;border:1px solid var(--borde);background:var(--negro)}
+.cost table{min-width:600px;font-size:14px}
+.cost th{background:var(--carbon2)}
+.cost td.con{color:var(--txt);white-space:normal}
+.cost td.mo{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums;color:var(--blanco);font-size:13.5px}
+.cost tr.sep td{background:var(--carbon2);font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--txt3);padding:8px 12px}
+.cost tr.tot td{background:color-mix(in srgb,var(--rojo) 9%,transparent);font-weight:700;color:var(--blanco)}
+.cost tr.tot td.mo{font-size:15px}
+.esc{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:16px}
+.esc>div{background:var(--carbon);border:1px solid var(--borde);padding:17px 19px}
+.esc .et{font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--txt3);display:block}
+.esc .v{font-family:var(--display);font-stretch:74%;font-weight:900;font-size:30px;line-height:1;color:var(--blanco);margin:9px 0 3px}
+.esc .v.g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.esc small{display:block;font-size:12.5px;color:var(--txt2);line-height:1.4;margin-top:7px}
+@media(max-width:560px){.hall>div{grid-template-columns:1fr;gap:10px}.hall .cif{text-align:left}}
+
 /* indice */
 .indice{margin-top:34px;padding-top:26px;border-top:1px solid var(--borde)}
 .indice nav{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:1px;background:var(--borde);
@@ -406,7 +446,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 <div class="resumen">
   <hr class="gradrule" style="width:72px">
   <p class="rtitle">Lo esencial<br>en un minuto</p>
-  <p class="rsub">Si no lee nada más, lea esto. Todo lo demás está desplegable más abajo, sección por sección.</p>
+  <p class="rsub">El estado, los hallazgos, la propuesta y los costos. Todo el detalle está desplegable más abajo, sección por sección.</p>
 
   <div class="cards">
     <div class="card"><div class="bar"></div><div class="bd">
@@ -442,8 +482,84 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 
 <!-- ============ SECCIONES ============ -->
 
+
+  <div class="bloque">
+    <span class="mono">Los hallazgos</span>
+    <h3>Cuatro datos que explican<br>todo lo demás</h3>
+    <div class="hall">
+      <div><span class="cif">68 %<small>del alcance</small></span>
+        <div><h5>Todo lo que creció vino de un evento</h5>
+        <p>El contenido de evento produjo el 68 % del alcance del año con el 51 % de las piezas. Los tres picos fueron el Sport Fest, el título mundial de Paula Torres y el taller. <b>Ninguno es repetible a voluntad.</b></p></div></div>
+      <div><span class="cif">23 %<small>del contenido</small></span>
+        <div><h5>Casi no le hablamos a la paciente</h5>
+        <p>Solo el 23 % de las piezas le habla a Mónica —su dolor, sus creencias—. El resto habla de la agenda de Recovery. Y ese 23 % hace escribir a la gente <b>cuatro veces más</b>.</p></div></div>
+      <div><span class="cif">2,3<small>por mil vistas</small></span>
+        <div><h5>La puerta de entrada está tapada</h5>
+        <p>Comentarios por cada 1.000 vistas, y comentar es la única forma de recibir las guías. <b>El reel que estrenó la guía del tendón recibió cero.</b> Ocho palabras clave distintas en un año: la audiencia nunca aprende el mecanismo.</p></div></div>
+      <div><span class="cif">$0<small>en pauta</small></span>
+        <div><h5>Sin inversión y sin ritmo</h5>
+        <p>El año fue 100 % orgánico, con 1,6 publicaciones por semana según el plan contratado. <b>Con ese ritmo y sin un dólar invertido, crecer depende de que vuelva a pasar algo extraordinario.</b></p></div></div>
+    </div>
+  </div>
+
+  <div class="bloque">
+    <span class="mono">La propuesta</span>
+    <h3>Tres movimientos<br>para el trimestre</h3>
+    <p>Diciembre reactiva, enero construye expectativa y febrero es el aniversario de los 11 años — el mismo modelo que produjo el mejor mes del año.</p>
+    <div class="mov">
+      <div><span class="n">Movimiento 1</span>
+        <h5>Arreglar la puerta</h5>
+        <p><b>Una sola palabra permanente —GUÍA— con un menú por padecimiento</b>, y tres formas de entrar: comentario, mensaje directo y enlace en la biografía.</p>
+        <p>Meta para diciembre: pasar de 2,3 comentarios por mil a <b>50 contactos reales en el mes</b>. Es la primera cifra de retorno que va a tener Recovery.</p></div>
+      <div><span class="n">Movimiento 2</span>
+        <h5>Encender la pauta</h5>
+        <p><b>Sin producir nada nuevo.</b> Hay cuatro piezas atemporales que ya rindieron entre 5 y 7 veces la mediana de la cuenta, sin un dólar invertido. Esas son las creatividades.</p>
+        <p>Objetivo del primer mes: <b>saber cuánto cuesta un contacto</b>. Ese número hoy no existe y sin él no se puede decidir nada.</p></div>
+      <div><span class="n">Movimiento 3</span>
+        <h5>Construir el motor</h5>
+        <p>El taller y el aniversario como arco de campaña, no como piezas sueltas. Y <b>las 14 páginas de servicio vacías de su web</b>, llenas por fin.</p>
+        <p>Es lo que convierte picos prestados en un motor propio que no depende de que ocurra algo extraordinario.</p></div>
+    </div>
+  </div>
+
+  <div class="bloque">
+    <span class="mono">La inversión</span>
+    <h3>Cuánto cuesta<br>y de qué depende</h3>
+    <p>Tres rubros que se suman y se deciden por separado. <b>El fee de gestión no incluye la inversión publicitaria:</b> aquel es el trabajo, esta es el dinero que va a Meta para ponerlo delante de gente nueva.</p>
+    <div class="cost"><table>
+      <thead><tr><th>Concepto</th><th class="mo">Diciembre</th><th class="mo">Desde enero</th></tr></thead>
+      <tbody>
+        <tr class="sep"><td colspan="3">Gestión de contenido · obligatorio</td></tr>
+        <tr><td class="con">Plan base — 4 videos, 3 carruseles y hasta 4 guías interactivas<br><span style="color:var(--txt3);font-size:12.5px">En diciembre incluye gestión de pauta e historias sin costo adicional, por la reactivación</span></td><td class="mo">$450</td><td class="mo">$550</td></tr>
+        <tr><td class="con" style="color:var(--txt2)">Opcional · TikTok propio con 8 videos al mes y TikTok Ads</td><td class="mo" style="color:var(--txt3)">—</td><td class="mo" style="color:var(--txt2)">$700</td></tr>
+        <tr class="sep"><td colspan="3">Inversión publicitaria · va directo a Meta</td></tr>
+        <tr><td class="con">10 % del objetivo comercial mensual<br><span style="color:var(--txt3);font-size:12.5px">Ejemplo con un objetivo de $2.000 en citas desde redes</span></td><td class="mo">$200</td><td class="mo">$200</td></tr>
+        <tr class="sep"><td colspan="3">Página web · opcional, se decide aparte</td></tr>
+        <tr><td class="con">Arranque — llenar las 14 páginas vacías, tomar el control y dejar el sitio medible<br><span style="color:var(--txt3);font-size:12.5px">Pago único, sujeto a que entreguen el proyecto</span></td><td class="mo">$350</td><td class="mo" style="color:var(--txt3)">único</td></tr>
+        <tr><td class="con" style="color:var(--txt2)">Nivel 1 · las guías bajo su dominio y el sitio al día</td><td class="mo" style="color:var(--txt2)">$50</td><td class="mo" style="color:var(--txt2)">$50</td></tr>
+        <tr><td class="con" style="color:var(--txt2)">Nivel 2 · artículos por padecimiento y posicionamiento continuo</td><td class="mo" style="color:var(--txt2)">$150</td><td class="mo" style="color:var(--txt2)">$150</td></tr>
+        <tr><td class="con" style="color:var(--txt2)">Módulo · agendamiento en la web con registro de origen</td><td class="mo" style="color:var(--txt2)">$200</td><td class="mo" style="color:var(--txt2)">$200</td></tr>
+      </tbody></table></div>
+
+    <div class="esc">
+      <div><span class="et">Escenario mínimo</span><div class="v">$650</div>
+        <small>Diciembre. Desde enero, <b>$750</b>.<br>Plan de contenido más la pauta. Es el piso para poder medir algo.</small></div>
+      <div><span class="et">Recomendado</span><div class="v g">$700</div>
+        <small>Diciembre, más $350 de arranque único. Desde enero, <b>$800</b>.<br>Suma las guías bajo su dominio.</small></div>
+      <div><span class="et">Completo</span><div class="v">$1.100</div>
+        <small>Mensual desde enero, más $350 únicos.<br>Suma posicionamiento continuo y agendamiento con medición de origen.</small></div>
+    </div>
+
+    <div class="box acc" style="margin-top:18px">
+      <h4>De qué depende que estos números tengan sentido</h4>
+      <p><b>Del objetivo comercial.</b> Necesitamos saber cuánto quiere generar Recovery al mes en citas que vengan de redes. De ahí sale la pauta —el 10 %— y de ahí sale saber si este plan alcanza o se queda corto. Un rango basta.</p>
+      <p style="margin-top:9px"><b>Del sistema de agendamiento.</b> Sin poder marcar de dónde llegó cada paciente nuevo, todo lo que podemos medir son vistas y comentarios, que son medios y no resultado.</p>
+      <p style="margin-top:9px;margin-bottom:0"><b>Y de la continuidad.</b> Los 99 días sin publicar de junio y julio, y el noviembre en blanco, no fueron un problema de producción: no estaba definido si el servicio seguía. <b>Esa es la primera decisión, y sostiene a todas las demás.</b></p>
+    </div>
+  </div>
+
   <div class="indice">
-    <p class="mono" style="display:block;margin:0 0 12px;color:var(--txt2)">Índice · toca una sección para abrirla <span style="color:var(--txt3)">· 16 secciones · versión 24 nov 2026 · 09:10</span></p>
+    <p class="mono" style="display:block;margin:0 0 12px;color:var(--txt2)">El detalle completo · toca una sección para abrirla <span style="color:var(--txt3)">· 16 secciones · versión 25 nov 2026 · 10:58</span></p>
     <nav aria-label="Secciones del informe"><a href="#s01"><i>01</i><b>El año, mes a mes</b><u>›</u></a><a href="#s02"><i>02</i><b>El embudo: dónde se tapa</b><u>›</u></a><a href="#s03"><i>03</i><b>Qué funcionó mejor</b><u>›</u></a><a href="#s04"><i>04</i><b>Qué funcionó peor</b><u>›</u></a><a href="#s05"><i>05</i><b>Quién está del otro lado</b><u>›</u></a><a href="#s06"><i>06</i><b>La fuga: ocho palabras en un año</b><u>›</u></a><a href="#s07"><i>07</i><b>A quién le hablamos</b><u>›</u></a><a href="#s08"><i>08</i><b>Por qué hace falta pauta</b><u>›</u></a><a href="#s09"><i>09</i><b>Qué incluye el plan actual y qué no</b><u>›</u></a><a href="#s10"><i>10</i><b>La página web: el activo dormido</b><u>›</u></a><a href="#s11"><i>11</i><b>Identidad: el logo y la foto de perfil</b><u>›</u></a><a href="#s12"><i>12</i><b>Historias destacadas</b><u>›</u></a><a href="#s13"><i>13</i><b>Plan: diciembre, enero y febrero</b><u>›</u></a><a href="#s14"><i>14</i><b>Automatización: una palabra, un menú</b><u>›</u></a><a href="#s15"><i>15</i><b>Amplificación: de contenido a modelo de negocio</b><u>›</u></a><a href="#s16"><i>16</i><b>Qué necesitamos de Recovery</b><u>›</u></a></nav>
   </div>
 
@@ -1328,7 +1444,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 <footer>
   <span>Pro Motion Sport Marketing · Dirección de Producción</span>
   <span>Recovery · datos de Metricool al 24 nov 2026</span>
-  <span id="sello-ver">Versión del informe · 24 nov 2026 · 09:10</span>
+  <span id="sello-ver">Versión del informe · 25 nov 2026 · 10:58</span>
 </footer>
 </div>
 
