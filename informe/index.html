@@ -54,10 +54,13 @@ img{max-width:100%}
   background:radial-gradient(closest-side,rgba(30,107,168,.17),transparent 70%)}
 .hero .in{position:relative;width:100%;max-width:1120px;margin:0 auto;padding:40px 20px 0;
   display:flex;flex-direction:column;min-height:inherit}
-.hero .top{display:flex;align-items:center;gap:15px;margin-bottom:0}
-.hero .top img{width:96px;height:auto}
-.hero .top span{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
-  color:rgba(255,255,255,.55);padding-left:15px;border-left:1px solid rgba(255,255,255,.17)}
+.hero .top{display:flex;align-items:center;gap:12px;margin-bottom:0;flex-wrap:wrap}
+.hero .top img{width:62px;height:auto}
+.hero .top .marca{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:21px;
+  letter-spacing:.05em;text-transform:uppercase;color:#fff;line-height:1}
+.hero .top span.et{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.52);padding-left:14px;border-left:1px solid rgba(255,255,255,.17)}
+@media(max-width:560px){.hero .top span.et{padding-left:0;border-left:0;width:100%}}
 .hgrid{flex:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(290px,.66fr);
   gap:52px;align-items:center;padding:44px 0 52px}
 .htx{min-width:0}
@@ -448,7 +451,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 <div class="hero">
   <div class="aura2"></div><div class="aura"></div>
   <div class="in">
-    <div class="top"><img src="assets/recovery-logo-oscuro.svg" alt="Recovery"><span>Informe de gestión · Enero – Noviembre 2026</span></div>
+    <div class="top"><img src="assets/recovery-logo.svg" alt=""><span class="marca">Recovery</span><span class="et">Informe de gestión · Enero – Noviembre 2026</span></div>
     <div class="hgrid">
       <div class="htx">
         <hr class="hregla">
