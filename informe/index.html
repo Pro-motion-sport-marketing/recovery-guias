@@ -46,17 +46,33 @@ img{max-width:100%}
 .gradrule{height:4px;border-radius:99px;background:var(--grad);border:0;margin:0}
 
 /* ============ HERO ============ */
-.hero{color-scheme:dark;position:relative;min-height:min(86vh,720px);display:flex;align-items:flex-end;overflow:hidden;
-  margin-bottom:0;background:var(--negro)}
-.hero .ph{position:absolute;inset:0}
-.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;filter:grayscale(.35) contrast(1.08) brightness(.72)}
-.hero .ph::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(10,10,11,.72) 0%,rgba(10,10,11,.28) 32%,rgba(10,10,11,.94) 76%,#0A0A0B 100%)}
-.hero .in{position:relative;width:100%;max-width:1120px;margin:0 auto;padding:40px 20px 54px}
-.hero .top{display:flex;align-items:center;gap:13px;margin-bottom:auto;padding-bottom:120px}
+.hero{color-scheme:dark;position:relative;min-height:min(88vh,760px);display:flex;align-items:flex-end;overflow:hidden;
+  margin-bottom:0;background:#0A0A0B}
+.hero .aura{position:absolute;right:-6%;bottom:-14%;width:min(76%,860px);aspect-ratio:1;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(228,27,43,.30),rgba(244,120,42,.13) 46%,transparent 72%)}
+.hero .aura2{position:absolute;left:-18%;top:-24%;width:min(62%,700px);aspect-ratio:1;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(30,107,168,.17),transparent 70%)}
+.hero .in{position:relative;width:100%;max-width:1120px;margin:0 auto;padding:40px 20px 0;
+  display:flex;flex-direction:column;min-height:inherit}
+.hero .top{display:flex;align-items:center;gap:13px;margin-bottom:34px}
 .hero .top img{width:58px;height:auto}
 .hero .top span{font-family:var(--mono);font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:rgba(255,255,255,.78)}
-h1{font-family:var(--display);font-size:clamp(40px,8.2vw,104px);line-height:.98;margin:0 0 20px;
+.hgrid{flex:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:16px;align-items:end}
+.htx{padding-bottom:54px;align-self:end}
+.hfoto{align-self:end;justify-self:end;position:relative;width:100%;max-width:520px}
+.hfoto img{display:block;width:100%;height:auto;
+  -webkit-mask-image:linear-gradient(180deg,#000 88%,transparent 100%);
+  mask-image:linear-gradient(180deg,#000 88%,transparent 100%)}
+.hfoto figcaption{position:absolute;left:0;bottom:16px;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(255,255,255,.52)}
+@media(max-width:880px){
+  .hero{min-height:0}
+  .hgrid{grid-template-columns:1fr;gap:0}
+  .htx{padding-bottom:28px}
+  .hfoto{max-width:380px;justify-self:center;margin:0 auto}
+  .hfoto figcaption{position:static;display:block;text-align:center;margin-top:-6px;padding-bottom:18px}
+}
+h1{font-family:var(--display);font-size:clamp(40px,6.6vw,78px);line-height:.98;margin:0 0 20px;
   text-transform:uppercase;color:#fff;letter-spacing:-.018em;text-wrap:balance}
 h1 span{display:block;padding-block:.02em}
 h1 .l{font-stretch:74%;font-weight:300}
@@ -64,7 +80,7 @@ h1 .b{font-stretch:70%;font-weight:900}
 h1 .g{font-stretch:70%;font-weight:900;
   background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
   padding-bottom:.08em;margin-bottom:-.08em}
-.hero p{max-width:60ch;color:rgba(239,236,230,.82);font-size:clamp(15px,1.9vw,18px);margin:0}
+.hero p{max-width:46ch;color:rgba(239,236,230,.80);font-size:clamp(14.5px,1.7vw,16.5px);margin:0;line-height:1.55}
 
 /* ============ TIRA DE CIFRAS ============ */
 .tirawrap{background:var(--carbon);border-top:1px solid var(--borde);border-bottom:1px solid var(--borde)}
@@ -422,11 +438,19 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
 </div>
 
 <div class="hero">
-  <div class="ph"><img src="assets/foto-expertas.jpg" alt="Equipo de fisioterapeutas de Recovery con el uniforme de la marca"></div>
+  <div class="aura2"></div><div class="aura"></div>
   <div class="in">
     <div class="top"><img src="assets/recovery-logo.svg" alt="Recovery"><span>Informe de gestión · Enero – Noviembre 2026</span></div>
-    <h1><span class="l">Qué pasó en</span><span class="b">11 meses</span><span class="l">y qué hacemos</span><span class="g">de diciembre a febrero</span></h1>
-    <p>Las 47 piezas publicadas entre el 1 de enero y el 24 de noviembre, con datos reales de Metricool. Y el plan de contenidos, pauta, automatización e identidad para el trimestre que arranca en diciembre.</p>
+    <div class="hgrid">
+      <div class="htx">
+        <h1><span class="l">Qué pasó en</span><span class="b">11 meses</span><span class="l">y qué hacemos</span><span class="g">de diciembre a febrero</span></h1>
+        <p>Las 47 piezas publicadas entre el 1 de enero y el 24 de noviembre, con datos reales de Metricool. Y el plan de contenidos, pauta, automatización e identidad para el trimestre que arranca en diciembre.</p>
+      </div>
+      <figure class="hfoto">
+        <img src="assets/equipo-recorte.webp" width="1284" height="1198" alt="Fisioterapeutas de Recovery, con el uniforme de la marca" fetchpriority="high">
+        <figcaption>Equipo de Recovery Therapy Center</figcaption>
+      </figure>
+    </div>
   </div>
 </div>
 
@@ -1033,7 +1057,7 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
         <ul>
           <li><b>Estrategia de historias</b> con una cantidad adecuada y sostenida</li>
           <li><b>Gestión de una estrategia de pauta mínima</b>: armado de campañas, públicos, creatividades y lectura de resultados</li>
-          <li><b>Republicación en TikTok</b> del contenido de Instagram</li>
+          <li><b>Republicación en TikTok</b> del contenido de Instagram<br><span style="color:var(--txt3);font-size:12.5px">Solo republicación: lo que sale en Instagram se sube también a TikTok. No incluye ideas ni guiones pensados para TikTok</span></li>
         </ul>
         <div class="no"><h5>No incluye</h5><ul>
           <li>La inversión publicitaria en sí</li>
@@ -1070,6 +1094,8 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--borde);displa
           <li><b>En TikTok solo se publican videos</b>, no carruseles. De las 7 piezas del plan actual, solo 4 son video.</li>
           <li>Repartidas entre las dos plataformas, eso daría <b>un video al mes en TikTok</b>, que no sostiene nada.</li>
           <li>Por eso la republicación entra en el plan de $550 —es barato y suma—, pero una estrategia real de TikTok arranca en 8 videos al mes.</li>
+          <li><b>Qué es exactamente la republicación.</b> Subir a TikTok los videos que ya se publicaron en Instagram. No incluye evaluar ideas, ángulos ni formatos pensados para TikTok, que tiene su propio lenguaje.</li>
+          <li><b>Y qué resultado esperar, dicho con honestidad:</b> no garantizamos que rindan igual que en Instagram, pero tampoco hay razón para dar por hecho que vayan a rendir mal. <b>Hay bastante contenido que funciona mejor en TikTok que en su red de origen.</b> Es una apuesta de costo casi cero: lo peor que puede pasar es que no pase nada.</li>
         </ul></div>
     </div>
 
